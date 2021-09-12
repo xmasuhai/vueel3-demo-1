@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import NewVue from './components/NewVue.vue';
 </script>
 
 <template>
-  <new-vue></new-vue>
+  <div>导航栏 |
+    <router-link to="/">newVue</router-link> |
+    <router-link to="/xxx">Home</router-link> |
+  </div>
+  <router-view></router-view>
 </template>
