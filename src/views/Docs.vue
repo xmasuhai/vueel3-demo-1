@@ -1,10 +1,12 @@
 <template>
-  第一个组件吧
+  <div>
+    Docs
+  </div>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'NewVue'
+  name: 'Docs'
 };
 </script>
 

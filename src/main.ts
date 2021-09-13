@@ -1,15 +1,15 @@
 import {createApp} from 'vue';
 import App from './App.vue';
 import {createWebHashHistory, createRouter} from 'vue-router';
-import NewVue from './components/NewVue.vue';
-import Home from './components/Home.vue';
+import Home from './views/Home.vue';
+import Docs from './views/Docs.vue';
 
 const history = createWebHashHistory();
 const router = createRouter({
   history,
   routes: [
-    {path: '/', component: NewVue},
-    {path: '/xxx', component: Home},
+    {path: '/', component: Home},
+    {path: '/docs', component: Docs},
   ]
 });
 
