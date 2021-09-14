@@ -1,8 +1,9 @@
 import {createApp} from 'vue';
-import App from './App.vue';
+import App from '@/App.vue';
+import '@/styles/index.scss';
 import {createWebHashHistory, createRouter} from 'vue-router';
-import Home from './views/Home.vue';
-import Docs from './views/Docs.vue';
+import Home from '@/views/Home.vue';
+import Docs from '@/views/Docs.vue';
 
 const history = createWebHashHistory();
 const router = createRouter({
