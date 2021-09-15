@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "sass:math";
+
 $one-line-height: 28px;
 .banner {
   padding: 100px 0;
@@ -40,7 +42,7 @@ $one-line-height: 28px;
       display: inline-block;
       height: $one-line-height;
       line-height: $one-line-height;
-      border-radius: $one-line-height/2;
+      border-radius: math.div($one-line-height, 2);
       padding: 0 8px;
     }
   }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {inject, Ref} from 'vue';
 
-const asideVisible = inject<Ref<boolean>>('xxx');
+const asideVisible = inject<Ref<boolean>>('asideVisible');
 const toggleMenu = () => {
   asideVisible!.value = !asideVisible?.value;
 };

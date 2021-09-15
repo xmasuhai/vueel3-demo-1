@@ -2,7 +2,7 @@
 import {provide, ref} from 'vue';
 
 const asideVisible = ref(false);
-provide('xxx', asideVisible);
+provide('asideVisible', asideVisible);
 </script>
 <script lang="ts">
 export default {
