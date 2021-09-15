@@ -18,6 +18,15 @@ a {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
 body {
   // 为什么这样写 font-family
   // 答案见 https://github.com/zenozeng/fonts.css/
