@@ -1,6 +1,15 @@
+<script setup lang="ts">
+import {inject, Ref} from 'vue';
+
+const asideVisible = inject<Ref<boolean>>('xxx');
+const toggleMenu = () => {
+  asideVisible!.value = !asideVisible?.value;
+};
+</script>
+
 <template>
   <div class="top-nav">
-    <div class="logo">LOGO</div>
+    <div class="logo" @click="toggleMenu">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
