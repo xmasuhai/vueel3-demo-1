@@ -30,6 +30,8 @@ export default {
   background: dodgerblue;
   display: flex;
   padding: 16px;
+  justify-content: center;
+  align-items: center;
 
   > .logo {
     max-width: 6em;
@@ -43,6 +45,16 @@ export default {
 
     > li {
       margin: 0 1em;
+    }
+  }
+
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+
+    > .logo {
+      margin: 0 auto;
     }
   }
 }
