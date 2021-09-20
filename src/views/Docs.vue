@@ -2,23 +2,51 @@
   <div class="layout">
     <top-nav class="nav"></top-nav>
     <div class="content">
-      <aside v-if="asideVisible">
-        <h2>组件列表</h2>
-        <ol>
-          <li>
-            <router-link to="/docs/switch">Switch 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/docs/button">Button 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/docs/dialog">Dialog 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/docs/tabs">Tabs 组件</router-link>
-          </li>
-        </ol>
-      </aside>
+      <transition name="aside">
+        <aside v-if="asideVisible">
+          <header>
+            <h2>
+              <router-link to="/docs"
+                           class="alink">组件列表
+              </router-link>
+            </h2>
+          </header>
+          <ol>
+            <li>
+              <h3>
+                <router-link to="/docs/switch"
+                             class="router-link">
+                  Switch 组件
+                </router-link>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                <router-link to="/docs/button"
+                             class="router-link">
+                  Button 组件
+                </router-link>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                <router-link to="/docs/dialog"
+                             class="router-link">
+                  Dialog 组件
+                </router-link>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                <router-link to="/docs/tabs"
+                             class="router-link">
+                  Tabs 组件
+                </router-link>
+              </h3>
+            </li>
+          </ol>
+        </aside>
+      </transition>
       <main>
         <router-view></router-view>
       </main>
@@ -65,17 +93,53 @@ export default {
       position: fixed;
       top: 0;
       left: 0;
-      background: cornflowerblue;
+      background: #063146;
       width: 150px;
-      padding: 70px 16px 16px;
+      padding: 70px 0 16px;
+      height: 100vh;
+      color: white;
 
-      > h2 {
+      > header {
         margin-bottom: 4px;
+        line-height: 50px;
+        padding-left: 16px;
+        user-select: none;
       }
 
       > ol {
+
         > li {
-          padding: 4px 0;
+          transition: .25s;
+
+          &:hover {
+            padding-left: 5px;
+          }
+
+          > h3 {
+            padding-left: 16px;
+            display: block;
+            line-height: 45px;
+
+            .router-link {
+              display: block;
+              height: 100%;
+              width: 100%;
+            }
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #000;
+          }
         }
       }
     }
@@ -85,6 +149,17 @@ export default {
       padding: 16px;
       background: lightgreen;
       overflow: auto;
+    }
+
+    .aside-enter-active,
+    .aside-leave-active {
+      transition: all 0.25s ease;
+    }
+
+    .aside-enter-from,
+    .aside-leave-to {
+      opacity: 0;
+      transform: translate3D(-100%, 0, 0);
     }
   }
 

@@ -9,7 +9,7 @@ const toggleMenu = () => {
 
 <template>
   <div class="top-nav">
-    <div class="logo">LOGO</div>
+    <header class="logo">LOGO</header>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
