@@ -17,6 +17,7 @@ const toggleMenu = () => {
     <div class="toggleAside"
          :class="{active: asideVisible}"
          @click="toggleMenu">
+      <span></span>
     </div>
   </div>
 </template>
@@ -64,39 +65,58 @@ export default {
     left: 16px;
     top: 50%;
     transform: translate3D(0, -50%, 0);
-    transition: .25s;
 
     &::before {
       content: '';
       position: absolute;
-      width: 18px;
+      top: 30%;
+      width: 50%;
       height: 1px;
       background-color: white;
-      box-shadow: 0 6px 0 white;
       transition: .25s;
-      transform: translate3D(0, -6px, 0);
     }
 
     &::after {
       content: '';
       position: absolute;
-      width: 18px;
+      bottom: 23%;
+      width: 50%;
       height: 1px;
       background-color: white;
-      transition: .25s;
-      transform: translate3D(0, 6px, 0);
+      transition: .45s;
+    }
+
+    & span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3D(50%, 50%, 0);
+      width: 50%;
+      height: 1px;
+      transition: .35s;
+      background-color: white;
     }
 
     &.active {
-      background: #f7226a;
-
       &::before {
-        transform: translateZ(0) rotate(45deg);
-        box-shadow: 0 0 0 #fff;
+        top: 45%;
+        width: 60%;
+        transform: rotate(-45deg);
+      }
+
+      & span {
+        background: #f7226a;
+        width: 100%;
+        height: 100%;
+        top: -50%;
+        left: -50%;
+        z-index: -1;
       }
 
       &::after {
-        transform: translateZ(0) rotate(-45deg);
+        bottom: 50%;
+        width: 60%;
+        transform: rotate(45deg);
       }
     }
   }
@@ -114,7 +134,7 @@ export default {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      transition: .25s;
+      transition: .3s;
     }
   }
 }
