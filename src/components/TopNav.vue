@@ -8,7 +8,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <div class="top-nav">
+  <nav class="top-nav">
     <header class="logo">LOGO</header>
     <ul class="menu">
       <li>菜单1</li>
@@ -17,9 +17,9 @@ const toggleMenu = () => {
     <div class="toggleAside"
          :class="{active: asideVisible}"
          @click="toggleMenu">
-      <span></span>
+      <div class="middle-line"></div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -87,7 +87,7 @@ export default {
       bottom: 23%;
     }
 
-    & span {
+    & .middle-line {
       @extend %hamburgerSame;
       transition: .25s;
       transform: translate3D(50%, 50%, 0);
@@ -102,7 +102,7 @@ export default {
         transform: rotate(-45deg);
       }
 
-      & span {
+      & .middle-line {
         background: #f7226a;
         width: 100%;
         height: 100%;
@@ -119,7 +119,7 @@ export default {
     }
   }
 
-  @media (max-width: 500px) {
+  @media screen and(max-width: 768px) {
     > .menu {
       display: none;
     }

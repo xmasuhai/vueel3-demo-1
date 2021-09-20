@@ -11,8 +11,8 @@ export default defineConfig({
     alias: [
       {
         find: '@',
-        replacement: resolve("./src")
+        replacement: resolve('./src')
       }
     ]
-  },
+  }
 });

@@ -77,14 +77,16 @@ export default {
 
   > .nav {
     flex-shrink: 0;
+    height: 5vh;
   }
 
   > .content {
+    height: 95vh;
     display: flex;
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
-    @media (max-width: 500px) {
+    @media screen and(max-width: 768px) {
       padding-left: 0;
     }
 
@@ -108,6 +110,9 @@ export default {
       }
 
       > ol {
+        display: flex;
+        flex-direction: column;
+
         > li {
           > h3 {
             padding-left: 16px;
