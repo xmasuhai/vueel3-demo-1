@@ -14,7 +14,10 @@ const toggleMenu = () => {
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
+    <div class="toggleAside"
+         :class="{active: asideVisible}"
+         @click="toggleMenu">
+    </div>
   </div>
 </template>
 
@@ -54,13 +57,48 @@ export default {
 
   > .toggleAside {
     display: none;
-    width: 24px;
-    height: 24px;
-    background: red;
+    width: 28px;
+    height: 26px;
+    background: transparent;
     position: absolute;
     left: 16px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate3D(0, -50%, 0);
+    transition: .25s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 1px;
+      background-color: white;
+      box-shadow: 0 6px 0 white;
+      transition: .25s;
+      transform: translate3D(0, -6px, 0);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 1px;
+      background-color: white;
+      transition: .25s;
+      transform: translate3D(0, 6px, 0);
+    }
+
+    &.active {
+      background: #f7226a;
+
+      &::before {
+        transform: translateZ(0) rotate(45deg);
+        box-shadow: 0 0 0 #fff;
+      }
+
+      &::after {
+        transform: translateZ(0) rotate(-45deg);
+      }
+    }
   }
 
   @media (max-width: 500px) {
@@ -73,7 +111,10 @@ export default {
     }
 
     > .toggleAside {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: .25s;
     }
   }
 }

@@ -93,9 +93,9 @@ export default {
       position: fixed;
       top: 0;
       left: 0;
-      background: #063146;
+      background: deepskyblue;
       width: 150px;
-      padding: 70px 0 16px;
+      padding: 55px 0 16px;
       height: 100vh;
       color: white;
 
@@ -104,21 +104,21 @@ export default {
         line-height: 50px;
         padding-left: 16px;
         user-select: none;
+        border-bottom: 1px solid #000;
       }
 
       > ol {
-
         > li {
-          transition: .25s;
-
-          &:hover {
-            padding-left: 5px;
-          }
-
           > h3 {
             padding-left: 16px;
             display: block;
             line-height: 45px;
+            transition: .25s;
+
+            &:hover {
+              padding-left: 20px;
+              transform: translate3D(5px, 0, 0);
+            }
 
             .router-link {
               display: block;
