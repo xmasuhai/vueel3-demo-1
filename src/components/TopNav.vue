@@ -29,6 +29,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+%hamburgerSame {
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  background-color: white;
+}
+
 .top-nav {
   position: fixed;
   top: 0;
@@ -68,33 +75,24 @@ export default {
 
     &::before {
       content: '';
-      position: absolute;
+      @extend %hamburgerSame;
+      transition: .45s;
       top: 30%;
-      width: 50%;
-      height: 1px;
-      background-color: white;
-      transition: .25s;
     }
 
     &::after {
       content: '';
-      position: absolute;
-      bottom: 23%;
-      width: 50%;
-      height: 1px;
-      background-color: white;
+      @extend %hamburgerSame;
       transition: .45s;
+      bottom: 23%;
     }
 
     & span {
-      position: absolute;
+      @extend %hamburgerSame;
+      transition: .25s;
+      transform: translate3D(50%, 50%, 0);
       top: 50%;
       left: 0;
-      transform: translate3D(50%, 50%, 0);
-      width: 50%;
-      height: 1px;
-      transition: .35s;
-      background-color: white;
     }
 
     &.active {
