@@ -72,6 +72,7 @@ export default {
     left: 16px;
     top: 50%;
     transform: translate3D(0, -50%, 0);
+    z-index: 2;
 
     &::before {
       content: '';

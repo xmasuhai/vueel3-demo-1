@@ -100,6 +100,7 @@ export default {
       padding: 55px 0 16px;
       height: 100vh;
       color: white;
+      z-index: 1;
 
       > header {
         margin-bottom: 4px;

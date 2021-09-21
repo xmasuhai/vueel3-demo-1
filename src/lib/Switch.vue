@@ -21,17 +21,22 @@ button {
   width: $h*2;
   border: none;
   background: dodgerblue;
-  border-radius: $h/2;
+  border-radius: math.div($h, 2);
   position: relative;
-}
 
-span {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: $h2;
-  width: $h2;
-  background: white;
-  border-radius: math.div($h2, 2);
+  span {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: $h2;
+    width: $h2;
+    background: white;
+    border-radius: math.div($h2, 2);
+  }
+
+  &:hover > span {
+    left: calc(100% - #{$h2} - 2px);
+  }
+
 }
 </style>
