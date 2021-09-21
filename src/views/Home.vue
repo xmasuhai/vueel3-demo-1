@@ -37,7 +37,7 @@ $one-line-height: 28px;
   .nav {
     height: 5vh;
 
-    &::v-deep .toggleAside {
+    &:deep(.toggleAside) {
       display: none;
     }
   }

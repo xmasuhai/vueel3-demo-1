@@ -76,20 +76,20 @@ export default {
     &::before {
       content: '';
       @extend %hamburgerSame;
-      transition: .45s;
+      transition: ease .35s;
       top: 30%;
     }
 
     &::after {
       content: '';
       @extend %hamburgerSame;
-      transition: .45s;
+      transition: ease .35s;
       bottom: 23%;
     }
 
     & .middle-line {
       @extend %hamburgerSame;
-      transition: .25s;
+      transition: cubic-bezier(.26, .18, .27, 1.58) .35s;
       transform: translate3D(50%, 50%, 0);
       top: 50%;
       left: 0;
@@ -132,7 +132,6 @@ export default {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      transition: .3s;
     }
   }
 }
