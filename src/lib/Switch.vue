@@ -42,6 +42,7 @@ button {
     width: $h2;
     background: white;
     border-radius: math.div($h2, 2);
+    transition: left .25s;
   }
 
   &.checked {
