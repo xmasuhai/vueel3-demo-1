@@ -5,6 +5,10 @@ const checked = ref(false);
 const toggle = () => {
   checked.value = !checked.value;
 };
+defineProps({
+  value: Boolean
+});
+defineEmits([]);
 </script>
 
 <template>
@@ -12,11 +16,12 @@ const toggle = () => {
           @click="toggle">
     <span></span>
   </button>
+  <div>{{ value }}</div>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'Switch'
+  name: 'Switch',
 };
 </script>
 
