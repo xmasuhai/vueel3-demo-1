@@ -1,11 +1,11 @@
 <template>
-  <Switch v-model:value="y"></Switch>
+  <Switch v-model:value="bool"></Switch>
 </template>
 
 <script setup lang="ts">
 import {ref} from 'vue';
 
-const y = ref(false);
+const bool = ref(false);
 </script>
 
 <script lang="ts">
