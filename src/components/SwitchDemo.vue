@@ -1,6 +1,6 @@
 <template>
   <Switch :value="y"
-          @input="y = $event"
+          @update:value="y = $event"
   >
   </Switch>
 </template>
@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 
-const y = ref(true);
+const y = ref(false);
 </script>
 
 <script lang="ts">
