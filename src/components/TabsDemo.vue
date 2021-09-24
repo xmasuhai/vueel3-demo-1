@@ -11,8 +11,8 @@
 </template>
 
 <script lang="ts">
-import Tabs from '@/lib/Tabs';
-import TabItem from '@/lib/TabItem';
+import Tabs from '@/lib/Tabs.vue';
+import TabItem from '@/lib/TabItem.vue';
 
 export default {
   name: 'TabsDemo',
