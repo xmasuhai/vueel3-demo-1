@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import {useAttrs, useSlots, defineEmits} from 'vue';
+
+let defaults;
 // 获取slots
 const slots = useSlots();
-console.log('slots.default(): ', slots.default());
-// console.log('context', context);
-
+if (slots.default) {
+  defaults = [...slots.default()];
+}
 // 获取attrs
 const attrs = useAttrs();
 console.log('attrs: ', attrs);
@@ -19,12 +21,14 @@ const a = 1;
 const b = 2;
 defineExpose({
   a,
-  b
+  b,
 });
 </script>
 
 <template>
-  Tabs
+  <component :is="defaults[0]"></component>
+  <component :is="defaults[1]"></component>
+  <component :is="defaults[2]"></component>
 </template>
 
 <script lang="ts">
