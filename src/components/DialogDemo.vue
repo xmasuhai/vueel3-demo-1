@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  DialogDemo
+  <div>
+    DialogDemo
+  </div>
 </template>
 
 <script lang="ts">

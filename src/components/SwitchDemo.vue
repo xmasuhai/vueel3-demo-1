@@ -1,5 +1,7 @@
 <template>
-  <Switch v-model:value="bool"></Switch>
+  <div>
+    <Switch v-model:value="bool"></Switch>
+  </div>
 </template>
 
 <script setup lang="ts">

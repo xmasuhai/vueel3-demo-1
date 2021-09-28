@@ -2,12 +2,14 @@
 </script>
 
 <template>
-  <h1>示例一</h1>
-  <Tabs>
-    <TabItem title="导航1">内容1</TabItem>
-    <TabItem title="导航2">内容2</TabItem>
-    <TabItem title="导航3">内容3</TabItem>
-  </Tabs>
+  <div>
+    <h1>示例一</h1>
+    <Tabs>
+      <TabItem title="导航1">内容1</TabItem>
+      <TabItem title="导航2">内容2</TabItem>
+      <TabItem title="导航3">内容3</TabItem>
+    </Tabs>
+  </div>
 </template>
 
 <script lang="ts">
@@ -22,7 +24,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

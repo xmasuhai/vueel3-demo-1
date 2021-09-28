@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useAttrs, useSlots, defineEmits} from 'vue';
+import {useAttrs, useSlots} from 'vue';
 
 let defaults;
 // 获取slots
@@ -7,9 +7,13 @@ const slots = useSlots();
 if (slots.default) {
   defaults = [...slots.default()];
 }
+
+const titles = defaults?.map((tag) => {
+  return tag?.props?.title;
+});
+
 // 获取attrs
 const attrs = useAttrs();
-console.log('attrs: ', attrs);
 
 // 获取 emit
 const emit = defineEmits(['change', 'close']);
@@ -26,9 +30,16 @@ defineExpose({
 </script>
 
 <template>
-  <component :is="defaults[0]"></component>
-  <component :is="defaults[1]"></component>
-  <component :is="defaults[2]"></component>
+  <div>
+    <div v-for="(title, index) in titles"
+         :key="index">
+      {{ title }}
+    </div>
+    <component v-for="(comp, index) in defaults"
+               :is="comp"
+               :key="index">
+    </component>
+  </div>
 </template>
 
 <script lang="ts">
@@ -36,7 +47,3 @@ export default {
   name: 'Tabs'
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

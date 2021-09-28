@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  DocsDemo默认页面
+  <div>
+    DocsDemo默认页面
+  </div>
 </template>
 
 <script lang="ts">

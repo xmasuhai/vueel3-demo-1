@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  ButtonDemo
+  <div>
+    ButtonDemo
+  </div>
 </template>
 
 <script lang="ts">
