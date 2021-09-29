@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useAttrs, useSlots} from 'vue';
+import {useSlots} from 'vue';
 
 let defaults;
 // 获取slots
@@ -12,33 +12,24 @@ const titles = defaults?.map((tag) => {
   return tag?.props?.title;
 });
 
-// 获取attrs
-const attrs = useAttrs();
-
-// 获取 emit
-const emit = defineEmits(['change', 'close']);
-emit('change', 'change事件的payload');
-emit('close', 'close事件的payload');
-
-// 获取expose
-const a = 1;
-const b = 2;
-defineExpose({
-  a,
-  b,
-});
 </script>
 
 <template>
-  <div>
-    <div v-for="(title, index) in titles"
-         :key="index">
-      {{ title }}
+  <div class="vue-tabs">
+    <div class="vue-tabs-nav">
+      <div v-for="(title, index) in titles"
+           :key="index"
+           class="vue-tabs-nav-item">
+        {{ title }}
+      </div>
     </div>
-    <component v-for="(comp, index) in defaults"
-               :is="comp"
-               :key="index">
-    </component>
+    <div class="vue-tabs-content">
+      <component v-for="(comp, index) in defaults"
+                 :is="comp"
+                 :key="index"
+                 class="vue-tabs-content-item">
+      </component>
+    </div>
   </div>
 </template>
 
@@ -47,3 +38,35 @@ export default {
   name: 'Tabs'
 };
 </script>
+
+<style lang="scss">
+$blue-underscore: #40a9ff;
+$color: #333;
+$border-color: #d9d9d9;
+
+.vue-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+
+    &-item {
+      padding: 8px 0;
+      margin: 0 16px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.selected {
+        color: $blue-underscore;
+      }
+    }
+  }
+
+  &-content {
+    padding: 8px 0;
+  }
+}
+</style>
