@@ -20,13 +20,11 @@ const currentTab = computed(() => {
   })[0];
 });
 
-/*
 const currentTile = computed(() => {
   return defaults.find((tag: VNode) => {
     return tag!.props!.title === props.selected;
-  });
+  })!.props!.title;
 });
-*/
 
 // 声明外部数据 获取 props.selected
 const emits = defineEmits(['update:selected']);
@@ -51,7 +49,7 @@ const select = (title: string) => {
       <keep-alive>
         <component :is="currentTab"
                    class="vue-tabs-content-item"
-                   :key="currentTab">
+                   :key="currentTile">
         </component>
       </keep-alive>
     </div>
