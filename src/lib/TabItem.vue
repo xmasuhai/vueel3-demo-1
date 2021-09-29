@@ -14,7 +14,3 @@ export default {
   name: 'TabItem'
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
