@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, onErrorCaptured, onMounted, useSlots, VNode} from 'vue';
+import {computed, onMounted, useSlots, VNode} from 'vue';
 import TabItem from '@/lib/TabItem.vue';
 // 获取slots
 let defaults: VNode[];
