@@ -58,9 +58,10 @@ onMounted(() => {
     </div>
     <div class="vue-tabs-content">
       <keep-alive>
-        <component :is="currentTab"
+        <component v-for="comp in defaults"
+                   :is="comp"
                    class="vue-tabs-content-item"
-                   :key="currentTitle">
+                   :class="{selected: comp.props.title === selected}">
         </component>
       </keep-alive>
     </div>
@@ -101,6 +102,14 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
+
+    &-item {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
