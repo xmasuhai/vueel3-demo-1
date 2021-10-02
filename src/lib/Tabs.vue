@@ -1,19 +1,31 @@
 <script setup lang="ts">
-import {computed, onMounted, useSlots, VNode} from 'vue';
+import {/*computed,*/ onMounted, ref, useSlots, VNode} from 'vue';
 import TabItem from '@/lib/TabItem.vue';
 // 获取slots
 let defaults: VNode[];
 const slots = useSlots();
 defaults = [...(slots.default as Function)()];
 
+// 检查子标签名方法
+const checkTabItem = () => {
+  defaults.forEach((tag: VNode) => {
+    if (tag.type !== TabItem) {
+      console.error(new Error('Tabs 子标签必须是 TabItem'));
+    }
+  });
+};
+
 // 获取VNode中对应title数组 titles: string[]
 const titles = defaults?.map((tag: VNode) => {
   return tag?.props?.title;
 });
+
 // 声明外部数据 获取 props.selected
 const props = defineProps({
   selected: String
 });
+
+/*
 // 对比所有项目的title和当前选中项的title 获取当前选中项currentTab
 const currentTab = computed(() => {
   return defaults?.filter((tag: VNode) => {
@@ -26,6 +38,7 @@ const currentTitle = computed(() => {
     return tag!.props!.title === props.selected;
   })!.props!.title;
 });
+*/
 
 // 声明外部数据 获取 props.selected
 const emits = defineEmits(['update:selected']);
@@ -34,13 +47,24 @@ const select = (title: string) => {
   emits('update:selected', title);
 };
 
-// 检查子标签名
+// 获取导航标签项目引用
+const navItems = ref<HTMLDivElement[]>([]);
+// 获取导航标签指示横线引用
+const indicator = ref<HTMLDivElement>(null);
+
+// 获取导航项目列表数组
+const xxx = () => {
+  // 获取导航项目列表数组
+  const divs = navItems.value;
+  // const result = divs.filter(div => div.classList.contains('selected'))[0];
+  const result = divs.find(div => div.classList.contains('selected'));
+  const {width} = result.getBoundingClientRect();
+  indicator.value.style.width = `${width}px`;
+};
+
 onMounted(() => {
-  defaults.forEach((tag: VNode) => {
-    if (tag.type !== TabItem) {
-      console.error(new Error('Tabs 子标签必须是 TabItem'));
-    }
-  });
+  checkTabItem();
+  xxx();
 });
 
 </script>
@@ -48,12 +72,16 @@ onMounted(() => {
 <template>
   <div class="vue-tabs">
     <div class="vue-tabs-nav">
-      <div v-for="(title, index) in titles"
+      <div class="vue-tabs-nav-item"
+           v-for="(title, index) in titles"
            :key="index"
            @click="select(title)"
-           class="vue-tabs-nav-item"
-           :class="{selected: title === selected}">
+           :class="{selected: title === selected}"
+           :ref="el => { if (el) navItems[index] = el }">
         {{ title }}
+      </div>
+      <div class="vue-tabs-nav-indicator"
+           ref="indicator">
       </div>
     </div>
     <div class="vue-tabs-content">
@@ -84,6 +112,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
 
     &-item {
       padding: 8px 0;
@@ -98,6 +127,16 @@ $border-color: #d9d9d9;
         color: $blue-underscore;
       }
     }
+
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background-color: $blue-underscore;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
+    }
+
   }
 
   &-content {
