@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onBeforeUpdate,/*computed, */ onMounted, ref, useSlots, VNode, watchEffect} from 'vue';
+import {onBeforeUpdate, computed, onMounted, ref, useSlots, VNode, watchEffect} from 'vue';
 import TabItem from '@/lib/TabItem.vue';
 
 // 获取slots
@@ -25,7 +25,6 @@ const props = defineProps({
   selected: String
 });
 
-/*
 // 对比所有项目的title和当前选中项的title 获取当前选中项currentTab
 const currentTab = computed(() => {
   return defaults?.filter((tag: VNode) => {
@@ -38,7 +37,6 @@ const currentTitle = computed(() => {
     return tag!.props!.title === props.selected;
   })!.props!.title;
 });
-*/
 
 // 声明 发布方法名
 const emits = defineEmits(['update:selected']);
@@ -93,10 +91,9 @@ onMounted(() => {
     </nav>
     <div class="vue-tabs-content">
       <keep-alive>
-        <component v-for="comp in defaults"
-                   :is="comp"
-                   class="vue-tabs-content-item"
-                   :class="{selected: comp.props.title === selected}">
+        <component :is="currentTab"
+                   :key="currentTitle"
+                   class="vue-tabs-content-item">
         </component>
       </keep-alive>
     </div>
@@ -148,14 +145,6 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
-
-    &-item {
-      display: none;
-
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>
