@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Tabs from '@/lib/Tabs.vue';
+import TabItem from '@/lib/TabItem.vue';
 import {ref} from 'vue';
 
 const defaultTab = ref('导航1');
@@ -17,14 +19,8 @@ const defaultTab = ref('导航1');
 </template>
 
 <script lang="ts">
-import Tabs from '@/lib/Tabs.vue';
-import TabItem from '@/lib/TabItem.vue';
 
 export default {
-  name: 'TabsDemo',
-  components: {
-    Tabs,
-    TabItem
-  }
+  name: 'TabsDemo'
 };
 </script>

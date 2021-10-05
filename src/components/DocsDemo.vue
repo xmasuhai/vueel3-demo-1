@@ -12,7 +12,3 @@ export default {
   name: 'DocsDemo'
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
