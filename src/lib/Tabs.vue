@@ -3,9 +3,8 @@ import {onBeforeUpdate,/*computed, */ onMounted, ref, useSlots, VNode, watchEffe
 import TabItem from '@/lib/TabItem.vue';
 
 // 获取slots
-let defaults: VNode[];
 const slots = useSlots();
-defaults = [...(slots.default as Function)()];
+const defaults: VNode[] = [...(slots.default as Function)()];
 
 // 检查子标签名方法
 const checkTabItem = () => {
@@ -61,17 +60,18 @@ onBeforeUpdate(() => {
   selectedItem.value = div;
 });
 
-// 追踪变更，执行回调
-watchEffect(() => {
-  const {width, left} = selectedItem.value!.getBoundingClientRect();
-  const {left: containerLeft} = container!.value!.getBoundingClientRect();
-  const leftPos = left - containerLeft;
-  indicator!.value!.style.width = `${width}px`;
-  indicator!.value!.style.transform = `translate3D(${leftPos}px, 0, 0)`;
-});
-
 onMounted(() => {
   checkTabItem();
+
+// 追踪变更，执行回调
+  watchEffect(() => {
+    const {width, left} = selectedItem.value!.getBoundingClientRect();
+    const {left: containerLeft} = container.value!.getBoundingClientRect();
+    const leftPos = left - containerLeft;
+    indicator.value!.style.width = `${width}px`;
+    indicator.value!.style.transform = `translate3D(${leftPos}px, 0, 0)`;
+  });
+
 });
 
 </script>

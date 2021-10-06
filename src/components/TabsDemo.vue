@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import {ref, watchEffect} from 'vue';
+import {ref} from 'vue';
 
 const defaultTab = ref('导航1');
-watchEffect(() => console.log(defaultTab.value));
 
 </script>
 
