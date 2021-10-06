@@ -11,8 +11,8 @@ watchEffect(() => console.log(defaultTab.value));
     <h1>示例一</h1>
     <Tabs v-model:selected="defaultTab">
       <TabItem title="导航1">内容1</TabItem>
-      <TabItem title="导航2">内容2</TabItem>
-      <TabItem title="导航3">内容3</TabItem>
+      <TabItem title="导航22">内容22</TabItem>
+      <TabItem title="导航333">内容333</TabItem>
     </Tabs>
   </div>
 </template>
