@@ -11,7 +11,8 @@ const toggle = () => {
 </script>
 
 <template>
-  <button :class="{checked: value}"
+  <button class="vue-switch"
+          :class="{[`vue-switch-checked`]: value}"
           @click="toggle">
     <span></span>
   </button>
@@ -23,51 +24,50 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "sass:math";
+@import 'var';
 
-$h: 22px;
-$h2: $h - 4px;
-
-button {
-  height: $h;
-  width: $h*2;
+.vue-switch {
+  height: $height;
+  width: $height * 2;
   border: none;
   background: #bfbfbf;
-  border-radius: math.div($h, 2);
+  border-radius: math.div($height, 2);
   position: relative;
 
   span {
     position: absolute;
     top: 2px;
     left: 2px;
-    height: $h2;
-    width: $h2;
+    height: $toggle-ball-height;
+    width: $toggle-ball-height;
     background: white;
-    border-radius: math.div($h2, 2);
+    border-radius: math.div($toggle-ball-height, 2);
     transition: all .25s;
   }
 
-  &.checked {
+  &-checked {
     background-color: #1890ff;
 
     & > span {
-      left: calc(100% - #{$h2} - 2px);
+      left: calc(100% - #{$toggle-ball-height} - 2px);
     }
   }
 
   &:active {
     > span {
-      width: $h2 + 4px;
+      width: calc(#{$toggle-ball-height} + 4px);
     }
   }
 
-  &.checked:active {
+  &-checked:active {
     > span {
-      width: $h2 + 4px;
+      width: calc(#{$toggle-ball-height} + 4px);
       margin-left: -4px;
     }
   }
 
 }
+
 </style>

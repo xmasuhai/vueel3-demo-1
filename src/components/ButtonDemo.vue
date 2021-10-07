@@ -6,7 +6,7 @@ import Button from '@/lib/Button.vue';
 <template>
   <h1>Button 示例</h1>
   <h2>示例一</h2>
-  <div>
+  <div class="container">
     <Button theme="button">普通按钮</Button>
     <Button theme="link">链接按钮</Button>
     <Button theme="text">文字按钮</Button>
@@ -20,5 +20,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

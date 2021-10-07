@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import '../styles/var.scss';
+@import '../lib/var';
 
 $one-line-height: 28px;
 
@@ -59,9 +59,9 @@ $one-line-height: 28px;
         margin: 0 8px;
         background: #fff;
         display: inline-block;
-        height: $one-line-height;
-        line-height: $one-line-height;
-        border-radius: math.div($one-line-height, 2);
+        height: #{$one-line-height}px;
+        line-height: #{$one-line-height}px;
+        border-radius: math.div($one-line-height, 2)px;
         padding: 0 8px;
       }
     }
