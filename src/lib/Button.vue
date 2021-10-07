@@ -4,19 +4,22 @@ import {computed} from 'vue';
 interface Props {
   theme?: 'button' | 'link' | 'text';
   size?: 'normal' | 'big' | 'small';
+  level?: 'normal' | 'primary' | 'danger';
 }
 
 const props = withDefaults(defineProps<Props>(), {
   theme: 'button',
-  size: 'normal'
+  size: 'normal',
+  level: 'normal'
 });
-const {theme, size} = props;
+const {theme, size, level} = props;
 
 // 计算classes
 const classes = computed(() => {
   return {
     [`vue-theme-${theme}`]: theme,
-    [`vue-size-${size}`]: size
+    [`vue-size-${size}`]: size,
+    [`vue-level-${level}`]: level,
   };
 });
 </script>
@@ -41,6 +44,7 @@ export default {
 .vue-button {
   align-items: center;
   background: $button-background;
+  transition: background 250ms;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out($shadow-color, .95);
@@ -70,19 +74,18 @@ export default {
     border: 0;
   }
 
-  // button
-  &.vue-theme-button {
-    &.vue-size-big {
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px;
-    }
+  // big
+  &.vue-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
 
-    &.vue-size-small {
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
+  // small
+  &.vue-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 
   // link
@@ -109,6 +112,68 @@ export default {
     }
   }
 
+  // level
+  &.vue-theme-button {
+    // primary
+    &.vue-level-primary {
+      background: $light-font-color;
+      color: white;
+      border-color: $light-font-color;
+
+      &:hover,
+      &:focus {
+        background: darken($light-font-color, 10%);
+        border-color: darken($light-font-color, 10%);
+      }
+    }
+
+    // danger
+    &.vue-level-danger {
+      background: $danger;
+      border-color: $danger;
+      color: white;
+
+      &:hover,
+      &:focus {
+        background: darken($danger, 10%);
+        border-color: darken($danger, 10%);
+      }
+    }
+  }
+
+  &.vue-theme-link {
+    // danger
+    &.vue-level-danger {
+      color: $danger;
+
+      &:hover,
+      &:focus {
+        color: darken($danger, 10%);
+      }
+    }
+  }
+
+  &.vue-theme-text {
+    // primary
+    &.vue-level-primary {
+      color: $light-font-color;
+
+      &:hover,
+      &:focus {
+        color: darken($light-font-color, 10%);
+      }
+    }
+
+    // danger
+    &.vue-level-danger {
+      color: $danger;
+
+      &:hover,
+      &:focus {
+        color: darken($danger, 10%);
+      }
+    }
+  }
 }
 
 </style>
