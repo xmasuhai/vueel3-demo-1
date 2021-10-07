@@ -5,8 +5,8 @@ interface Props {
   theme?: 'button' | 'link' | 'text';
   size?: 'normal' | 'big' | 'small';
   level?: 'normal' | 'primary' | 'danger';
-  disabled?: Boolean;
-  loading?: Boolean;
+  disabled?: boolean;
+  loading?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
+@use 'sass:math';
 @import 'var';
 
 // basic
@@ -200,11 +201,11 @@ export default {
 
   // loading
   > .vue-loadingIndicator {
-    width: 14px;
-    height: 14px;
+    width: $loadingIndicator-size;
+    height: $loadingIndicator-size;
     display: inline-block;
     margin-right: 4px;
-    border-radius: 7px;
+    border-radius: math.div($loadingIndicator-size, 2);
     border-color: $light-font-color $light-font-color $light-font-color transparent;
     border-style: solid;
     border-width: 2px;
