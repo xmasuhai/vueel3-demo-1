@@ -6,15 +6,17 @@ interface Props {
   size?: 'normal' | 'big' | 'small';
   level?: 'normal' | 'primary' | 'danger';
   disabled?: Boolean;
+  loading?: Boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   theme: 'button',
   size: 'normal',
   level: 'normal',
-  disabled: false
+  disabled: false,
+  loading: false,
 });
-const {theme, size, level, disabled} = props;
+const {theme, size, level, disabled, loading} = props;
 
 // 计算classes
 const classes = computed(() => {
@@ -30,6 +32,8 @@ const classes = computed(() => {
   <button class="vue-button"
           :class="classes"
           :disabled="disabled">
+    <span class="vue-loadingIndicator"
+          v-if="loading"></span>
     <slot></slot>
   </button>
 </template>
@@ -192,6 +196,29 @@ export default {
       cursor: not-allowed;
       color: $grey;
     }
+  }
+
+  // loading
+  > .vue-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 7px;
+    border-color: $light-font-color $light-font-color $light-font-color transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: vue-spin 1s infinite linear;
+  }
+
+}
+
+@keyframes vue-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
   }
 }
 
