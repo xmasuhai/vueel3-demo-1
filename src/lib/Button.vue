@@ -5,14 +5,16 @@ interface Props {
   theme?: 'button' | 'link' | 'text';
   size?: 'normal' | 'big' | 'small';
   level?: 'normal' | 'primary' | 'danger';
+  disabled?: Boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   theme: 'button',
   size: 'normal',
-  level: 'normal'
+  level: 'normal',
+  disabled: false
 });
-const {theme, size, level} = props;
+const {theme, size, level, disabled} = props;
 
 // 计算classes
 const classes = computed(() => {
@@ -26,7 +28,8 @@ const classes = computed(() => {
 
 <template>
   <button class="vue-button"
-          :class="classes">
+          :class="classes"
+          :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -172,6 +175,22 @@ export default {
       &:focus {
         color: darken($danger, 10%);
       }
+    }
+  }
+
+  // disabled
+  &.vue-theme-button {
+    &[disabled]:hover {
+      border-color: $grey;
+    }
+  }
+
+  &.vue-theme-button,
+  &.vue-theme-link,
+  &.vue-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
