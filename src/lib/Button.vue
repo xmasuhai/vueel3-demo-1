@@ -201,11 +201,11 @@ export default {
 
   // loading
   > .vue-loadingIndicator {
-    width: $loadingIndicator-size;
-    height: $loadingIndicator-size;
+    width: $loading-indicator-size;
+    height: $loading-indicator-size;
     display: inline-block;
     margin-right: 4px;
-    border-radius: math.div($loadingIndicator-size, 2);
+    border-radius: math.div($loading-indicator-size, 2);
     border-color: $light-font-color $light-font-color $light-font-color transparent;
     border-style: solid;
     border-width: 2px;
