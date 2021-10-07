@@ -26,6 +26,7 @@ export default {
 <style lang="scss">
 @import 'var';
 
+// basic
 .vue-button {
   align-items: center;
   background: $button-background;
@@ -56,6 +57,30 @@ export default {
 
   &::-moz-focus-inner {
     border: 0;
+  }
+
+  // link
+  &.vue-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $light-font-color;
+
+    &:hover,
+    &:focus {
+      color: lighten($light-font-color, 10%);
+    }
+  }
+
+  // text
+  &.vue-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);;
+    }
   }
 }
 
