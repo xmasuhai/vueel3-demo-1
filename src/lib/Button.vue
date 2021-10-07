@@ -1,18 +1,29 @@
 <script setup lang="ts">
+import {computed} from 'vue';
+
 interface Props {
   theme?: 'button' | 'link' | 'text';
+  size?: 'normal' | 'big' | 'small';
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  theme: 'button'
+  theme: 'button',
+  size: 'normal'
 });
-const {theme} = props;
+const {theme, size} = props;
 
+// 计算classes
+const classes = computed(() => {
+  return {
+    [`vue-theme-${theme}`]: theme,
+    [`vue-size-${size}`]: size
+  };
+});
 </script>
 
 <template>
   <button class="vue-button"
-          :class="`vue-theme-${theme}`">
+          :class="classes">
     <slot></slot>
   </button>
 </template>
@@ -59,6 +70,21 @@ export default {
     border: 0;
   }
 
+  // button
+  &.vue-theme-button {
+    &.vue-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px;
+    }
+
+    &.vue-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
+    }
+  }
+
   // link
   &.vue-theme-link {
     border-color: transparent;
@@ -82,6 +108,7 @@ export default {
       background: darken(white, 5%);;
     }
   }
+
 }
 
 </style>
