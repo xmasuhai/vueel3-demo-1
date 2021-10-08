@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import {defineProps} from 'vue';
 import Button from '@/lib/Button.vue';
+import {onUpdated} from 'vue';
+
 /*
 interface Props {
   visible?: boolean;
@@ -8,12 +9,21 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   visible: false,
-});*/
+});
+*/
 
 const props = defineProps({
-  visible: Boolean
+  visible: {
+    type: Boolean,
+    default: false
+  }
 });
+
 const {visible} = props;
+
+onUpdated(() => {
+  console.log('visible: ', visible);
+});
 
 </script>
 

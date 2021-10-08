@@ -1,5 +1,4 @@
-import './lib/var.scss';
-import './lib/vue-reset.scss';
+import '@/lib/var.scss';
 import '@/styles/index.scss';
 import {createApp} from 'vue';
 import App from '@/App.vue';

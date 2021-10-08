@@ -6,6 +6,8 @@ import Dialog from '@/lib/Dialog.vue';
 const x = ref(false);
 const toggle = () => {
   x.value = !x.value;
+
+  console.log(x.value);
 };
 </script>
 
