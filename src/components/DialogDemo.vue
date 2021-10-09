@@ -6,8 +6,6 @@ import Dialog from '@/lib/Dialog.vue';
 const x = ref(false);
 const toggle = () => {
   x.value = !x.value;
-
-  console.log(x.value);
 };
 </script>
 
@@ -16,7 +14,6 @@ const toggle = () => {
   <h2>示例一</h2>
   <Button @click="toggle">toggle</Button>
   <Dialog :visible="x"></Dialog>
-  {{ x }}
 </template>
 
 <script lang="ts">
