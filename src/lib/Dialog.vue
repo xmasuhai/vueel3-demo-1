@@ -1,34 +1,5 @@
-<script setup lang="ts">
-import Button from '@/lib/Button.vue';
-import {onUpdated} from 'vue';
-
-/*
-interface Props {
-  visible?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  visible: false,
-});
-*/
-
-const props = defineProps({
-  visible: {
-    type: Boolean,
-    default: false
-  }
-});
-
-const {visible} = props;
-
-onUpdated(() => {
-  console.log('visible: ', visible);
-});
-
-</script>
-
 <template>
-  <div v-if="visible">
+  <div v-show="visible">
     <div class="vue-dialog-overlay"></div>
     <div class="vue-dialog-wrapper">
       <div class="vue-dialog">
@@ -46,10 +17,23 @@ onUpdated(() => {
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'Dialog'
-};
+<script setup lang="ts">
+import Button from '@/lib/Button.vue';
+import {onUpdated, toRefs} from 'vue';
+
+const props = defineProps({
+  visible: Boolean
+});
+
+// destructured prop visible is Value (integer for e.g.) which cannot be reactive by itself
+// 解构出来的visible为简单类型，不再具有数据响应性
+// 需要调用 toRefs(props) 赋予数据响应性
+const {visible} = toRefs(props);
+
+onUpdated(() => {
+  console.log('visible: ', visible.value);
+});
+
 </script>
 
 <style lang="scss" scoped>

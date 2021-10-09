@@ -15,7 +15,8 @@ const toggle = () => {
   <h1>Dialog 示例</h1>
   <h2>示例一</h2>
   <Button @click="toggle">toggle</Button>
-  <Dialog :visible="x"></Dialog>
+  <Dialog :visible="x" :visible2="x"></Dialog>
+  {{x}}
 </template>
 
 <script lang="ts">
@@ -23,7 +24,3 @@ export default {
   name: 'DialogDemo'
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
