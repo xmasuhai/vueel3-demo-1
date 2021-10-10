@@ -29,8 +29,13 @@ const fn2 = () => {
   <Button @click="toggle">toggle</Button>
   <Dialog v-model:visible="x"
           :ok="fn1" :cancel="fn2">
-    <div>自定义内容</div>
-    <div>自定义内容</div>
+    <template v-slot:title>
+      <strong>粗体的标题</strong>
+    </template>
+    <template v-slot:content>
+      <div>自定义内容</div>
+      <div>自定义内容</div>
+    </template>
   </Dialog>
 </template>
 
