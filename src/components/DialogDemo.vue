@@ -10,11 +10,9 @@ const toggle = () => {
 
 // 指定ok cancel的回调
 const fn1 = () => {
-  console.log(1);
   return false;
 };
 const fn2 = () => {
-  console.log(2);
 };
 
 </script>
@@ -30,7 +28,10 @@ const fn2 = () => {
   <h2>示例三 点击ok cancel 预定义回调</h2>
   <Button @click="toggle">toggle</Button>
   <Dialog v-model:visible="x"
-          :ok="fn1" :cancel="fn2"></Dialog>
+          :ok="fn1" :cancel="fn2">
+    <div>自定义内容</div>
+    <div>自定义内容</div>
+  </Dialog>
 </template>
 
 <script lang="ts">
