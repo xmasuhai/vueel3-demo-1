@@ -26,20 +26,28 @@ const props = defineProps({
 });
 
 // 对比所有项目的title和当前选中项的title 获取当前选中项currentTab
+// filter 性能不如 find，改用find
+/*
 const currentTab = computed(() => {
   return defaults?.filter((tag: VNode) => {
     return tag?.props?.title === props.selected;
   })[0];
 });
-
+*/
+const currentTab = computed(() => {
+  return defaults.find((tag: VNode) => {
+    return tag?.props?.title === props.selected;
+  });
+});
 const currentTitle = computed(() => {
   return defaults.find((tag: VNode) => {
-    return tag!.props!.title === props.selected;
+    return tag?.props?.title === props.selected;
   })!.props!.title;
 });
 
 // 声明 发布方法名
 const emits = defineEmits(['update:selected']);
+
 // 点击选中项目时执行的方法 通知父组件当前的选中项
 const select = (title: string) => {
   emits('update:selected', title);
@@ -107,14 +115,12 @@ export default {
 </script>
 
 <style lang="scss">
-$blue-underscore: #40a9ff;
-$color: #333;
-$border-color: #d9d9d9;
+@import 'var';
 
 .vue-tabs {
   &-nav {
     display: flex;
-    color: $color;
+    color: $tab-color;
     border-bottom: 1px solid $border-color;
     position: relative;
 

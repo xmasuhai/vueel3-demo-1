@@ -16,7 +16,10 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
   loading: false,
 });
-const {theme, size, level, disabled, loading} = props;
+
+// 解构的对象不能为undefined、null
+// 否则会报错，要给被解构的对象一个默认值
+const {theme, size, level, disabled, loading} = props || {};
 
 // 计算classes
 const classes = computed(() => {

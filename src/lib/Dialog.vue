@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 // 解构出来的visible为简单类型，不再具有数据响应性
 // 需要调用 toRefs(props) 赋予数据响应性
 // 或者直接使用 props.visible
-const {visible, closeOnClickOverlay} = toRefs(props);
+const {visible, closeOnClickOverlay} = toRefs(props) || {};
 
 // 注册发布自定义事件
 const emits = defineEmits(['update:visible']);
