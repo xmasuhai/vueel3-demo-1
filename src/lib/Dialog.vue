@@ -51,23 +51,25 @@ const cancelFn = () => {
 
 <template>
   <template v-if="visible">
-    <div class="vue-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="vue-dialog-wrapper">
-      <div class="vue-dialog">
-        <header>
-          <slot name="title"></slot>
-          <span class="vue-dialog-close"
-                @click="close"></span>
-        </header>
-        <main>
-          <slot name="content"></slot>
-        </main>
-        <footer>
-          <Button level="main" @click="okFn">OK</Button>
-          <Button @click="cancelFn">Cancel</Button>
-        </footer>
+    <teleport to="body">
+      <div class="vue-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="vue-dialog-wrapper">
+        <div class="vue-dialog">
+          <header>
+            <slot name="title">标题</slot>
+            <span class="vue-dialog-close"
+                  @click="close"></span>
+          </header>
+          <main>
+            <slot name="content">内容</slot>
+          </main>
+          <footer>
+            <Button level="main" @click="okFn">OK</Button>
+            <Button @click="cancelFn">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </teleport>
   </template>
 </template>
 
@@ -88,7 +90,7 @@ const cancelFn = () => {
     left: 0;
     width: 100%;
     height: 100%;
-    background: fade_out(black, 0.5);
+    background: fade_out(black, 0.8);
     z-index: 10;
   }
 
