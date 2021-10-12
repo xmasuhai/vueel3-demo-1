@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../lib/var';
+
 %hamburgerSame {
   position: absolute;
   width: 50%;
@@ -37,6 +39,7 @@ export default {
 }
 
 .top-nav {
+  color: $ugly-cyan;
   position: fixed;
   top: 0;
   left: 0;

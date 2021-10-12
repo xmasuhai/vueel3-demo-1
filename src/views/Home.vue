@@ -61,12 +61,13 @@ export default {
       padding: 8px 0;
 
       a {
+        line-height: 24px;
         margin: 0 8px;
+        color: #fff;
+        background: $ugly-green;
         display: inline-block;
-        height: $one-line-height;
-        line-height: $one-line-height;
-        border-radius: math.div($one-line-height, 2);
-        padding: 0 8px;
+        border-radius: $radius;
+        padding: 8px 24px;
       }
     }
   }

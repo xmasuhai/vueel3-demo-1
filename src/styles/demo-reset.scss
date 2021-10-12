@@ -12,6 +12,11 @@ ol {
 a {
   color: inherit;
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
 }
 
 h1,
