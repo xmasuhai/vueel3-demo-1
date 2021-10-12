@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {onBeforeUpdate, computed, onMounted, ref, useSlots, VNode, watchEffect} from 'vue';
+import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect} from 'vue';
 import TabItem from '@/lib/TabItem.vue';
+import {useGetSlots} from '@/hooks/useGetSlots';
 
-// 获取slots
-const slots = useSlots();
-const defaults: VNode[] = [...(slots.default as Function)()];
+// 获取slotsDefaults
+const {defaults} = useGetSlots();
 
 // 检查子标签名方法
 const checkTabItem = () => {

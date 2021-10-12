@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed} from 'vue';
+import {computed, toRefs,} from 'vue';
 
 interface Props {
   theme?: 'button' | 'link' | 'text';
@@ -17,16 +17,15 @@ const props = withDefaults(defineProps<Props>(), {
   loading: false,
 });
 
-// 解构的对象不能为undefined、null
-// 否则会报错，要给被解构的对象一个默认值
-const {theme, size, level, disabled, loading} = props || {};
+// 解构的对象不能为undefined、null 否则会报错，要给被解构的对象一个默认值
+const {theme, size, level, disabled, loading} = toRefs(props) || {};
 
 // 计算classes
 const classes = computed(() => {
   return {
-    [`vue-theme-${theme}`]: theme,
-    [`vue-size-${size}`]: size,
-    [`vue-level-${level}`]: level,
+    [`vue-theme-${theme.value}`]: theme.value,
+    [`vue-size-${size.value}`]: size.value,
+    [`vue-level-${level.value}`]: level.value,
   };
 });
 </script>

@@ -1,9 +1,9 @@
 import Dialog from '@/lib/Dialog.vue';
-import {createApp, h} from 'vue';
+import {createApp, h, Ref} from 'vue';
 
-interface dialogOptions {
-  title?: string;
-  content?: string;
+export interface dialogOptions {
+  title?: Ref<string>;
+  content?: Ref<string>;
   ok?: Function;
   cancel?: Function;
 }
@@ -27,7 +27,10 @@ export const useDialog = (options: dialogOptions) => {
         },
         ok,
         cancel,
-      }, {title, content});
+      }, {
+        title,
+        content
+      });
     }
   });
   app.mount(div);
