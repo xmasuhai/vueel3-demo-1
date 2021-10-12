@@ -42,7 +42,6 @@ export default {
   left: 0;
   width: 100vw;
   z-index: 10;
-  background: dodgerblue;
   display: flex;
   padding: 16px;
   justify-content: center;

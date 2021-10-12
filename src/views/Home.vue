@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="topNavAndBanner">
     <top-nav class="nav"></top-nav>
     <div class="banner">
       <h1>Vueel 3 demo</h1>
@@ -27,12 +27,11 @@ export default {
 @use "sass:math";
 @import '../lib/var.scss';
 
-$one-line-height: 28px;
-
-.layout {
+.topNavAndBanner {
+  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%,
+    rgba(183, 233, 230, 50) 100%);
   display: flex;
   flex-direction: column;
-  height: 100vh;
 
   .nav {
     height: 5vh;
@@ -50,14 +49,19 @@ $one-line-height: 28px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: darkolivegreen;
+
+    > h1,
+    h2 {
+      background: linear-gradient(to left, rgb(112, 101, 214), rgb(230, 106, 213));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
     > .actions {
       padding: 8px 0;
 
       a {
         margin: 0 8px;
-        background: #fff;
         display: inline-block;
         height: $one-line-height;
         line-height: $one-line-height;
