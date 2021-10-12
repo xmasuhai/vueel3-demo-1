@@ -2,11 +2,13 @@
 import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect} from 'vue';
 import TabItem from '@/lib/TabItem.vue';
 import {useGetSlots} from '@/hooks/useGetSlots';
+import {useCheckSlots} from '@/hooks/useCheckSlots';
 
 // 获取slotsDefaults
 const {defaults} = useGetSlots();
 
 // 检查子标签名方法
+/*
 const checkTabItem = () => {
   defaults.forEach((tag: VNode) => {
     if (tag.type !== TabItem) {
@@ -14,6 +16,8 @@ const checkTabItem = () => {
     }
   });
 };
+*/
+const checkTabItem = useCheckSlots.bind(null, defaults, TabItem);
 
 // 获取子组件VNode中对应title属性组成的数组 titles: string[]
 const titles = defaults?.map((tag: VNode) => {
