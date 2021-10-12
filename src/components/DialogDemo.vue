@@ -2,7 +2,7 @@
 import {ref} from 'vue';
 import Button from '@/lib/Button.vue';
 import Dialog from '@/lib/Dialog.vue';
-import {openDialog} from '@/hooks/openDialog';
+import {useDialog} from '@/hooks/useDialog';
 
 const [
   isDialogVisible1,
@@ -30,7 +30,7 @@ const toggle4 = () => {
 };
 
 const dialogHook = () => {
-  openDialog({
+  useDialog({
     title: '一个标题',
     content: '一段内容',
     ok() {

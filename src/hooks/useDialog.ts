@@ -8,7 +8,7 @@ interface dialogOptions {
   cancel?: Function;
 }
 
-export const openDialog = (options: dialogOptions) => {
+export const useDialog = (options: dialogOptions) => {
   const {title, content, ok, cancel} = options;
   const div = document.createElement('div');
   document.body.appendChild(div);
@@ -17,6 +17,7 @@ export const openDialog = (options: dialogOptions) => {
     app.unmount();
     div.remove();
   };
+
   const app = createApp({
     render() {
       return h(Dialog, {
@@ -30,4 +31,5 @@ export const openDialog = (options: dialogOptions) => {
     }
   });
   app.mount(div);
+
 };
