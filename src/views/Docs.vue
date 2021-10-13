@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <top-nav class="nav"></top-nav>
+    <top-nav class="nav" menuBtnVisible></top-nav>
     <div class="content">
       <transition name="aside">
         <aside v-if="asideVisible">

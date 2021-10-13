@@ -5,6 +5,14 @@ const asideVisible = inject<Ref<boolean>>('asideVisible');
 const toggleMenu = () => {
   asideVisible!.value = !asideVisible?.value;
 };
+
+// 是否显示菜单按钮
+const props = defineProps({
+  menuBtnVisible: {
+    type: Boolean,
+    default: true
+  }
+});
 </script>
 
 <template>
@@ -14,7 +22,8 @@ const toggleMenu = () => {
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <div class="toggleAside"
+    <div v-if="menuBtnVisible"
+         class="toggleAside"
          :class="{active: asideVisible}"
          @click="toggleMenu">
       <div class="middle-line"></div>
@@ -44,7 +53,7 @@ export default {
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   padding: 16px;
   justify-content: center;
