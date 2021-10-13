@@ -1,11 +1,61 @@
-# Vue 3 + Typescript + Vite
+## 介绍
+
+> Vueel 3 UI 是一个基于Vue 3.2 和 TypeScript 的 UI 组件库
+
+- 这是我在学习 Vue.js 过程中做的一个 UI 框架
+- 使用了Composotion API
+- 使用了 script setup 的语法糖
+
+作者：徐某人
+
+## 技术栈
+
+- `Vue.js 3.x`全家桶
+- `TypeScript`
+- `SCSS`
+- `Vite`
+
+## UI参考
+
+- Eleme UI
+- Ant Design Vue
+- Vant UI
+- iView UI
+- Bulma UI
+- 饥人谷的 [Gulu UI](https://github.com/FrankFang/frank-test-1)
+- [轱辘 UI源码](https://github.com/FrankFang/gulu)
+- [Gulu UI for Vue 3](https://github.com/FrankFang/gulu-for-vue3)
+
+## 提问
+
+## 变更记录
+
+- [x]添加 图标组件
+- [x]添加 按钮组件
+- 添加 输入框组件
+- 添加 栅栏组件
+- 添加 布局组件
+- [x] 添加 标签栏组件
+- [x] 添加 弹出框组件
+- 添加 浮动消息组件
+- 添加 手风琴组件
+
+## 联系方式
+
+- `xmasuhai@163.com`
+
+## 贡献代码
+
+---
+
+## Vue 3 + Typescript + Vite
 
 This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended IDE Setup
+### Recommended IDE Setup
 
 - [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-## Type Support For `.vue` Imports in TS
+### Type Support For `.vue` Imports in TS
 
 Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
