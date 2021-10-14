@@ -55,6 +55,8 @@ export default {
       background: linear-gradient(to left, rgb(112, 101, 214), rgb(230, 106, 213));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      color: transparent;
     }
 
     > .actions {
