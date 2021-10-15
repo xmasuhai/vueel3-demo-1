@@ -17,7 +17,11 @@ const props = defineProps({
 
 <template>
   <nav class="top-nav">
-    <header class="logo">LOGO</header>
+    <header class="logo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-sky-wheel-1"></use>
+      </svg>
+    </header>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -62,6 +66,11 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+
+    .icon {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   > .menu {

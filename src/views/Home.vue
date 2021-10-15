@@ -1,13 +1,26 @@
 <template>
-  <div class="topNavAndBanner">
-    <top-nav class="nav"></top-nav>
-    <div class="banner">
-      <h1>Vueel 3 UI</h1>
-      <h2>一个基于 Vue 3 的UI组件库</h2>
-      <p class="actions">
-        <a href="https://www.github.com/xmasuhai">GitHub</a> |
-        <router-link to="/docs">开始</router-link>
-      </p>
+  <div>
+    <div class="topNavAndBanner">
+      <top-nav class="nav"></top-nav>
+      <div class="banner">
+        <h1>Vueel 3 UI</h1>
+        <h2>一个基于 Vue 3 的UI组件库</h2>
+        <p class="actions">
+          <a href="https://www.github.com/xmasuhai">GitHub</a> |
+          <router-link to="/docs">开始</router-link>
+        </p>
+      </div>
+    </div>
+    <div class="features">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-vue"></use>
+      </svg>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-ts"></use>
+      </svg>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-ui"></use>
+      </svg>
     </div>
   </div>
 </template>
@@ -75,4 +88,10 @@ export default {
   }
 }
 
+.features {
+  > svg {
+    width: 64px;
+    height: 64px;
+  }
+}
 </style>
