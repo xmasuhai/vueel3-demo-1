@@ -1,6 +1,8 @@
 <template>
   <div>
     <Switch v-model:value="bool"></Switch>
+    <VueSwitch v-model:value="bool" activeText="开" inactiveText="关">
+    </VueSwitch>
   </div>
 </template>
 
