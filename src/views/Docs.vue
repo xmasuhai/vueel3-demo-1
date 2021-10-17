@@ -5,6 +5,16 @@
       <transition name="aside">
         <aside v-if="asideVisible">
           <header>
+            <h2>文档</h2>
+          </header>
+          <ol>
+            <li>
+              <h3>
+                <router-link to="intro">介绍</router-link>
+              </h3>
+            </li>
+          </ol>
+          <header>
             <h2>
               <router-link to="/docs"
                            class="alink">组件列表
