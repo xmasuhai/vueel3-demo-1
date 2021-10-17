@@ -18,9 +18,11 @@ const props = defineProps({
 <template>
   <nav class="top-nav">
     <header class="logo">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-sky-wheel-1"></use>
-      </svg>
+      <router-link to="/">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-sky-wheel-1"></use>
+        </svg>
+      </router-link>
     </header>
     <ul class="menu">
       <li>
