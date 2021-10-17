@@ -45,6 +45,8 @@ export default {
     rgba(183, 233, 230, 50) 100%);
   display: flex;
   flex-direction: column;
+  border-bottom-left-radius: 50% calc(100% - 240px);
+  border-bottom-right-radius: 50% calc(100% - 240px);
 
   .nav {
     height: 5vh;
