@@ -11,6 +11,31 @@
         </p>
       </div>
     </div>
+    <div class="features">
+      <ul>
+        <li>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-vue"></use>
+          </svg>
+          <h3>基于 Vue 3</h3>
+          <p>使用 Vue 3 Composition API 和 &lt;script setup&gt;语法糖</p>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ts"></use>
+          </svg>
+          <h3>基于 TypeScript</h3>
+          <p>源代码采用TypeScript</p>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ui"></use>
+          </svg>
+          <h3>代码易读、符合语义</h3>
+          <p>每个组件源代码简洁、严谨</p>
+        </li>
+      </ul>
+    </div>
     <div class="custom-shape-divider-bottom">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path
@@ -22,17 +47,6 @@
         <path
           d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
           class="shape-fill"></path>
-      </svg>
-    </div>
-    <div class="features">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-vue"></use>
-      </svg>
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-ts"></use>
-      </svg>
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-ui"></use>
       </svg>
     </div>
   </div>
@@ -102,6 +116,51 @@ export default {
   }
 }
 
+.features {
+  margin: 64px auto;
+  width: 400px;
+
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      justify-content: start;
+      align-content: space-between;
+      grid-template-areas:
+        "icon title"
+        "icon text";
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+
+      > svg {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+
+      > h3 {
+        grid-area: title;
+        font-size: 28px;
+      }
+
+      > p {
+        grid-area: text;
+      }
+    }
+  }
+}
+
 .custom-shape-divider-bottom {
   position: absolute;
   bottom: 0;
@@ -123,10 +182,4 @@ export default {
   fill: rgba(183, 233, 230, 50);
 }
 
-.features {
-  > svg {
-    width: 64px;
-    height: 64px;
-  }
-}
 </style>

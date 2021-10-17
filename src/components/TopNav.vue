@@ -23,8 +23,9 @@ const props = defineProps({
       </svg>
     </header>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/docs">文档</router-link>
+      </li>
     </ul>
     <div v-if="menuBtnVisible"
          class="toggleAside"
