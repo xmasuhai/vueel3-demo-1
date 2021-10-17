@@ -95,11 +95,14 @@ export default {
       position: fixed;
       top: 0;
       left: 0;
-      background: deepskyblue;
+      background: linear-gradient(
+          145deg,
+          rgba(183, 233, 230, 50) 100%,
+          rgba(227, 255, 253, 1) 0%);
       width: 150px;
       padding: 55px 0 16px;
       height: 100vh;
-      color: white;
+      color: black;
       z-index: 1;
 
       > header {

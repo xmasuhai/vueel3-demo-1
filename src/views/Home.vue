@@ -29,7 +29,7 @@
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-ui"></use>
+            <use xlink:href="#icon-design-rule-2"></use>
           </svg>
           <h3>代码易读、符合语义</h3>
           <p>每个组件源代码简洁、严谨</p>

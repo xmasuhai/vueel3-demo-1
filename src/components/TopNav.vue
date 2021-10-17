@@ -10,7 +10,7 @@ const toggleMenu = () => {
 const props = defineProps({
   menuBtnVisible: {
     type: Boolean,
-    default: true
+    default: false
   }
 });
 </script>
@@ -49,7 +49,7 @@ export default {
   position: absolute;
   width: 50%;
   height: 1px;
-  background-color: white;
+  background-color: black;
 }
 
 .top-nav {
@@ -86,8 +86,8 @@ export default {
 
   > .toggleAside {
     display: none;
-    width: 28px;
-    height: 26px;
+    width: 32px;
+    height: 30px;
     background: transparent;
     position: absolute;
     left: 16px;
@@ -119,6 +119,7 @@ export default {
 
     &.active {
       &::before {
+        background-color: white;
         top: 45%;
         width: 60%;
         transform: rotate(-45deg);
@@ -134,6 +135,7 @@ export default {
       }
 
       &::after {
+        background-color: white;
         bottom: 50%;
         width: 60%;
         transform: rotate(45deg);
@@ -142,12 +144,12 @@ export default {
   }
 
   @media screen and(max-width: 768px) {
-    > .menu {
-      display: none;
-    }
-
     > .logo {
       margin: 0 auto;
+      transform: translateX(50%);
+    }
+
+    > .menu {
     }
 
     > .toggleAside {
