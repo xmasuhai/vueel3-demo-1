@@ -1,21 +1,36 @@
 <script setup lang="ts">
 const props = defineProps({
-  value: Boolean
+  toggleValue: Boolean,
+  activeText: String,
+  inactiveText: String
 });
 
-const emit = defineEmits(['update:value']);
+const emit = defineEmits(['update:toggleValue']);
 
 const toggle = () => {
-  emit('update:value', !props.value);
+  emit('update:toggleValue', !props.toggleValue);
 };
 </script>
 
 <template>
-  <button class="vue-switch"
-          :class="{[`vue-switch-checked`]: value}"
-          @click="toggle">
-    <span></span>
-  </button>
+  <div class="vue-switch-button-wrapper">
+    <button class="vue-switch"
+            :class="{[`vue-switch-checked`]: toggleValue}"
+            @click="toggle">
+      <span class="vue-switch-toggle">
+        <span v-show="!toggleValue"
+              class="close-line"></span>
+        <template v-if="activeText">
+          <div class="vue-switch-label open" v-show="toggleValue">
+            {{ activeText }}
+          </div>
+          <div class="vue-switch-label close" v-show="!toggleValue">
+            {{ inactiveText }}
+          </div>
+        </template>
+      </span>
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -28,46 +43,74 @@ export default {
 @use "sass:math";
 @import 'var';
 
-.vue-switch {
-  height: $height;
-  width: $height * 2;
-  border: none;
-  background: #bfbfbf;
-  border-radius: math.div($height, 2);
-  position: relative;
+.vue-switch-button-wrapper {
+  .vue-switch {
+    height: $height;
+    width: $height * 2;
+    border: none;
+    background: #bfbfbf;
+    border-radius: math.div($height, 2);
+    position: relative;
 
-  span {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    height: $toggle-ball-height;
-    width: $toggle-ball-height;
-    background: white;
-    border-radius: math.div($toggle-ball-height, 2);
-    transition: all .25s;
-  }
+    .vue-switch-toggle {
+      line-height: $toggle-ball-height;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      height: $toggle-ball-height;
+      width: $toggle-ball-height;
+      background: white;
+      border-radius: math.div($toggle-ball-height, 2);
+      transition: all .25s;
 
-  &-checked {
-    background-color: #1890ff;
+      .vue-switch-label {
+        color: #fff;
+        font-size: 18px;
 
-    & > span {
-      left: calc(100% - #{$toggle-ball-height} - 2px);
+        &.open {
+          transform: translateX(-26px);
+        }
+
+        &.close {
+          transform: translateX(26px);
+        }
+      }
+
+      .close-line {
+        width: 10px;
+        height: 2px;
+        background-color: #bfbfbf;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
     }
-  }
 
-  &:active {
-    > span {
-      width: calc(#{$toggle-ball-height} + 4px);
+    &-checked {
+      background-color: #1890ff;
+
+      & > .vue-switch-toggle {
+        left: calc(100% - #{$toggle-ball-height} - 2px);
+
+      }
     }
-  }
 
-  &-checked:active {
-    > span {
-      width: calc(#{$toggle-ball-height} + 4px);
-      margin-left: -4px;
+    &:active {
+      > span {
+        width: calc(#{$toggle-ball-height} + 4px);
+      }
     }
-  }
 
+    &-checked:active {
+      > span {
+        width: calc(#{$toggle-ball-height} + 4px);
+        margin-left: -4px;
+      }
+    }
+
+  }
 }
 
 </style>

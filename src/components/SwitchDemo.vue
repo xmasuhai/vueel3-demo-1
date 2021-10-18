@@ -1,16 +1,25 @@
 <template>
   <div>
-    <Switch v-model:value="bool"></Switch>
-    <VueSwitch v-model:value="bool" activeText="开" inactiveText="关">
+    <VueSwitch v-model:toggleValue="bool1">
+    </VueSwitch>
+    <VueSwitch v-model:toggleValue="bool2"
+               activeText="on"
+               inactiveText="off">
+    </VueSwitch>
+    <VueSwitch v-model:toggleValue="bool3"
+               activeText="开"
+               inactiveText="关">
     </VueSwitch>
   </div>
 </template>
 
 <script setup lang="ts">
-import Switch from '@/lib/Switch.vue';
+import VueSwitch from '@/lib/Switch.vue';
 import {ref} from 'vue';
 
-const bool = ref(false);
+const bool1 = ref(false);
+const bool2 = ref(false);
+const bool3 = ref(false);
 </script>
 
 <script lang="ts">
