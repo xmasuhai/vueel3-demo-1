@@ -50,7 +50,7 @@ export default {
 @use 'sass:math';
 @import 'var';
 
-// basic
+// basic button
 .vue-button {
   align-items: center;
   background: $button-background;
@@ -84,21 +84,22 @@ export default {
     border: 0;
   }
 
-  // big
+  // size
+  // big small
   &.vue-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
 
-  // small
   &.vue-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
 
-  // link
+  //theme
+  // link text
   &.vue-theme-link {
     border-color: transparent;
     box-shadow: none;
@@ -110,7 +111,6 @@ export default {
     }
   }
 
-  // text
   &.vue-theme-text {
     border-color: transparent;
     box-shadow: none;
@@ -123,6 +123,7 @@ export default {
   }
 
   // level
+  // primary danger
   &.vue-theme-button {
     // primary
     &.vue-level-primary {
@@ -192,6 +193,7 @@ export default {
     }
   }
 
+  // theme disabled
   &.vue-theme-button,
   &.vue-theme-link,
   &.vue-theme-text {
