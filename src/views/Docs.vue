@@ -5,30 +5,30 @@
       <transition name="aside">
         <aside v-if="asideVisible">
           <header>
-            <h2>文档</h2>
+            <h2>
+              <router-link class="alink" to="/docs">文档</router-link>
+            </h2>
           </header>
           <ol>
             <li>
               <h3>
-                <router-link to="/docs/intro">介绍</router-link>
+                <router-link class="router-link" to="/docs/intro">介绍</router-link>
               </h3>
             </li>
             <li>
               <h3>
-                <router-link to="/docs/install">安装</router-link>
+                <router-link class="router-link" to="/docs/install">安装</router-link>
               </h3>
             </li>
             <li>
               <h3>
-                <router-link to="/docs/get-started">开始使用</router-link>
+                <router-link class="router-link" to="/docs/get-started">开始使用</router-link>
               </h3>
             </li>
           </ol>
           <header>
             <h2>
-              <router-link to="/docs"
-                           class="alink">组件列表
-              </router-link>
+              组件列表
             </h2>
           </header>
           <ol>
@@ -90,10 +90,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.router-link-exact-active {
-  color: red;
-}
-
 .layout {
   display: flex;
   flex-direction: column;
@@ -124,17 +120,18 @@ export default {
           rgba(183, 233, 230, 50) 100%,
           rgba(227, 255, 253, 1) 0%);
       width: 150px;
-      padding: 55px 0 16px;
+      padding: 60px 0 16px;
       height: 100vh;
       color: black;
       z-index: 1;
 
       > header {
-        margin-bottom: 4px;
-        line-height: 50px;
-        padding-left: 16px;
-        user-select: none;
-        border-bottom: 1px solid #000;
+        > h2 {
+          margin-bottom: 4px;
+          line-height: 50px;
+          padding: 0 16px;
+          user-select: none;
+        }
       }
 
       > ol {
@@ -143,38 +140,33 @@ export default {
 
         > li {
           > h3 {
-            padding-left: 16px;
             display: block;
-            line-height: 45px;
+            line-height: 25px;
             transition: .25s;
+            padding-left: -16px;
 
             &:hover {
-              padding-left: 20px;
-              transform: translate3D(5px, 0, 0);
+              transform: translate3D(4px, 0, 0);
             }
 
             .router-link {
               display: block;
               height: 100%;
               width: 100%;
+              padding: 4px 16px;
             }
+
+            .router-link-active {
+              background-color: white;
+              padding-left: -4px;
+            }
+
+
           }
 
-          &::before {
-            content: '';
-            display: block;
-            width: 100%;
-            border-top: 1px solid rgba(255, 255, 255, .1);
-          }
-
-          &::after {
-            content: '';
-            display: block;
-            width: 100%;
-            border-bottom: 1px solid #000;
-          }
         }
       }
+
     }
 
     > main {
