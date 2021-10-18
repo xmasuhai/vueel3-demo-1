@@ -90,6 +90,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router-link-exact-active {
+  color: red;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
