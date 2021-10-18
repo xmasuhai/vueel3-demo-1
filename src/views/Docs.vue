@@ -10,7 +10,17 @@
           <ol>
             <li>
               <h3>
-                <router-link to="intro">介绍</router-link>
+                <router-link to="/docs/intro">介绍</router-link>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                <router-link to="/docs/install">安装</router-link>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                <router-link to="/docs/get-started">开始使用</router-link>
               </h3>
             </li>
           </ol>
