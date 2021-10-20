@@ -64,7 +64,7 @@ const cancelFn = () => {
             <slot name="content">内容</slot>
           </main>
           <footer>
-            <Button level="main" @click="okFn">OK</Button>
+            <Button level="primary" @click="okFn">OK</Button>
             <Button @click="cancelFn">Cancel</Button>
           </footer>
         </div>

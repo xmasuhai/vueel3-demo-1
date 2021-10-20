@@ -1,9 +1,9 @@
 import Dialog from '@/lib/Dialog.vue';
-import {createApp, h, Ref} from 'vue';
+import {createApp, h} from 'vue';
 
 export interface dialogOptions {
-  title?: Ref<string>;
-  content?: Ref<string>;
+  title?: string;
+  content?: string;
   ok?: Function;
   cancel?: Function;
 }
