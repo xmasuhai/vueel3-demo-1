@@ -1,7 +1,7 @@
 <template>
   <div>
-    <VueSwitch v-model:toggleValue="bool1">
-    </VueSwitch>
+    <VueSwitch v-model:toggleValue="bool1"></VueSwitch>
+    <VueSwitch disabled></VueSwitch>
     <VueSwitch v-model:toggleValue="bool2"
                activeText="on"
                inactiveText="off">

@@ -1,21 +1,38 @@
 <script setup lang="ts">
-const props = defineProps({
-  toggleValue: Boolean,
-  activeText: String,
-  inactiveText: String
+import {toRefs} from 'vue';
+
+interface Props {
+  toggleValue?: boolean;
+  activeText?: string;
+  inactiveText?: string;
+  disabled?: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  toggleValue: false,
+  activeText: '',
+  inactiveText: '',
+  disabled: false
 });
+
+const {toggleValue, disabled, activeText, inactiveText} = toRefs(props) || {};
 
 const emit = defineEmits(['update:toggleValue']);
 
 const toggle = () => {
-  emit('update:toggleValue', !props.toggleValue);
+  if (!disabled.value) {
+    emit('update:toggleValue', !toggleValue.value);
+  }
 };
 </script>
 
 <template>
   <div class="vue-switch-button-wrapper">
     <button class="vue-switch"
-            :class="{[`vue-switch-checked`]: toggleValue}"
+            :class="{
+                    [`vue-switch-checked`]: toggleValue,
+                    [`vue-switch-disabled`]: disabled
+                    }"
             @click="toggle">
       <span class="vue-switch-toggle">
         <span v-show="!toggleValue"
@@ -95,6 +112,11 @@ export default {
         left: calc(100% - #{$toggle-ball-height} - 2px);
 
       }
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      background: lighten(#bfbfbf, 10%);
     }
 
     &:active {
