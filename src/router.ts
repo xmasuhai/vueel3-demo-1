@@ -3,11 +3,12 @@ import DialogDemo from '@/components/DialogDemo.vue';
 import DocsDemo from '@/components/DocsDemo.vue';
 import SwitchDemo from '@/components/SwitchDemo.vue';
 import TabsDemo from '@/components/TabsDemo.vue';
+import Docs from '@/views/Docs.vue';
+import Home from '@/views/Home.vue';
+// use 'vite-plugin-md' import markdown
 import GetStarted from '@/markdown/getStarted.md';
 import Install from '@/markdown/install.md';
 import Intro from '@/markdown/intro.md';
-import Docs from '@/views/Docs.vue';
-import Home from '@/views/Home.vue';
 
 import {createRouter, createWebHashHistory} from 'vue-router';
 

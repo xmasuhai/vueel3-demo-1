@@ -1,6 +1,7 @@
 import vue from '@vitejs/plugin-vue';
 import {defineConfig} from 'vite';
 import Markdown from 'vite-plugin-md';
+import ViteComponents from 'vite-plugin-components';
 
 // const path = require('path'); path.resolve(...)
 const {resolve} = require('path');
@@ -11,7 +12,15 @@ export default defineConfig({
     vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    Markdown()
+    Markdown(),
+    ViteComponents({
+      dirs: ['src/markdown'],
+      // allow auto load markdown components under `./src/components/`
+      extensions: ['vue', 'md'],
+
+      // allow auto import and register components used in markdown
+      customLoaderMatcher: path => path.endsWith('.md'),
+    })
   ],
   resolve: {
     alias: [
