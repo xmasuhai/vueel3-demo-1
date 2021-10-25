@@ -1,5 +1,5 @@
 import App from '@/App.vue';
-import '@/lib/svg.js';
+import '@/assets/icon/svg.js';
 import '@/lib/var.scss';
 import {router} from '@/router';
 import '@/styles/index.scss';

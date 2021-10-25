@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc && vite build",
+    "noEmit": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
