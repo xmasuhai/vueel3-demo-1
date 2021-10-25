@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="demo">
-      <h2>支持 disabled </h2>
+      <h2>支持 禁用</h2>
       <div class="demo-component">
         <Switch2demo/>
       </div>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="demo">
-      <h2>支持 文字 </h2>
+      <h2>支持 文字</h2>
       <div class="demo-component">
         <Switch3demo/>
       </div>
@@ -46,6 +46,7 @@ import Switch2demo from '@/components/switch/switch2demo.vue';
 import Switch3demo from '@/components/switch/switch3demo.vue';
 import VueButton from '@/lib/Button.vue';
 
+console.log(Switch1demo);
 </script>
 
 <script lang="ts">

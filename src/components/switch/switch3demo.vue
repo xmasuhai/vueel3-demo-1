@@ -1,3 +1,4 @@
+<!--<demo>支持 文字 </demo>-->
 <script setup lang="ts">
 import VueSwitch from '@/lib/Switch.vue';
 import {ref} from 'vue';
