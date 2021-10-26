@@ -1,4 +1,4 @@
-<!--<demo>常规用法</demo>-->
+<demo>常规用法</demo>
 <script setup lang="ts">
 import VueSwitch from '@/lib/Switch.vue';
 import {ref} from 'vue';

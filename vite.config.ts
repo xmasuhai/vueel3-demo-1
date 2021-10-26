@@ -2,9 +2,9 @@ import vue from '@vitejs/plugin-vue';
 import {defineConfig/*, PluginOption, UserConfig*/} from 'vite';
 import Markdown from 'vite-plugin-md';
 import ViteComponents/*, {Options}*/ from 'vite-plugin-components';
+// vueCustomBlockTransforms
 import fs from 'fs';
 import {baseParse} from '@vue/compiler-core';
-import {Plugin} from 'vite';
 
 // const path = require('path'); path.resolve(...)
 const {resolve} = require('path');
@@ -13,17 +13,19 @@ const {resolve} = require('path');
 // 自定义块转换
 // 使用 vueCustomBlockTransforms 选项
 // 可以告诉 vite 在遇到 vue 文件的时候如何处理自定义块 <demo>
-const vueCustomBlockTransformsPlugin = (options: any): Plugin => {
-  const {path} = options;
+// 获取组件源码 Component.__sourceCode
+// 获取组件标题 Component.__sourceCodeTitle
+const vueCustomBlockTransformsPlugin = () => {
   return {
     name: 'vueCustomBlockTransforms',
     transform: (code: string, id: string) => {
       if (!/vue&type=demo/.test(id)) {
         return;
       }
-      const file = fs.readFileSync(path).toString();
+      const path = id.replace('?vue&type=demo&index=0&lang.demo', '');
+      const fileString = fs.readFileSync(path).toString();
       // @ts-ignore
-      const parsed = baseParse(file).children.find(n => n.tag === 'demo');
+      const parsed = baseParse(fileString).children.find(n => n.tag === 'demo');
       // demo 标题
       // @ts-ignore
       const title = parsed.children[0].content;
@@ -53,7 +55,6 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       customLoaderMatcher: (path: string) => path.endsWith('.md'),
     }),
-// @ts-ignore
     vueCustomBlockTransformsPlugin()
   ],
   resolve: {

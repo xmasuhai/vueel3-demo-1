@@ -45,8 +45,20 @@ import Switch1demo from '@/components/switch/switch1demo.vue';
 import Switch2demo from '@/components/switch/switch2demo.vue';
 import Switch3demo from '@/components/switch/switch3demo.vue';
 import VueButton from '@/lib/Button.vue';
+import {nextTick, onMounted, ref} from 'vue';
 
-console.log(Switch1demo);
+const message = ref('');
+const changeMessage = async (newMessage: string) => {
+  message.value = newMessage;
+  await nextTick();
+  console.log('Now DOM is updated');
+  console.log(Switch1demo);
+};
+
+onMounted(() => {
+  changeMessage('Hi');
+});
+
 </script>
 
 <script lang="ts">
