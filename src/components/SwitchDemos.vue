@@ -2,57 +2,18 @@
   <div>
     <h1>Switch 组件示例 </h1>
     <div class="demo">
-      <h2>常规用法</h2>
-      <div class="demo-component">
-        <component :is="Switch1demo"></component>
-      </div>
-      <div class="demo-actions">
-        <VueButton>查看代码</VueButton>
-      </div>
-      <div class="demo-code">
-        <pre class="language-html" v-html="Prism.highlight(Switch1demo.__sourceCode, Prism.languages.html, 'html')"></pre>
-      </div>
-    </div>
-    <div class="demo">
-      <h2>支持 禁用</h2>
-      <div class="demo-component">
-        <component :is="Switch2demo"></component>
-      </div>
-      <div class="demo-actions">
-        <VueButton>查看代码</VueButton>
-      </div>
-      <div class="demo-code">
-        <pre>{{ switch2demoCode }}</pre>
-      </div>
-    </div>
-    <div class="demo">
-      <h2>支持 文字</h2>
-      <div class="demo-component">
-        <component :is="Switch3demo"></component>
-      </div>
-      <div class="demo-actions">
-        <VueButton>查看代码</VueButton>
-      </div>
-      <div class="demo-code">
-        <pre>{{ switch3demoCode }}</pre>
-      </div>
+      <Demo :component="Switch1demo"></Demo>
+      <Demo :component="Switch2demo"></Demo>
+      <Demo :component="Switch3demo"></Demo>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import * as Prism from 'prismjs';
-import 'prismjs/themes/prism-okaidia.css';
+import Demo from '@/components/Demo.vue';
 import Switch1demo from '@/components/switch/switch1demo.vue';
 import Switch2demo from '@/components/switch/switch2demo.vue';
 import Switch3demo from '@/components/switch/switch3demo.vue';
-import VueButton from '@/lib/Button.vue';
-import {computed, ref} from 'vue';
-
-const switch1demoCode = ref(Switch1demo.__sourceCode);
-const switch2demoCode = ref(Switch2demo.__sourceCode);
-const switch3demoCode = ref(Switch3demo.__sourceCode);
-
 </script>
 
 <script lang="ts">
@@ -62,35 +23,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-color: #d9d9d9;
-.demo {
-  border: 1px solid $border-color;
-  margin: 16px 0 32px;
-
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
-
-  &-component {
-    padding: 16px;
-  }
-
-  &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-  }
-
-  &-code {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-
-    > pre {
-      line-height: 1.1;
-      font-family: Consolas, 'Courier New', Courier, monospace;
-      margin: 0;
-    }
-  }
-}
 </style>
