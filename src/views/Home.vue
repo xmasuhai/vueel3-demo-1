@@ -18,7 +18,10 @@
             <use xlink:href="#icon-vue"></use>
           </svg>
           <h3>基于 Vue 3</h3>
-          <p>使用 Vue 3 Composition API 和 &lt;script setup&gt;语法糖</p>
+          <p>
+            使用 <strong>Composition API</strong> 和
+            <strong> &lt; script setup &gt; 语法糖</strong>
+          </p>
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
@@ -26,6 +29,13 @@
           </svg>
           <h3>基于 TypeScript</h3>
           <p>源代码采用TypeScript</p>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-design-rule-2"></use>
+          </svg>
+          <h3>使用Vite 开发、构建</h3>
+          <p>迭代快速</p>
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
@@ -156,6 +166,11 @@ export default {
 
       > p {
         grid-area: text;
+
+        > strong {
+          color: rgb(255, 140, 0);
+          font-weight: bold;
+        }
       }
     }
   }
