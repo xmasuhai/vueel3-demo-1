@@ -4,7 +4,7 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch1demo/>
+        <component :is="Switch1demo"></component>
       </div>
       <div class="demo-actions">
         <VueButton>查看代码</VueButton>
@@ -16,7 +16,7 @@
     <div class="demo">
       <h2>支持 禁用</h2>
       <div class="demo-component">
-        <Switch2demo/>
+        <component :is="Switch2demo"></component>
       </div>
       <div class="demo-actions">
         <VueButton>查看代码</VueButton>
@@ -28,7 +28,7 @@
     <div class="demo">
       <h2>支持 文字</h2>
       <div class="demo-component">
-        <Switch3demo/>
+        <component :is="Switch3demo"></component>
       </div>
       <div class="demo-actions">
         <VueButton>查看代码</VueButton>
@@ -47,7 +47,6 @@ import Switch3demo from '@/components/switch/switch3demo.vue';
 import VueButton from '@/lib/Button.vue';
 import {ref} from 'vue';
 
-console.log(Switch1demo);
 const switch1demoCode = ref(Switch1demo.__sourceCode);
 const switch2demoCode = ref(Switch2demo.__sourceCode);
 const switch3demoCode = ref(Switch3demo.__sourceCode);
