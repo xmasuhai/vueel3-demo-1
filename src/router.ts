@@ -1,8 +1,8 @@
-import ButtonDemo from '@/components/ButtonDemo.vue';
-import DialogDemo from '@/components/DialogDemo.vue';
+import ButtonDemo from '@/components/ButtonDemos.vue';
+import DialogDemo from '@/components/DialogDemos.vue';
 import DocsDemo from '@/components/DocsDemo.vue';
-import SwitchDemo from '@/components/SwitchDemo.vue';
-import TabsDemo from '@/components/TabsDemo.vue';
+import SwitchDemo from '@/components/SwitchDemos.vue';
+import TabsDemo from '@/components/TabsDemos.vue';
 import Docs from '@/views/Docs.vue';
 import Home from '@/views/Home.vue';
 // use 'vite-plugin-md' import markdown

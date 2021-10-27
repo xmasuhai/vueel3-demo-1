@@ -1,4 +1,12 @@
-<demo>支持 文字 </demo>
+<demo>支持 文字</demo>
+<script lang="ts">
+export default {
+  name: 'Switch3Demo',
+  __sourceCode: '',
+  __sourceCodeTitle: ''
+};
+</script>
+
 <script setup lang="ts">
 import VueSwitch from '@/lib/Switch.vue';
 import {ref} from 'vue';

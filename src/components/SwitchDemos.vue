@@ -10,7 +10,7 @@
         <VueButton>查看代码</VueButton>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+        <pre>{{ switch1demoCode }}</pre>
       </div>
     </div>
     <div class="demo">
@@ -22,7 +22,7 @@
         <VueButton>查看代码</VueButton>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+        <pre>{{ switch2demoCode }}</pre>
       </div>
     </div>
     <div class="demo">
@@ -34,7 +34,7 @@
         <VueButton>查看代码</VueButton>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+        <pre>{{ switch3demoCode }}</pre>
       </div>
     </div>
   </div>
@@ -45,19 +45,12 @@ import Switch1demo from '@/components/switch/switch1demo.vue';
 import Switch2demo from '@/components/switch/switch2demo.vue';
 import Switch3demo from '@/components/switch/switch3demo.vue';
 import VueButton from '@/lib/Button.vue';
-import {nextTick, onMounted, ref} from 'vue';
+import {ref} from 'vue';
 
-const message = ref('');
-const changeMessage = async (newMessage: string) => {
-  message.value = newMessage;
-  await nextTick();
-  console.log('Now DOM is updated');
-  console.log(Switch1demo);
-};
-
-onMounted(() => {
-  changeMessage('Hi');
-});
+console.log(Switch1demo);
+const switch1demoCode = ref(Switch1demo.__sourceCode);
+const switch2demoCode = ref(Switch2demo.__sourceCode);
+const switch3demoCode = ref(Switch3demo.__sourceCode);
 
 </script>
 
