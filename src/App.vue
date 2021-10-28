@@ -12,7 +12,6 @@ router.afterEach(() => {
     asideVisible.value = false;
   }
 });
-
 </script>
 
 <script lang="ts">

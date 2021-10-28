@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import * as Prism from 'prismjs';
+import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js';
 import VueButton from '@/lib/button.vue';
 import {computed, ref} from 'vue';
 
@@ -29,8 +29,8 @@ const html = computed(() => {
     <div class="vue-demo-actions">
       <VueButton @click="toggle">查看代码</VueButton>
     </div>
-    <div class="vue-demo-code line-numbers" v-if="codeVisible">
-      <pre class="line-numbers language-html">
+    <div class="vue-demo-code" v-show="codeVisible">
+      <pre class="language-html line-numbers">
         <code class="language-html" v-html="html"></code>
       </pre>
     </div>
