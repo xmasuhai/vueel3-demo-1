@@ -2,14 +2,13 @@
 import * as Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import VueButton from '@/lib/button.vue';
 import {computed, ref} from 'vue';
 
+const codeVisible = ref(true);
 const props = defineProps({
   component: Object
 });
-const codeVisible = ref(false);
 const toggle = () => {
   codeVisible.value = !codeVisible.value;
 };
@@ -19,23 +18,27 @@ const html = computed(() => {
 </script>
 
 <template>
-  <div class="demo">
+  <div class="vue-demo">
     <h2>{{ component.__sourceCodeTitle }}</h2>
-    <div class="demo-component">
-      <component :is="component"></component>
+    <div class="vue-demo-component">
+      <keep-alive>
+        <component :is="component"></component>
+      </keep-alive>
     </div>
-    <div class="demo-actions">
+    <div class="vue-demo-actions">
       <VueButton @click="toggle">查看代码</VueButton>
     </div>
-    <div class="demo-code line-numbers" v-show="codeVisible">
+    <div class="vue-demo-code line-numbers" v-if="codeVisible">
       <pre class="language-html">
-        <code v-html="html"></code>
+        <code class="language-html" v-html="html"></code>
       </pre>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
+
 export default {
   name: 'Demo'
 };
@@ -43,7 +46,8 @@ export default {
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
-.demo {
+
+.vue-demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;
 

@@ -1,64 +1,18 @@
 <script setup lang="ts">
-import Button from '@/lib/Button.vue';
-
+import Demo from '@/components/Demo.vue';
+import Button1demo from '@/components/button/button1demo.vue';
+import Button2demo from '@/components/button/button2demo.vue';
+import Button3demo from '@/components/button/button3demo.vue';
+import Button4demo from '@/components/button/button4demo.vue';
+import Button5demo from '@/components/button/button5demo.vue';
 </script>
 
 <template>
-  <h1>Button 示例</h1>
-  <h2>示例一</h2>
-  <div class="container">
-    <Button>普通按钮</Button>
-    <Button theme="button">普通按钮</Button>
-    <Button theme="link">链接按钮</Button>
-    <Button theme="text">文字按钮</Button>
-  </div>
-  <h2>示例二</h2>
-  <div class="container">
-    <Button size="big">大号按钮</Button>
-    <Button size="normal">普通按钮</Button>
-    <Button size="small">小号按钮</Button>
-  </div>
-  <div class="container">
-    <Button size="big" theme="link">大号链接按钮</Button>
-    <Button size="normal" theme="link">普通链接按钮</Button>
-    <Button size="small" theme="link">小号链接按钮</Button>
-  </div>
-  <div class="container">
-    <Button size="big" theme="text">大号文字按钮</Button>
-    <Button size="normal" theme="text">普通文字按钮</Button>
-    <Button size="small" theme="text">小号文字按钮</Button>
-  </div>
-  <h2>示例三</h2>
-  <div class="container">
-    <Button level="primary">主要按钮</Button>
-    <Button level="normal">普通按钮</Button>
-    <Button level="danger">警告按钮</Button>
-  </div>
-  <div class="container">
-    <Button level="primary" theme="link">主要链接按钮</Button>
-    <Button level="normal" theme="link">普通链接按钮</Button>
-    <Button level="danger" theme="link">警告链接按钮</Button>
-  </div>
-  <div class="container">
-    <Button level="primary" theme="text">主要文字按钮</Button>
-    <Button level="normal" theme="text">普通文字按钮</Button>
-    <Button level="danger" theme="text">警告文字按钮</Button>
-  </div>
-  <h2>示例四</h2>
-  <div class="container">
-    <Button disabled>禁用按钮</Button>
-    <Button :disabled="true">绑定disabled属性禁用按钮</Button>
-    <Button theme="link" disabled>禁用链接按钮</Button>
-    <Button theme="text" disabled>禁用文字按钮</Button>
-  </div>
-  <h2>示例五</h2>
-  <div class="container">
-    <Button :loading="true">加载中</Button>
-    <Button :loading="true">绑定loading属性加载中按钮</Button>
-    <Button theme="link" :loading="true">加载中链接按钮</Button>
-    <Button theme="text" :loading="true">加载中文字按钮</Button>
-    <Button>加载完毕</Button>
-  </div>
+  <Demo :component="Button1demo"></Demo>
+  <Demo :component="Button2demo"></Demo>
+  <Demo :component="Button3demo"></Demo>
+  <Demo :component="Button4demo"></Demo>
+  <Demo :component="Button5demo"></Demo>
 </template>
 
 <script lang="ts">
@@ -68,14 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2,
-h2 {
-  margin: 10px auto;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  margin: 10px auto;
+:deep(.vue-button) {
+  margin: 5px;
 }
 </style>
