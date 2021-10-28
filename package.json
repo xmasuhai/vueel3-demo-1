@@ -12,6 +12,7 @@
   "dependencies": {
     "github-markdown-css": "^5.0.0",
     "prismjs": "^1.25.0",
+    "vue-prism-component": "^2.0.0",
     "vue-router": "4.0.11"
   },
   "devDependencies": {
