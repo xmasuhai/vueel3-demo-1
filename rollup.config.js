@@ -10,6 +10,7 @@ module.exports = {
     alias({
       entries: [
         {find: '@', replacement: './src'},
+        {'vue-types': 'vue-types/shim'}
       ]
     })
   ]

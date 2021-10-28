@@ -128,13 +128,31 @@ export default {
 
 .features {
   margin: 64px auto;
-  width: 400px;
+  padding: 0 16px;
 
   @media (min-width: 800px) {
     width: 800px;
+    > ui {
+      > li {
+        width: 50%;
+      }
+    }
+  }
+  @media (min-width: 1000px) {
+    width: 1000px;
+    > ul {
+      > li {
+        width: 33.3333%;
+      }
+    }
   }
   @media (min-width: 1200px) {
     width: 1200px;
+    > ul {
+      > li {
+        width: 25%;
+      }
+    }
   }
 
   > ul {
@@ -142,8 +160,7 @@ export default {
     flex-wrap: wrap;
 
     > li {
-      width: 400px;
-      margin: 16px 0;
+      margin: 16px 16px;
       display: grid;
       justify-content: start;
       align-content: space-between;

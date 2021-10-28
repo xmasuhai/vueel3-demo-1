@@ -16,6 +16,7 @@ const toggle = () => {
 const html = computed(() => {
   return Prism.highlight(props.component?.__sourceCode, Prism.languages.html, 'html');
 });
+document.querySelector('body')?.classList.add('line-numbers');
 </script>
 
 <template>
@@ -30,7 +31,7 @@ const html = computed(() => {
       <VueButton @click="toggle">查看代码</VueButton>
     </div>
     <div class="vue-demo-code" v-show="codeVisible">
-      <pre class="language-html line-numbers">
+      <pre class="language-html">
         <code class="language-html" v-html="html"></code>
       </pre>
     </div>
@@ -73,9 +74,12 @@ $border-color: #d9d9d9;
       line-height: 1.1;
       font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;
+      padding-left: 70px;
 
       > code {
-        margin-left: -70px;
+        &:first-child {
+          margin-left: -70px;
+        }
       }
     }
   }

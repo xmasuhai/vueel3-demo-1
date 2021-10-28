@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import {ref} from 'vue';
+import Demo from '@/components/Demo.vue';
+import Dialog1demo from '@/components/button/button1demo.vue';
+import Dialog2demo from '@/components/button/button2demo.vue';
+import Dialog3demo from '@/components/button/button3demo.vue';
 import Button from '@/lib/Button.vue';
 import Dialog from '@/lib/Dialog.vue';
+import {ref} from 'vue';
 import {useDialog} from '@/hooks/useDialog';
 
 const [

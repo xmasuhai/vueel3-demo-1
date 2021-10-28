@@ -12,10 +12,11 @@
   "dependencies": {
     "github-markdown-css": "^5.0.0",
     "prismjs": "^1.25.0",
-    "vue-router": "4.0.11"
+    "vue-router": "4.0.11",
+    "vue-types": "^4.1.1"
   },
   "devDependencies": {
-    "@rollup/plugin-alias": "^3.1.5",
+    "@rollup/plugin-alias": "^3.1.8",
     "@types/node": "^16.9.1",
     "@types/prismjs": "^1.16.6",
     "@vitejs/plugin-vue": "^1.6.1",
