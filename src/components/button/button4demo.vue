@@ -1,4 +1,4 @@
-<demo>常规用法</demo>
+<demo>禁用状态按钮</demo>
 <script lang="ts">
 export default {
   name: 'Button1Demo',

@@ -8,6 +8,7 @@ import Button5demo from '@/components/button/button5demo.vue';
 </script>
 
 <template>
+  <h1>Button 组件示例 </h1>
   <Demo :component="Button1demo"></Demo>
   <Demo :component="Button2demo"></Demo>
   <Demo :component="Button3demo"></Demo>

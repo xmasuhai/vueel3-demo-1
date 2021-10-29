@@ -1,4 +1,4 @@
-<demo>一行代码打开 Dialog</demo>
+<demo>使用Hooks打开 Dialog</demo>
 <script lang="ts">
 export default {
   name: 'Dialog4Demo',

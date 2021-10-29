@@ -8,6 +8,7 @@ import Dialog5demo from '@/components/dialog/dialog5demo.vue';
 </script>
 
 <template>
+  <h1>Dialog 组件示例 </h1>
   <Demo :component="Dialog1demo"></Demo>
   <Demo :component="Dialog2demo"></Demo>
   <Demo :component="Dialog3demo"></Demo>

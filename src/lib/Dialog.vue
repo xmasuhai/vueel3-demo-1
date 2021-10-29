@@ -75,6 +75,7 @@ const cancelFn = () => {
 
 <style lang="scss" scoped>
 @import 'var.scss';
+$dialog-z-index: 10;
 
 .vue-dialog {
   background: white;
@@ -91,7 +92,7 @@ const cancelFn = () => {
     width: 100%;
     height: 100%;
     background: fade_out(black, 0.8);
-    z-index: 10;
+    z-index: $dialog-z-index;
   }
 
   // 外层样式

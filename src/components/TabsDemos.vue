@@ -9,6 +9,9 @@ const defaultTab = ref('导航1');
 
 <template>
   <div>
+    <h1>Tab 组件示例 </h1>
+
+
     <h1>示例一</h1>
     <Tabs v-model:selected="defaultTab">
       <TabItem title="导航1">内容1</TabItem>

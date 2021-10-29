@@ -1,4 +1,4 @@
-<demo>常规用法</demo>
+<demo>不同等级层次的按钮</demo>
 <script lang="ts">
 export default {
   name: 'Button1Demo',

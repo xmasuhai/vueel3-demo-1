@@ -1,3 +1,43 @@
+<script setup lang="ts">
+import TopNav from '@/components/TopNav.vue';
+import {inject, Ref} from 'vue';
+
+let asideVisible = inject<Ref<boolean>>('asideVisible');
+
+const routerInfo = [
+  {
+    toPath: 'intro',
+    textInfo: '介绍'
+  },
+  {
+    toPath: 'install',
+    textInfo: '安装'
+  },
+  {
+    toPath: 'get-started',
+    textInfo: '开始使用'
+  }
+];
+const compInfo = [
+  {
+    toPath: 'switch',
+    textInfo: 'Switch 组件'
+  },
+  {
+    toPath: 'button',
+    textInfo: 'Button 组件'
+  },
+  {
+    toPath: 'dialog',
+    textInfo: 'Dialog 组件'
+  },
+  {
+    toPath: 'tabs',
+    textInfo: 'Tabs 组件'
+  }
+];
+</script>
+
 <template>
   <div class="layout">
     <top-nav class="nav" menuBtnVisible></top-nav>
@@ -10,19 +50,11 @@
             </h2>
           </header>
           <ol>
-            <li>
+            <li v-for="{toPath, textInfo} of routerInfo">
               <h3>
-                <router-link class="router-link" to="/docs/intro">介绍</router-link>
-              </h3>
-            </li>
-            <li>
-              <h3>
-                <router-link class="router-link" to="/docs/install">安装</router-link>
-              </h3>
-            </li>
-            <li>
-              <h3>
-                <router-link class="router-link" to="/docs/get-started">开始使用</router-link>
+                <router-link class="router-link" :to="`/docs/${toPath}`">
+                  {{ textInfo }}
+                </router-link>
               </h3>
             </li>
           </ol>
@@ -32,35 +64,11 @@
             </h2>
           </header>
           <ol>
-            <li>
+            <li v-for="{toPath, textInfo} of compInfo">
               <h3>
-                <router-link to="/docs/switch"
+                <router-link :to="`/docs/${toPath}`"
                              class="router-link">
-                  Switch 组件
-                </router-link>
-              </h3>
-            </li>
-            <li>
-              <h3>
-                <router-link to="/docs/button"
-                             class="router-link">
-                  Button 组件
-                </router-link>
-              </h3>
-            </li>
-            <li>
-              <h3>
-                <router-link to="/docs/dialog"
-                             class="router-link">
-                  Dialog 组件
-                </router-link>
-              </h3>
-            </li>
-            <li>
-              <h3>
-                <router-link to="/docs/tabs"
-                             class="router-link">
-                  Tabs 组件
+                  {{ textInfo }}
                 </router-link>
               </h3>
             </li>
@@ -74,18 +82,9 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import {inject, Ref} from 'vue';
-
-let asideVisible = inject<Ref<boolean>>('asideVisible');
-</script>
-
 <script lang="ts">
-import TopNav from '@/components/TopNav.vue';
-
 export default {
-  name: 'Docs',
-  components: {TopNav}
+  name: 'Docs'
 };
 </script>
 
@@ -160,7 +159,6 @@ export default {
               background-color: white;
               padding-left: -4px;
             }
-
 
           }
 
