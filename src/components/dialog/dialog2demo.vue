@@ -1,4 +1,4 @@
-<demo>常规用法</demo>
+<demo>点击遮罩层不执行关闭逻辑</demo>
 <script lang="ts">
 export default {
   name: 'Dialog2Demo',
@@ -9,8 +9,19 @@ export default {
 </script>
 
 <template>
-  <idv></idv>
+  <VueButton @click="toggle">toggle</VueButton>
+  <VueDialog v-model:visible="visible"
+             :closeOnClickOverlay="false">
+  </VueDialog>
 </template>
 
 <script setup lang="ts">
+import VueButton from '@/lib/Button.vue';
+import VueDialog from '@/lib/Dialog.vue';
+import {ref} from 'vue';
+
+const visible = ref(false);
+const toggle = () => {
+  visible.value = !visible.value;
+};
 </script>

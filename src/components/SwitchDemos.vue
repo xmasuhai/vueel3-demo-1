@@ -14,7 +14,6 @@ import Demo from '@/components/Demo.vue';
 import Switch1demo from '@/components/switch/switch1demo.vue';
 import Switch2demo from '@/components/switch/switch2demo.vue';
 import Switch3demo from '@/components/switch/switch3demo.vue';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 </script>
 
 <script lang="ts">

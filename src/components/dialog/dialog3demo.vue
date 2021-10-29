@@ -1,4 +1,4 @@
-<demo>常规用法</demo>
+<demo>点击ok cancel 预定义回调</demo>
 <script lang="ts">
 export default {
   name: 'Dialog3Demo',
@@ -9,8 +9,34 @@ export default {
 </script>
 
 <template>
-  <idv></idv>
+  <VueButton @click="toggle">toggle</VueButton>
+  <VueDialog v-model:visible="visible"
+             :ok="fn1" :cancel="fn2">
+    <template v-slot:title>
+      <strong>粗体的标题</strong>
+    </template>
+    <template v-slot:content>
+      <div>自定义内容</div>
+      <div>自定义内容</div>
+    </template>
+  </VueDialog>
 </template>
 
 <script setup lang="ts">
+import VueButton from '@/lib/Button.vue';
+import VueDialog from '@/lib/Dialog.vue';
+import {ref} from 'vue';
+
+const visible = ref(false);
+const toggle = () => {
+  visible.value = !visible.value;
+};
+
+// 指定ok cancel的回调
+const fn1 = () => {
+  return false;
+};
+const fn2 = () => {
+};
+
 </script>
