@@ -16,7 +16,7 @@ const toggle = () => {
 const html = computed(() => {
   return Prism.highlight(props.component?.__sourceCode, Prism.languages.html, 'html');
 });
-document.querySelector('body')?.classList.add('line-numbers');
+
 </script>
 
 <template>
@@ -75,6 +75,10 @@ $border-color: #d9d9d9;
       font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;
       padding-left: 70px;
+
+      @media(max-width: 500px) {
+        padding-left: 5px;
+      }
 
       > code {
         &:first-child {
