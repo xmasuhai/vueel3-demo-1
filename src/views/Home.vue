@@ -20,6 +20,7 @@
           <h3>基于 <strong>Vue 3.2</strong></h3>
           <p>
             使用 <strong>Composition API</strong> 和
+            <br>
             <strong> &lt; script setup &gt; 语法糖</strong>
           </p>
         </li>
