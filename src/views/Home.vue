@@ -17,7 +17,7 @@
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-vue"></use>
           </svg>
-          <h3>基于 Vue 3</h3>
+          <h3>基于 <strong>Vue 3.2</strong></h3>
           <p>
             使用 <strong>Composition API</strong> 和
             <strong> &lt; script setup &gt; 语法糖</strong>
@@ -132,7 +132,7 @@ export default {
 
   @media (min-width: 800px) {
     width: 800px;
-    > ui {
+    > ul {
       > li {
         width: 50%;
       }
@@ -176,6 +176,11 @@ export default {
         height: 64px;
       }
 
+      strong {
+        color: rgb(255, 140, 0);
+        font-weight: bold;
+      }
+
       > h3 {
         grid-area: title;
         font-size: 28px;
@@ -184,10 +189,6 @@ export default {
       > p {
         grid-area: text;
 
-        > strong {
-          color: rgb(255, 140, 0);
-          font-weight: bold;
-        }
       }
     }
   }

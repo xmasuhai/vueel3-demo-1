@@ -1,23 +1,13 @@
 <script setup lang="ts">
-import Tabs from '@/lib/Tabs.vue';
-import TabItem from '@/lib/TabItem.vue';
-import {ref} from 'vue';
-
-const defaultTab = ref('导航1');
+import Demo from '@/components/Demo.vue';
+import Tab1demo from '@/components/tab/tab1demo.vue';
 
 </script>
 
 <template>
   <div>
     <h1>Tab 组件示例 </h1>
-
-
-    <h1>示例一</h1>
-    <Tabs v-model:selected="defaultTab">
-      <TabItem title="导航1">内容1</TabItem>
-      <TabItem title="导航22">内容22</TabItem>
-      <TabItem title="导航333">内容333</TabItem>
-    </Tabs>
+    <Demo :component="Tab1demo"></Demo>
   </div>
 </template>
 
