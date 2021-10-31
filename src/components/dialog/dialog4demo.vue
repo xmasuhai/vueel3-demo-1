@@ -53,7 +53,6 @@ export default {
     <div v-for="{zIndex} in [{zIndex: 20}, {zIndex: 10}, {zIndex: 1}]"
          :style="
             { position: 'relative',
-              left: '-100px',
               zIndex: zIndex,
               width: '120px',
               height: '240px',

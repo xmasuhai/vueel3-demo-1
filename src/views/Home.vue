@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="topNavAndBanner">
       <top-nav class="nav"></top-nav>
       <div class="banner">
@@ -20,8 +20,10 @@
           <h3>基于 <strong>Vue 3.2</strong></h3>
           <p>
             使用 <strong>Composition API</strong> 和
-            <br>
+            <br/>
             <strong> &lt; script setup &gt; 语法糖</strong>
+            <br/>
+            <span>每个组件代码简洁、易读、严谨</span>
           </p>
         </li>
         <li>
@@ -36,14 +38,7 @@
             <use xlink:href="#icon-design-rule-2"></use>
           </svg>
           <h3>使用Vite 开发、构建</h3>
-          <p>迭代快速</p>
-        </li>
-        <li>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-design-rule-2"></use>
-          </svg>
-          <h3>代码易读、符合语义</h3>
-          <p>每个组件源代码简洁、严谨</p>
+          <p>快速开发</p>
         </li>
       </ul>
     </div>
@@ -78,142 +73,139 @@ export default {
 @use "sass:math";
 @import '../lib/var.scss';
 
-.topNavAndBanner {
-  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 50) 100%);
+.wrapper {
   display: flex;
   flex-direction: column;
-  clip-path: ellipse(80% 60% at 50% 40%);
 
-  .nav {
-    height: 5vh;
-
-    &:deep(.toggleAside) {
-      display: none;
-    }
-  }
-
-  .banner {
-    flex-grow: 1;
-    height: 30vh;
-    padding: 100px 0;
+  .topNavAndBanner {
+    background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%,
+      rgba(183, 233, 230, 50) 100%);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    clip-path: ellipse(80% 60% at 50% 40%);
 
-    > h1,
-    h2 {
-      background: linear-gradient(to left, rgb(112, 101, 214), rgb(230, 106, 213));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      color: transparent;
-    }
+    .nav {
+      height: 5vh;
 
-    > .actions {
-      padding: 8px 0;
-
-      a {
-        line-height: 24px;
-        margin: 0 8px;
-        color: #fff;
-        background: $ugly-green;
-        display: inline-block;
-        border-radius: $radius;
-        padding: 8px 24px;
+      &:deep(.toggleAside) {
+        display: none;
       }
     }
-  }
-}
 
-.features {
-  margin: 64px auto;
-  padding: 0 16px;
+    .banner {
+      flex-grow: 1;
+      height: 30vh;
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
 
-  @media (min-width: 800px) {
-    width: 800px;
-    > ul {
-      > li {
-        width: 50%;
-      }
-    }
-  }
-  @media (min-width: 1000px) {
-    width: 1000px;
-    > ul {
-      > li {
-        width: 33.3333%;
-      }
-    }
-  }
-  @media (min-width: 1200px) {
-    width: 1200px;
-    > ul {
-      > li {
-        width: 25%;
-      }
-    }
-  }
-
-  > ul {
-    display: flex;
-    flex-wrap: wrap;
-
-    > li {
-      margin: 16px 16px;
-      display: grid;
-      justify-content: start;
-      align-content: space-between;
-      grid-template-areas:
-        "icon title"
-        "icon text";
-      grid-template-columns: 80px auto;
-      grid-template-rows: 1fr auto;
-
-      > svg {
-        grid-area: icon;
-        width: 64px;
-        height: 64px;
-      }
-
-      strong {
-        color: rgb(255, 140, 0);
+      > h1,
+      h2 {
+        background: linear-gradient(to left, rgb(112, 101, 214), rgb(230, 106, 213));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-weight: bold;
+        color: transparent;
       }
 
-      > h3 {
-        grid-area: title;
-        font-size: 28px;
-      }
+      > .actions {
+        padding: 8px 0;
 
-      > p {
-        grid-area: text;
-
+        a {
+          line-height: 24px;
+          margin: 0 8px;
+          color: #fff;
+          background: $ugly-green;
+          display: inline-block;
+          border-radius: $radius;
+          padding: 8px 24px;
+        }
       }
     }
   }
-}
 
-.custom-shape-divider-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
+  .features {
+    margin: 64px auto;
+    padding: 0 16px;
 
-.custom-shape-divider-bottom svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 96px;
-}
+    @media (min-width: 800px) {
+      width: 800px;
+      > ul {
+        > li {
+          width: 50%;
+        }
+      }
+    }
+    @media (min-width: 1200px) {
+      width: 1200px;
+      > ul {
+        > li {
+          width: 30%;
+        }
+      }
+    }
 
-.custom-shape-divider-bottom .shape-fill {
-  fill: rgba(183, 233, 230, 50);
-}
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
 
+      > li {
+        margin: 16px 16px;
+        display: grid;
+        justify-content: start;
+        align-content: space-between;
+        grid-template-areas:
+          "icon title"
+          "icon text";
+        grid-template-columns: 80px auto;
+        grid-template-rows: 1fr auto;
+
+        > svg {
+          grid-area: icon;
+          width: 64px;
+          height: 64px;
+        }
+
+        strong {
+          color: rgb(255, 140, 0);
+          font-weight: bold;
+        }
+
+        > h3 {
+          grid-area: title;
+          font-size: 28px;
+        }
+
+        > p {
+          grid-area: text;
+
+        }
+      }
+    }
+  }
+
+  .custom-shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 96px;
+    }
+
+    .shape-fill {
+      fill: rgba(183, 233, 230, 50);
+    }
+
+  }
+}
 </style>

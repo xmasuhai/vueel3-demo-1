@@ -95,8 +95,11 @@ export default {
   height: 100vh;
 
   > .nav {
+    background-color: #fff;
     flex-shrink: 0;
     height: 5vh;
+    z-index: 101;
+    box-shadow:0 1px 1px #ddd;
   }
 
   > .content {
@@ -122,7 +125,7 @@ export default {
       padding: 60px 0 16px;
       height: 100vh;
       color: black;
-      z-index: 1;
+      z-index: 100;
 
       > header {
         > h2 {
