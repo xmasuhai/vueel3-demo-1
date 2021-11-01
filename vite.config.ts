@@ -13,6 +13,7 @@ const {resolve} = require('path');
 import {vueCompAddSourceCodeTitleFromCustomBlock} from './plugins/vueCompAddSourceCodeTitleFromCustomBlock';
 
 export default defineConfig({
+  base: './',
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
