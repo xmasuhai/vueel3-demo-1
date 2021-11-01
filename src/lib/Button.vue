@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs,} from 'vue';
+import {computed, toRefs} from 'vue';
 
 interface Props {
   theme?: 'button' | 'link' | 'text';
@@ -35,7 +35,8 @@ const classes = computed(() => {
           :class="classes"
           :disabled="disabled">
     <span class="vue-loadingIndicator"
-          v-if="loading"></span>
+          v-if="loading">
+    </span>
     <slot></slot>
   </button>
 </template>

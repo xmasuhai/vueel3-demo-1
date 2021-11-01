@@ -20,7 +20,7 @@ const props = defineProps({
     <header class="logo">
       <router-link to="/">
         <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-sky-wheel-1"></use>
+          <use xlink:href="#icon-vueel"></use>
         </svg>
       </router-link>
     </header>

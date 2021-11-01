@@ -3,6 +3,7 @@ import ButtonDemo from '@/components/ButtonDemos.vue';
 import DialogDemo from '@/components/DialogDemos.vue';
 import SwitchDemo from '@/components/SwitchDemos.vue';
 import TabsDemo from '@/components/TabsDemos.vue';
+import IconsDemo from '@/components/IconsDemos.vue';
 import Docs from '@/views/Docs.vue';
 import Home from '@/views/Home.vue';
 // use 'vite-plugin-md' import markdown
@@ -28,6 +29,7 @@ export const router = createRouter({
         {path: 'dialog', component: DialogDemo},
         {path: 'switch', component: SwitchDemo},
         {path: 'tabs', component: TabsDemo},
+        {path: 'icons', component: IconsDemo},
       ]
     },
   ]

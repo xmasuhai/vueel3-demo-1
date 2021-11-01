@@ -41,6 +41,10 @@ const compInfo = [
   {
     toPath: 'tabs',
     textInfo: 'Tabs 组件'
+  },
+  {
+    toPath: 'icons',
+    textInfo: 'Icons 组件'
   }
 ];
 </script>

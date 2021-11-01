@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {computed, defineProps, toRefs} from 'vue';
+import '@/assets/icon/svg.js';
+import {computed, toRefs} from 'vue';
 /*
 interface Props {
   name?: string;
@@ -18,27 +19,47 @@ const props = withDefaults(defineProps<Props>(), {
   pulse: false,
   customClass: ''
 });
-
 */
 
-const icons: Record<string, string> = {};
 const props = defineProps({
-  name: {
+  iconName: {
     type: String,
+    require: true,
     validator(val: string) {
-      if (val) {
-        if (!(val in icons)) {
-          console.warn(`Invalid prop: prop "name" is referring to an unregistered icon "${val}".` +
-            `\nPlease make sure you have imported this icon before using it.`);
-          return false;
-        }
-        return true;
-      }
-      console.warn(`Invalid prop: prop "name" is required.`);
-      return false;
+      const iconsNames = [
+        'vite',
+        'mobile-design',
+        'design-rule-1',
+        'design-rule-2',
+        'frontend',
+        'vue',
+        'ui',
+        'ts',
+        'gear-green',
+        'gear-blue',
+        'gear3',
+        'sky-wheel-1',
+        'sky-wheel-2',
+        'sky-wheel-3',
+        'tire',
+      ];
+
+      (!val)
+        ? console.warn(`Invalid prop: prop "name" is required.`)
+        : (!iconsNames.includes(val))
+          ? console.log(`Invalid prop: prop "name" is referring to an unregistered icon "${val}".
+                         Please make sure you have imported this icon before using it.`)
+          : null;
+      return iconsNames.includes(val);
     }
   },
-  scale: [Number, String],
+  scale: {
+    type: Number,
+    default: 1,
+    validator(val: number) {
+      return (val >= 2 && val <= 10);
+    }
+  },
   spin: Boolean,
   inverse: {
     type: Boolean,
@@ -60,7 +81,7 @@ const props = defineProps({
 });
 
 // 解构的对象不能为undefined、null 否则会报错，要给被解构的对象一个默认值
-const {name, scale, flip, spin, inverse, pulse, customClass} = toRefs(props) || {};
+const {iconName, scale, flip, spin, inverse, pulse, customClass} = toRefs(props) || {};
 
 const iconClass = computed(() => {
   return {
@@ -72,23 +93,49 @@ const iconClass = computed(() => {
     'vue-icon-pulse': pulse
   };
 });
-
+const iconScale = computed(() => {
+  return {
+    [`vue-icon-${scale.value}x`]: true
+  };
+});
 </script>
 
 <template>
-  <svg :class="iconClass">
-
-  </svg>
+  <span class="vue-icon-wrapper">
+    <svg class="vue-icon-svg"
+         :class="{iconClass: true}, iconScale"
+         aria-hidden="true">
+      <use :xlink:href="`#icon-${iconName}`">
+      </use>
+    </svg>
+  </span>
 </template>
 
-
-<script lang="scss">
+<script lang="ts">
 export default {
   name: 'Icon'
-}
+};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.vue-icon-wrapper {
+  line-height: 1em;
+  width: 1em;
+  height: 1em;
+
+  .vue-icon-svg {
+    width: 1em;
+    height: 1em;
+
+  }
+
+}
+
+@for $i from 2 through 10 {
+  .vue-icon-#{$i}x {
+    transform: scale($i);
+  }
+}
 
 @keyframes fa-spin {
   0% {
