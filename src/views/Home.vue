@@ -17,7 +17,7 @@
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-vue"></use>
           </svg>
-          <h3>基于 <strong>Vue 3.2</strong></h3>
+          <h3>基于Vue 3.2</h3>
           <p>
             使用 <strong>Composition API</strong> 和
             <br/>
@@ -35,10 +35,10 @@
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-design-rule-2"></use>
+            <use xlink:href="#icon-vite"></use>
           </svg>
           <h3>使用Vite 开发、构建</h3>
-          <p>快速开发</p>
+          <p>秒级运行、快速开发</p>
         </li>
       </ul>
     </div>
@@ -130,23 +130,6 @@ export default {
     margin: 64px auto;
     padding: 0 16px;
 
-    @media (min-width: 800px) {
-      width: 800px;
-      > ul {
-        > li {
-          width: 50%;
-        }
-      }
-    }
-    @media (min-width: 1200px) {
-      width: 1200px;
-      > ul {
-        > li {
-          width: 30%;
-        }
-      }
-    }
-
     > ul {
       display: flex;
       flex-wrap: wrap;
@@ -182,6 +165,37 @@ export default {
           grid-area: text;
 
         }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    > ul {
+      width: 100%;
+      flex-wrap: nowrap;
+
+      > li {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 800px) {
+    > ul {
+      width: 800px;
+
+      > li {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    > ul {
+      width: 1200px;
+
+      > li {
+        width: 30%;
       }
     }
   }
