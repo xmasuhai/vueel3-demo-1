@@ -8,3 +8,4 @@ git branch -M main &&
 git remote add origin git@github.com:xmasuhai/vueel3-demo-website.git &&
 git push -f -u origin main &&
 cd -
+echo https://xmasuhai.xyz/vueel3-demo-website/index.html
