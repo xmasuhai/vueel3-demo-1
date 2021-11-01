@@ -16,11 +16,11 @@ export const router = createRouter({
   history,
   routes: [
     {path: '/', component: Home},
-    {path: '/readme', component: Readme},
     {
       path: '/docs', component: Docs,
       children: [
         {path: '', redirect: '/docs/intro'},
+        {path: 'readme', component: Readme},
         {path: 'intro', component: Intro},
         {path: 'get-started', component: GetStarted},
         {path: 'install', component: Install},

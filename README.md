@@ -1,9 +1,9 @@
-## 介绍
+## Vueel3
 
 > Vueel 3 UI 是一个基于Vue 3.2 和 TypeScript 的 UI 组件库
 > 
 <img src="https://img.shields.io/npm/v/vueel3-demo-1/ui?style=flat-square" alt="version">
-<img src="https://img.shields.io/github/license/xmasuhai/vueel3-demo-1"></img>
+<img src="https://img.shields.io/github/license/xmasuhai/vueel3-demo-1" alt="license">
 <img src="https://img.shields.io/badge/vue-v3.2.0%2B-%23407fbc" alt="vue">
 
 - 这是我在学习 Vue.js 过程中做的一个 UI 框架
