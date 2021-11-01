@@ -2,6 +2,10 @@ import vue from '@vitejs/plugin-vue';
 import {defineConfig/*, PluginOption, UserConfig*/} from 'vite';
 import Markdown from 'vite-plugin-md';
 import ViteComponents/*, {Options}*/ from 'vite-plugin-components';
+/*// ES6
+import path from 'path';
+import fs from 'fs';
+import marked from 'marked';*/
 // const path = require('path'); path.resolve(...)
 // https://vitejs.dev/config/
 const {resolve} = require('path');

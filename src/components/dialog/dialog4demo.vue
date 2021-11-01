@@ -65,8 +65,7 @@ export default {
               border: '1px solid rgba(255, 255, 255, 0.18)',
               boxShadow: 'rgba(14, 14, 14, 0.19) 0 6px 15px 0',
               borderRadius: '16px',
-              color: 'rgba(128, 128, 128, 0.8)',
-              color: 'black'}
+              color: 'rgba(128, 128, 128, 0.8)'}
           ">
       <span v-text="`z-index: ${zIndex}; 层叠上下文 比较同一级父级元素的z-index属性`"></span>
     </div>
