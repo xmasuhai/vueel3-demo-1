@@ -11,7 +11,7 @@ export default {
 <template>
   <div>
     <VueButton @click="toggle1">toggle z-index 1</VueButton>
-    <VueDialog v-model:visible="visible1" zIndexLevel="1">
+    <VueDialog v-model:visible="visible1" :zIndexLevel="1">
       <template v-slot:title>
         <strong>使用Teleport</strong>
       </template>
@@ -23,7 +23,7 @@ export default {
     <br/>
     <br/>
     <VueButton @click="toggle10">toggle z-index 10</VueButton>
-    <VueDialog v-model:visible="visible10" zIndexLevel="10">
+    <VueDialog v-model:visible="visible10" :zIndexLevel="10">
       <template v-slot:title>
         <strong>使用Teleport</strong>
       </template>
@@ -35,7 +35,7 @@ export default {
     <br/>
     <br/>
     <VueButton @click="toggle100">toggle z-index 100</VueButton>
-    <VueDialog v-model:visible="visible100" zIndexLevel="100">
+    <VueDialog v-model:visible="visible100" :zIndexLevel="100">
       <template v-slot:title>
         <strong>使用Teleport</strong>
       </template>

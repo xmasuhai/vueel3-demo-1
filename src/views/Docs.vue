@@ -3,6 +3,13 @@ import TopNav from '@/components/TopNav.vue';
 import {inject, Ref} from 'vue';
 
 let asideVisible = inject<Ref<boolean>>('asideVisible');
+const emmiter = inject<any>('evBus');
+
+const closeAside = () => {
+  emmiter.on('evBus', () => {
+    asideVisible!.value = false;
+  });
+};
 
 const routerInfo = [
   {
@@ -52,7 +59,9 @@ const compInfo = [
           <ol>
             <li v-for="{toPath, textInfo} of routerInfo">
               <h3>
-                <router-link class="router-link" :to="`/docs/${toPath}`">
+                <router-link class="router-link"
+                             :to="`/docs/${toPath}`"
+                             @click="closeAside">
                   {{ textInfo }}
                 </router-link>
               </h3>
@@ -67,7 +76,8 @@ const compInfo = [
             <li v-for="{toPath, textInfo} of compInfo">
               <h3>
                 <router-link :to="`/docs/${toPath}`"
-                             class="router-link">
+                             class="router-link"
+                             @click="closeAside">
                   {{ textInfo }}
                 </router-link>
               </h3>
@@ -99,7 +109,7 @@ export default {
     flex-shrink: 0;
     height: 5vh;
     z-index: 101;
-    box-shadow:0 1px 1px #ddd;
+    box-shadow: 0 1px 1px #ddd;
   }
 
   > .content {

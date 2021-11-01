@@ -69,6 +69,7 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    z-index: 3;
 
     .icon {
       width: 36px;

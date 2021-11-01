@@ -16,7 +16,7 @@
   }
 
   a = function () {
-    var l, a;W
+    var l, a;
     (a = document.createElement('div')).innerHTML = i, i = null, (l = a.getElementsByTagName('svg')[0]) && (l.setAttribute('aria-hidden', 'true'), l.style.position = 'absolute', l.style.width = 0, l.style.height = 0, l.style.overflow = 'hidden', a = l, (l = document.body).firstChild ? m(a, l.firstChild) : l.appendChild(a))
   }, document.addEventListener ? ~['complete', 'loaded', 'interactive'].indexOf(document.readyState) ? setTimeout(a, 0) : (c = function () {document.removeEventListener('DOMContentLoaded', c, !1), a()}, document.addEventListener('DOMContentLoaded', c, !1)) : document.attachEvent && (h = a, t = l.document, e = !1, o(), t.onreadystatechange = function () {'complete' == t.readyState && (t.onreadystatechange = null, d())})
 }(window)
