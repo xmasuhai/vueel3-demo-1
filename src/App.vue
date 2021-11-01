@@ -13,12 +13,12 @@ router.afterEach(() => {
   // 判断屏幕尺寸是否为移动端，决定侧边栏是否可见
   if (width <= 500) {
     asideVisible.value = false;
+    emmiter.emit('evBus');
   } else {
     // 屏幕宽度小于500px 不显示代码行数 prismjs line-numbers
     document.querySelector('body')?.classList.add('line-numbers');
   }
 
-  emmiter.emit('evBus');
 });
 
 </script>

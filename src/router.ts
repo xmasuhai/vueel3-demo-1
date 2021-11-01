@@ -9,12 +9,14 @@ import Home from '@/views/Home.vue';
 import GetStarted from '@/markdown/getStarted.md';
 import Install from '@/markdown/install.md';
 import Intro from '@/markdown/intro.md';
+import Readme from '../README.md';
 
 const history = createWebHashHistory();
 export const router = createRouter({
   history,
   routes: [
     {path: '/', component: Home},
+    {path: '/readme', component: Readme},
     {
       path: '/docs', component: Docs,
       children: [
