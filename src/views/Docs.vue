@@ -113,7 +113,7 @@ export default {
     flex-shrink: 0;
     height: 5vh;
     z-index: 101;
-    box-shadow: 0 1px 1px #ddd;
+    box-shadow: 0 1px 1px rgba(183, 233, 230, 50);
   }
 
   > .content {

@@ -13,8 +13,7 @@
     "github-markdown-css": "^5.0.0",
     "mitt": "^3.0.0",
     "prismjs": "^1.25.0",
-    "vue-router": "4.0.11",
-    "vue-types": "^4.1.1"
+    "vue-router": "4.0.11"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.8",
@@ -31,7 +30,8 @@
     "vite-plugin-components": "^0.13.3",
     "vite-plugin-md": "^0.11.2",
     "vue": "^3.2.20",
-    "vue-tsc": "^0.2.2"
+    "vue-tsc": "^0.2.2",
+    "vue-types": "^4.1.1"
   },
   "peerDependencies": {
     "vue": "^3.2.6"

@@ -3,22 +3,29 @@ import {computed, toRefs} from 'vue';
 
 interface Props {
   theme?: 'button' | 'link' | 'text';
-  size?: 'normal' | 'big' | 'small';
+  size?: 'big' | 'medium ' | 'small';
   level?: 'normal' | 'primary' | 'danger';
   disabled?: boolean;
-  loading?: boolean;
+  isLoading?: boolean;
+  showIcon?: boolean;
+  isRound?: boolean;
+  isCircle?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   theme: 'button',
-  size: 'normal',
+  size: 'medium ',
   level: 'normal',
   disabled: false,
-  loading: false,
+  isLoading: false,
+  showIcon: false,
+  isRound: false,
+  isCircle: false
+
 });
 
 // 解构的对象不能为undefined、null 否则会报错，要给被解构的对象一个默认值
-const {theme, size, level, disabled, loading} = toRefs(props) || {};
+const {theme, size, level, disabled, isLoading} = toRefs(props) || {};
 
 // 计算classes
 const classes = computed(() => {
@@ -35,9 +42,9 @@ const classes = computed(() => {
           :class="classes"
           :disabled="disabled">
     <span class="vue-loadingIndicator"
-          v-if="loading">
+          v-if="isLoading">
     </span>
-    <slot></slot>
+    <slot>按钮内容</slot>
   </button>
 </template>
 
@@ -49,54 +56,80 @@ export default {
 
 <style lang="scss">
 @use 'sass:math';
-@import 'var';
+@import 'var.scss';
+@import 'theme-var.scss';
+@import 'mixins.scss';
+@import 'animate.scss';
 
-// basic button
-.vue-button {
+// .vue-button
+@include bem(button) {
+  // layout position
+  height: $--size-medium;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  position: relative;
+  // shape bg
   background: $button-background;
   transition: background 250ms;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out($shadow-color, .95);
+  // font
+  font-size: $--font-size-medium;
   color: $basic-font-color;
-  cursor: pointer;
-  display: inline-flex;
-  height: $height;
-  justify-content: center;
-  padding: 0 12px;
   white-space: nowrap;
+  // SP effect
+  cursor: pointer;
 
+  // side by side
   & + & {
     margin-left: 8px;
   }
 
+  // basic level
   &:hover,
   &:focus {
     border-color: $light-font-color;
     color: $light-font-color;
   }
-
   &:focus {
     outline: none;
   }
-
   &::-moz-focus-inner {
     border: 0;
   }
 
-  // size
-  // big small
-  &.vue-size-big {
-    font-size: 24px;
-    height: 48px;
-    padding: 0 16px;
+  // level
+  // primary info success
+  &-primary {// focus,hover的时，背景色变浅
+    &:focus,
+    &:hover {}
+    &:active {}
+    &-disabled {
+      &:focus,
+      &:hover,
+      &:active {}
+    }
   }
 
-  &.vue-size-small {
-    font-size: 12px;
-    height: 20px;
-    padding: 0 4px;
+  &-info {
+  }
+
+  &-success {
+  }
+
+  &-warning {
+  }
+
+  &-text {
+  }
+
+  &-link {
+  }
+
+  &-error {
   }
 
   //theme
@@ -204,8 +237,61 @@ export default {
     }
   }
 
+  // size
+  // big normal small
+  &.vue-size-big {
+    font-size: $--font-size-big;
+    line-height: $--font-size-big;
+    height: $--size-big;
+    padding: 0 16px;
+
+    &-round {
+      border-radius: math.div($--font-size-big, 2);
+    }
+
+    &-circle {
+      min-width: $--font-size-big;
+      border-radius: 50%;
+    }
+
+  }
+
+  &.vue-size-medium {
+    font-size: $--font-size-medium;
+    line-height: $--font-size-medium;
+    height: $--size-medium;
+    padding: 0 8px;
+
+    &-round {
+      border-radius: math.div($--font-size-medium, 2);
+    }
+
+    &-circle {
+      min-width: $--font-size-medium;
+      border-radius: 50%;
+    }
+
+  }
+
+  &.vue-size-small {
+    font-size: $--font-size-small;
+    line-height: $--font-size-small;
+    height: $--size-small;
+    padding: 0 4px;
+
+    &-round {
+      border-radius: math.div($--font-size-small, 2);
+    }
+
+    &-circle {
+      min-width: $--font-size-small;
+      border-radius: 50%;
+    }
+  }
+
   // loading
   > .vue-loadingIndicator {
+    pointer-events: none;
     width: $loading-indicator-size;
     height: $loading-indicator-size;
     display: inline-block;
@@ -214,18 +300,9 @@ export default {
     border-color: $light-font-color $light-font-color $light-font-color transparent;
     border-style: solid;
     border-width: 2px;
-    animation: vue-spin 1s infinite linear;
+    animation: vue-spin 1s infinite linear; // @import 'animate.scss';
   }
 
-}
-
-@keyframes vue-spin {
-  0% {
-    transform: rotate(0deg)
-  }
-  100% {
-    transform: rotate(360deg)
-  }
 }
 
 </style>

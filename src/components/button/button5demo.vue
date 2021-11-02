@@ -8,10 +8,10 @@ export default {
 </script>
 
 <template>
-  <VueButton :loading="true">加载中</VueButton>
-  <VueButton :loading="true">绑定loading属性加载中按钮</VueButton>
-  <VueButton theme="link" :loading="true">加载中链接按钮</VueButton>
-  <VueButton theme="text" :loading="true">加载中文字按钮</VueButton>
+  <VueButton :isLoading="true">加载中</VueButton>
+  <VueButton :isLoading="true">绑定loading属性加载中按钮</VueButton>
+  <VueButton theme="link" :isLoading="true">加载中链接按钮</VueButton>
+  <VueButton theme="text" :isLoading="true">加载中文字按钮</VueButton>
   <VueButton>加载完毕</VueButton>
 </template>
 

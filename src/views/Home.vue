@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import TopNav from '@/components/TopNav.vue';
+import VueButton from '@/lib/Button.vue';
+</script>
+
 <template>
   <div class="wrapper">
     <div class="topNavAndBanner">
@@ -5,10 +10,10 @@
       <div class="banner">
         <h1>Vueel 3 UI</h1>
         <h2>一个基于 Vue 3 的UI组件库</h2>
-        <p class="actions">
-          <a href="https://www.github.com/xmasuhai">GitHub</a> |
+        <vue-button class="actions">
+          <a href="https://xmasuhai.xyz/vueel3-demo-website/index.html">GitHub</a> |
           <router-link to="/docs">开始</router-link>
-        </p>
+        </vue-button>
       </div>
     </div>
     <div class="features">
@@ -59,13 +64,8 @@
 </template>
 
 <script lang="ts">
-import TopNav from '@/components/TopNav.vue';
-
 export default {
-  name: 'Home',
-  components: {
-    TopNav
-  }
+  name: 'Home'
 };
 </script>
 
@@ -112,14 +112,14 @@ export default {
 
       > .actions {
         padding: 8px 0;
+        background: $ugly-green;
 
         a {
           line-height: 24px;
           margin: 0 8px;
           color: #fff;
-          background: $ugly-green;
           display: inline-block;
-          border-radius: $radius;
+          border-radius: 24px;
           padding: 8px 24px;
         }
       }
