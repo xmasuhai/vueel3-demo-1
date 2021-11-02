@@ -9,6 +9,9 @@
     "noEmit": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
+  "resolutions": {
+  "node-sass": "npm:sass@^1.39.2"
+  },
   "dependencies": {
     "github-markdown-css": "^5.0.0",
     "mitt": "^3.0.0",
