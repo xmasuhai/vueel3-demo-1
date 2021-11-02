@@ -1,3 +1,7 @@
+@use 'sass:math';
+@import 'var.scss';
+@import 'theme-var.scss';
+
 $namespace: 'vue';
 
 /* -----------BEM--------------- */
@@ -7,5 +11,19 @@ $namespace: 'vue';
   .#{$Comp} {
     // @content;类似插槽 使用时可自定义内容替换
     @content;
+  }
+}
+
+/* -----------shape--------------- */
+@mixin shape($text-width: $--size-medium) {
+  &.vue-button-shape-rect {
+    border-radius: $radius;
+  }
+  &.vue-button-shape-capsule {
+    border-radius: math.div($text-width, 2);
+  }
+  &.vue-button-shape-circle {
+    min-width: $text-width;
+    border-radius: 50%;
   }
 }

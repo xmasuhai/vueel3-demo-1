@@ -1,18 +1,24 @@
-<demo>加载状态切换</demo>
+<demo>不同等级层次的按钮</demo>
 <script lang="ts">
 export default {
-  name: 'Button1Demo',
+  name: 'Button5Demo',
   __sourceCode: '',
   __sourceCodeTitle: ''
 };
 </script>
 
 <template>
-  <VueButton :isLoading="true">加载中</VueButton>
-  <VueButton :isLoading="true">绑定loading属性加载中按钮</VueButton>
-  <VueButton theme="link" :isLoading="true">加载中链接按钮</VueButton>
-  <VueButton theme="text" :isLoading="true">加载中文字按钮</VueButton>
-  <VueButton>加载完毕</VueButton>
+  <VueButton level="primary">主要按钮</VueButton>
+  <VueButton level="normal">普通按钮</VueButton>
+  <VueButton level="danger">警告按钮</VueButton>
+  <br/>
+  <VueButton level="primary" theme="link">主要链接按钮</VueButton>
+  <VueButton level="normal" theme="link">普通链接按钮</VueButton>
+  <VueButton level="danger" theme="link">警告链接按钮</VueButton>
+  <br/>
+  <VueButton level="primary" theme="text">主要文字按钮</VueButton>
+  <VueButton level="normal" theme="text">普通文字按钮</VueButton>
+  <VueButton level="danger" theme="text">警告文字按钮</VueButton>
 </template>
 
 <script setup lang="ts">

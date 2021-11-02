@@ -10,7 +10,7 @@ export default {
 
 <template>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="frontend" :scale="3"></VueIcon>
+    <VueIcon iconName="search" :scale="3"></VueIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
     <VueIcon iconName="vue" :scale="3"></VueIcon>
@@ -22,7 +22,7 @@ export default {
     <VueIcon iconName="ts" :scale="3"></VueIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="mobile-design" :scale="3"></VueIcon>
+    <VueIcon iconName="github" :scale="3"></VueIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
     <VueIcon iconName="design-rule-1" :scale="3"></VueIcon>

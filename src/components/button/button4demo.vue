@@ -1,17 +1,24 @@
-<demo>禁用状态按钮</demo>
+<demo>不同尺寸按钮</demo>
 <script lang="ts">
 export default {
-  name: 'Button1Demo',
+  name: 'Button4Demo',
   __sourceCode: '',
   __sourceCodeTitle: ''
 };
 </script>
 
 <template>
-  <VueButton disabled>禁用按钮</VueButton>
-  <VueButton :disabled="true">绑定disabled属性禁用按钮</VueButton>
-  <VueButton theme="link" disabled>禁用链接按钮</VueButton>
-  <VueButton theme="text" disabled>禁用文字按钮</VueButton>
+  <VueButton size="big">大号按钮</VueButton>
+  <VueButton size="medium">普通按钮</VueButton>
+  <VueButton size="small">小号按钮</VueButton>
+  <br/>
+  <VueButton size="big" theme="link">大号链接按钮</VueButton>
+  <VueButton size="medium" theme="link">普通链接按钮</VueButton>
+  <VueButton size="small" theme="link">小号链接按钮</VueButton>
+  <br/>
+  <VueButton size="big" theme="text">大号文字按钮</VueButton>
+  <VueButton size="medium" theme="text">普通文字按钮</VueButton>
+  <VueButton size="small" theme="text">小号文字按钮</VueButton>
 </template>
 
 <script setup lang="ts">

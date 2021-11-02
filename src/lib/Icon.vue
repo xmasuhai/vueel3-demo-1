@@ -27,21 +27,19 @@ const props = defineProps({
     require: true,
     validator(val: string) {
       const iconsNames = [
-        'vite',
-        'mobile-design',
+        'search',
+        'delete',
+        'edit',
+        'share',
+        'frontend',
         'design-rule-1',
         'design-rule-2',
-        'frontend',
+        'vite',
         'vue',
         'ui',
         'ts',
         'gear-green',
-        'gear-blue',
-        'gear3',
-        'sky-wheel-1',
-        'sky-wheel-2',
-        'sky-wheel-3',
-        'tire',
+        'gear-blue'
       ];
 
       (!val)
@@ -57,7 +55,7 @@ const props = defineProps({
     type: Number,
     default: 1,
     validator(val: number) {
-      return (val >= 2 && val <= 10);
+      return (val >= 1 && val <= 10);
     }
   },
   spin: Boolean,
@@ -117,16 +115,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import 'var.scss';
 .vue-icon-wrapper {
   line-height: 1em;
   width: 1em;
   height: 1em;
 
   .vue-icon-svg {
+    vertical-align: top;
     width: 1em;
     height: 1em;
-
   }
 
 }
