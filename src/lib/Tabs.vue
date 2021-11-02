@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect} from 'vue';
+import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect, Ref} from 'vue';
 import TabItem from '@/lib/TabItem.vue';
 import {useGetSlots} from '@/hooks/useGetSlots';
 import {useCheckSlots} from '@/hooks/useCheckSlots';
@@ -7,7 +7,7 @@ import {useCheckSlots} from '@/hooks/useCheckSlots';
 // 获取slotsDefaults
 const {defaults} = useGetSlots();
 
-// 检查子标签名方法
+// 检查子标签名方法hooks: useCheckSlots
 /*
 const checkTabItem = () => {
   defaults.forEach((tag: VNode) => {
@@ -59,7 +59,7 @@ const select = (title: string) => {
 
 // 获取导航标签项目引用
 const div = document.createElement('div');
-let selectedItem = ref<HTMLDivElement>(div);
+let selectedItem: Ref = ref<HTMLDivElement>(div);
 // 获取导航标签指示横线引用
 const indicator = ref<HTMLDivElement>(div);
 // 获取导航外部div引用
@@ -72,16 +72,20 @@ onBeforeUpdate(() => {
 
 onMounted(() => {
   checkTabItem();
+});
 
-// 追踪变更，执行回调
-  watchEffect(() => {
-    const {width, left} = selectedItem.value!.getBoundingClientRect();
-    const {left: containerLeft} = container.value!.getBoundingClientRect();
-    const leftPos = left - containerLeft;
-    indicator.value!.style.width = `${width}px`;
-    indicator.value!.style.transform = `translate3D(${leftPos}px, 0, 0)`;
-  });
 
+const indicatorTraceTab = () => {
+  const {width, left} = selectedItem.value!.getBoundingClientRect();
+  const {left: containerLeft} = container.value!.getBoundingClientRect();
+  const leftPos = left - containerLeft;
+  indicator.value!.style.width = `${width}px`;
+  indicator.value!.style.transform = `translate3D(${leftPos}px, 0, 0)`;
+};
+
+// 追踪 变更，执行回调
+watchEffect(() => {
+  indicatorTraceTab();
 });
 
 </script>
