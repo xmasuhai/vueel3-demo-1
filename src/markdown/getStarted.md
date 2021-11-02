@@ -5,12 +5,12 @@
 然后在你的代码中写入下面的代码
 
 ```
-import {Button, Tabs, Switch, Dialog} from "king-ui"
+import {Button, Tabs, Switch, Dialog} from "vueel3-ui"
 ```
 
 就可以使用我提供的组件了。
 
-## Vue 单文件组件
+## Vue 单文件组件 使用时不必使用 ts 语法
 
 代码示例：
 
@@ -21,7 +21,7 @@ import {Button, Tabs, Switch, Dialog} from "king-ui"
   </div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog} from "king-ui"
+import {Button, Tabs, Switch, Dialog} from "vueel3-ui"
 export default {
   components: {Button}
 }
