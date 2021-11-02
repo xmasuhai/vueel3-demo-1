@@ -14,7 +14,7 @@ export default {
 
 <script setup lang="ts">
 import VueButton from '@/lib/Button.vue'
-import {useDialog} from '@/hooks/useDialog';
+import {useDialog} from '@/lib/hooks/useDialog';
 
 const dialogHook = () => {
   useDialog({

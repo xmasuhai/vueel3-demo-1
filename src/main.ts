@@ -1,5 +1,5 @@
 import App from '@/App.vue';
-import '@/assets/icon/svg.js';
+import '@/lib/svg/svg.js';
 import '@/lib/var.scss';
 import '@/styles/index.scss';
 import 'github-markdown-css/github-markdown-light.css';
