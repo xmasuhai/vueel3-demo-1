@@ -28,7 +28,7 @@ const html = computed(() => {
       </keep-alive>
     </div>
     <div class="vue-demo-actions">
-      <VueButton @click="toggle">查看代码</VueButton>
+      <VueButton @click="toggle">{{ codeVisible ? '隐藏代码' : '查看代码' }}</VueButton>
     </div>
     <div class="vue-demo-code" v-show="codeVisible">
       <pre class="language-html">
@@ -43,10 +43,6 @@ export default {
   name: 'Demo'
 };
 </script>
-
-<style lang="scss">
-@import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-</style>
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
