@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // 主题颜色
 $--color-primary: #40a9ff !default;
 $--color-text: transparent !default;
@@ -25,10 +26,12 @@ $--border-color: #dcdfe6;
 // 禁用色
 $--color-disabled: #c0c4cc;
 
+$--color-dust: #f8f8f8;
+
 // 滚动条的样式
-@mixin scrollBar {
+@mixin scroll-bar {
   &::-webkit-scrollbar-track-piece {
-    background: #f8f8f8;
+    background: $--color-dust;
   }
 
   &::-webkit-scrollbar {

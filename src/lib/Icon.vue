@@ -116,7 +116,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'var.scss';
+@import 'animate.scss';
+
 .vue-icon-wrapper {
   line-height: 1em;
   width: 1em;
@@ -133,15 +134,6 @@ export default {
 @for $i from 2 through 10 {
   .vue-icon-#{$i}x {
     transform: scale($i);
-  }
-}
-
-@keyframes fa-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
