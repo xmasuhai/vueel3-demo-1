@@ -1,0 +1,11 @@
+$namespace: 'vue';
+
+/* -----------BEM--------------- */
+@mixin bem($block) {
+  $Comp: $namespace + '-' + $block !global;
+
+  .#{$Comp} {
+    // @content;类似插槽 使用时可自定义内容替换
+    @content;
+  }
+}
