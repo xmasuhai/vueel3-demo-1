@@ -55,10 +55,10 @@ export default {
 
 <style lang="scss">
 @use 'sass:math';
-@import 'var.scss';
-@import 'theme-var.scss';
-@import 'mixins.scss';
-@import 'animate.scss';
+@import 'styles/var';
+@import 'styles/theme-var';
+@import 'styles/mixins';
+@import 'styles/animate';
 
 // .vue-button
 @include bem(button) {

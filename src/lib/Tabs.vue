@@ -123,7 +123,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'var';
+@import 'styles/var';
 
 .vue-tabs {
   &-nav {

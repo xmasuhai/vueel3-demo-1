@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss">
 @use "sass:math";
-@import 'var';
+@import 'styles/var';
 
 .vue-switch-button-wrapper {
   .vue-switch {

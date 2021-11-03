@@ -116,7 +116,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'animate.scss';
+@import 'styles/animate';
 
 .vue-icon-wrapper {
   line-height: 1em;

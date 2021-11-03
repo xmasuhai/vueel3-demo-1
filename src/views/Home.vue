@@ -80,7 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import '../lib/var.scss';
+@import '../lib/styles/var';
 
 .wrapper {
   display: flex;

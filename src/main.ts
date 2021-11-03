@@ -1,6 +1,6 @@
 import App from '@/App.vue';
 import '@/lib/svg/svg.js';
-import '@/lib/var.scss';
+import '@/lib/styles/var.scss';
 import '@/styles/index.scss';
 import 'github-markdown-css/github-markdown-light.css';
 import {router} from '@/router';

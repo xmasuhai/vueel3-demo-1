@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../lib/var';
+@import '../lib/styles/var';
 
 %hamburgerSame {
   position: absolute;

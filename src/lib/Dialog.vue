@@ -92,7 +92,7 @@ const cancelFn = () => {
 </template>
 
 <style lang="scss" scoped>
-@import 'var.scss';
+@import 'styles/var.scss';
 
 .vue-dialog {
   background: white;
@@ -100,7 +100,6 @@ const cancelFn = () => {
   box-shadow: 0 0 3px fade_out(black, 0.5);
   min-width: 15em;
   max-width: 90%;
-
 
   // 邻层的遮罩层 z-index: $dialog-z-index;
   &-overlay {
