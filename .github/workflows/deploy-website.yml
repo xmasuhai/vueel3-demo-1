@@ -1,17 +1,32 @@
-name: GitHub Actions Build and Deploy Demo
-on: [push]
+name: Deploy GitHub Pages
+
+on:
+  # 每当 push 到 main 分支时触发部署
+  push:
+    branches: [main]
+
+# 任务
 jobs:
   build-and-deploy:
-  runs-on: ubuntu-latest
-  steps:
+    # 服务器环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
 
-    - name: Checkout
-    uses: actions/checkout@v1
+    steps:
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
-    - name: Build and Deploy
-    uses: JamesIves/github-pages-deploy-action@releases/v2
-    env:
-    ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-    BRANCH: gh-pages
-    FOLDER: docs
-    BUILD_SCRIPT: yarn install && yarn vite-bd
+      # 1、生成静态文件
+      - name: Build
+        run: yarn install && yarn vite-bd
+
+      # 2、部署到 GitHub Pages
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: xmasuhai/vueel3-demo-website
+          BRANCH: gh-pages
+          FOLDER: ./dist/
