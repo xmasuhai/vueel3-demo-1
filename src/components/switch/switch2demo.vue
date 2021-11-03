@@ -16,4 +16,5 @@ const bool = ref(false);
 
 <template>
   <VueSwitch v-model:toggleValue="bool" disabled/>
+  <VueSwitch v-model:toggleValue="bool" disabled="true"/>
 </template>
