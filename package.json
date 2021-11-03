@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
+    "vite-bd": "vite build",
     "build": "vue-tsc && vite build",
-    "noEmit": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "noEmit": "vue-tsc --noEmit && vite build"
   },
   "resolutions": {
   "node-sass": "npm:sass@^1.39.2"
