@@ -28,5 +28,5 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: xmasuhai/vueel3-demo-website
-          BRANCH: main
+          BRANCH: gh-pages
           FOLDER: dist
