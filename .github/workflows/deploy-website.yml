@@ -16,11 +16,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          path: '../'
           persist-credentials: false
 
       # 1、生成静态文件
       - name: Build
-        run: yarn install && sh deply.sh
+        run: yarn install && yarn vite-bd
 
       # 2、部署到 GitHub Pages
       - name: Deploy
