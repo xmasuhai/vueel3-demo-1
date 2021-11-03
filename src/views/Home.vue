@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TopNav from '@/components/TopNav.vue';
 import VueButton from '@/lib/Button.vue';
+import VueIcon from '@/lib/Icon.vue';
 </script>
 
 <template>
@@ -10,10 +11,18 @@ import VueButton from '@/lib/Button.vue';
       <div class="banner">
         <h1>Vueel 3 UI</h1>
         <h2>一个基于 Vue 3 的UI组件库</h2>
-        <vue-button class="actions">
-          <a href="https://xmasuhai.xyz/vueel3-demo-website/index.html">GitHub</a> |
-          <router-link to="/docs">开始</router-link>
-        </vue-button>
+        <div class="skip">
+          <vue-button class="actions"
+                      shape="capsule">
+            <VueIcon iconName="github"></VueIcon>
+            <a href="https://github.com/xmasuhai/vueel3-demo-1">GitHub</a>
+          </vue-button>
+          |
+          <vue-button class="actions get-started"
+                      shape="capsule">
+            <router-link to="/docs">开始</router-link>
+          </vue-button>
+        </div>
       </div>
     </div>
     <div class="features">
@@ -93,10 +102,10 @@ export default {
     }
 
     .banner {
+      display: flex;
       flex-grow: 1;
       height: 30vh;
       padding: 100px 0;
-      display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
@@ -110,18 +119,42 @@ export default {
         color: transparent;
       }
 
-      > .actions {
-        padding: 8px 0;
-        background: $ugly-green;
+      .skip {
+        margin-top: 18px;
 
-        a {
-          line-height: 24px;
-          margin: 0 8px;
-          color: #fff;
-          display: inline-block;
-          border-radius: 24px;
-          padding: 8px 24px;
+        .actions {
+          padding: 8px 0;
+          background: #f6f6f6;
+
+          a {
+            line-height: 24px;
+            margin: 0 8px;
+            color: #4f5959;
+            display: inline-block;
+            border-radius: 24px;
+            padding: 8px 24px;
+          }
+
+          &:deep(.vue-icon-wrapper) {
+            padding-left: 1em;
+
+            > svg {
+              fill: #7f8c8d;
+            }
+          }
+
         }
+
+        .get-started {
+          border-color: #42b983;
+          border-width: 1.8px;
+
+          > a {
+            color: #42b983;
+
+          }
+        }
+
       }
     }
   }
