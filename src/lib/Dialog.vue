@@ -6,7 +6,7 @@ import {computed, toRefs} from 'vue';
 interface Props {
   visible?: boolean;
   closeOnClickOverlay?: boolean;
-  zIndexLevel?: 10 | 100 | 1000;
+  zIndexLevel?: 1 | 10 | 100 | 1000;
   ok?: Function;
   cancel?: Function;
 }

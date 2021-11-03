@@ -1,5 +1,12 @@
-## Attributes
+## TabItem.vue Attributes
 
 参数   |   说明   |   类型	   |   可选值   |   默认值
 ---- |:----:|:---- |:---- |:----:|
-name   |   icon 图标名   |   String   |   —   |   —   
+title   |  当前导航栏的名称，唯一且必填   |   String   |   —   |   —   
+
+
+## Tabs.vue Attributes
+
+参数   |   说明   |   类型	   |   可选值   |   默认值
+---- |:----:|:---- |:---- |:----:|
+v-model:selected   |   v-model:selected绑定的ref实例   |   String   |   —   |   —   

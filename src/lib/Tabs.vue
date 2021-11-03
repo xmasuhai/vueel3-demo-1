@@ -32,18 +32,19 @@ const props = defineProps({
 // 对比所有项目的title和当前选中项的title 获取当前选中项currentTab
 // filter 性能不如 find，改用find
 /*
-const currentTab = computed(() => {
+const getCurrentTab = computed(() => {
   return defaults?.filter((tag: VNode) => {
     return tag?.props?.title === props.selected;
   })[0];
 });
 */
-const currentTab = computed(() => {
+const getCurrentTab = computed(() => {
   return defaults.find((tag: VNode) => {
     return tag?.props?.title === props.selected;
   });
 });
-const currentTitle = computed(() => {
+
+const getCurrentTitle = computed(() => {
   return defaults.find((tag: VNode) => {
     return tag?.props?.title === props.selected;
   })!.props!.title;
@@ -73,7 +74,6 @@ onBeforeUpdate(() => {
 onMounted(() => {
   checkTabItem();
 });
-
 
 const indicatorTraceTab = () => {
   const {width, left} = selectedItem.value!.getBoundingClientRect();
@@ -107,8 +107,8 @@ watchEffect(() => {
     </nav>
     <div class="vue-tabs-content">
       <keep-alive>
-        <component :is="currentTab"
-                   :key="currentTitle"
+        <component :is="getCurrentTab"
+                   :key="getCurrentTitle"
                    class="vue-tabs-content-item">
         </component>
       </keep-alive>

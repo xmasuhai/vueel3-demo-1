@@ -8,8 +8,8 @@ export interface dialogOptions {
   cancel?: Function;
 }
 
-export const useDialog = (options: dialogOptions) => {
-  const {title, content, ok, cancel} = options;
+export const useDialog = (dialogOptions: dialogOptions) => {
+  const {title, content, ok, cancel} = dialogOptions;
   const div = document.createElement('div');
   document.body.appendChild(div);
 
