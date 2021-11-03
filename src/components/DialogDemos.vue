@@ -5,6 +5,7 @@ import Dialog2demo from '@/components/dialog/dialog2demo.vue';
 import Dialog3demo from '@/components/dialog/dialog3demo.vue';
 import Dialog4demo from '@/components/dialog/dialog4demo.vue';
 import Dialog5demo from '@/components/dialog/dialog5demo.vue';
+import DialogDoc from '@/markdown/components/dialog.md'
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import Dialog5demo from '@/components/dialog/dialog5demo.vue';
   <Demo :component="Dialog3demo"></Demo>
   <Demo :component="Dialog4demo"></Demo>
   <Demo :component="Dialog5demo"></Demo>
+  <DialogDoc></DialogDoc>
 </template>
 
 <script lang="ts">

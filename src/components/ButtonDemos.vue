@@ -7,6 +7,7 @@ import Button4demo from '@/components/button/button4demo.vue';
 import Button5demo from '@/components/button/button5demo.vue';
 import Button6demo from '@/components/button/button6demo.vue';
 import Button7demo from '@/components/button/button7demo.vue';
+import ButtonDoc from '@/markdown/components/button.md'
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import Button7demo from '@/components/button/button7demo.vue';
   <Demo :component="Button5demo"></Demo>
   <Demo :component="Button6demo"></Demo>
   <Demo :component="Button7demo"></Demo>
+  <ButtonDoc></ButtonDoc>
 </template>
 
 <script lang="ts">

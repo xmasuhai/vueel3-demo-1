@@ -9,9 +9,6 @@ interface Props {
   shape?: 'rect' | 'capsule' | 'circle';
   disabled?: boolean;
   isLoading?: boolean;
-  showIcon?: boolean;
-  isRound?: boolean;
-  isCircle?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -20,11 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
   level: 'normal',
   shape: 'rect',
   disabled: false,
-  isLoading: false,
-  showIcon: false,
-  isRound: false,
-  isCircle: false
-
+  isLoading: false
 });
 
 // 解构的对象不能为undefined、null 否则会报错，要给被解构的对象一个默认值
