@@ -16,7 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: '../'
           persist-credentials: false
 
       # 1、生成静态文件

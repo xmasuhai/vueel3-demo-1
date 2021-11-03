@@ -3,7 +3,7 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js';
-import VueButton from '@/lib/button.vue';
+import VueButton from '@/lib/Button.vue';
 import {computed, ref} from 'vue';
 
 const codeVisible = ref(false);
