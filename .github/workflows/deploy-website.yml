@@ -20,7 +20,7 @@ jobs:
 
       # 1、生成静态文件
       - name: Build
-        run: yarn install && yarn vite-bd
+        run: yarn install && sh deply.sh
 
       # 2、部署到 GitHub Pages
       - name: Deploy
@@ -29,4 +29,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: xmasuhai/vueel3-demo-website
           BRANCH: gh-pages
-          FOLDER: ./dist/
+          FOLDER: dist
