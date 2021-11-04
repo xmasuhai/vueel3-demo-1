@@ -4,40 +4,41 @@
 // rollup-plugin-scss
 // sass
 // rollup-plugin-terser
-import esbuild from 'rollup-plugin-esbuild'
-import vue from 'rollup-plugin-vue'
-import scss from 'rollup-plugin-scss'
 import dartSass from 'sass'
-import {terser} from 'rollup-plugin-terser'
-import alias from '@rollup/plugin-alias'
+import vuePlugin from 'rollup-plugin-vue'
+import esbuildPlugin from 'rollup-plugin-esbuild'
+import scssPlugin from 'rollup-plugin-scss'
+import {terser} from 'rollup-plugin-terser' // 压缩 js 代码，包括 ES6 代码压缩
 
 export default {
   input: 'src/lib/index.ts',
-  external: ['vue'],
   output: {
+    // exports: 'vueel3',
     globals: {
-      vue: 'vue'
+      vue: 'vue' // 告诉rollup全局变量Vue即是vue
     },
     name: 'vueel3-ui',
     file: 'dist/lib/vueel3.js',
     format: 'umd', // format: 'cjs',
     plugins: [terser()],
-    // dir: 'output',
   },
+  external: ['vue'],
   plugins: [
-    alias({
-      entries: [
-        {find: '@', replacement: './src'}
-      ]
+    // .vue -> .js
+    vuePlugin({
+      include: /\.vue$/,
+      // 把单文件组件中的样式，插入到html中的style标签
+      css: true,
+      // 把组件转换成 render 函数
+      compileTemplate: true
     }),
-    scss({include: /\.scss$/, sass: dartSass}),
-    esbuild({
+    // .ts -> .js
+    esbuildPlugin({
       include: /\.[jt]s$/,
       minify: process.env.NODE_ENV === 'production',
       target: 'es2015'
     }),
-    vue({
-      include: /\.vue$/,
-    })
+    // .scss -> css
+    scssPlugin({include: /\.scss$/, sass: dartSass})
   ]
 }

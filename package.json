@@ -8,6 +8,7 @@
   ],
   "main": "dist/lib/vueel3.js",
   "scripts": {
+    "rpc": "rollup -c",
     "dev": "vite",
     "vite-bd": "vite build",
     "build": "vue-tsc --noEmit && vite build"
@@ -28,9 +29,11 @@
     "@types/node": "^16.9.1",
     "@types/prismjs": "^1.16.6",
     "@vitejs/plugin-vue": "^1.6.1",
-    "@vue/compiler-sfc": "^3.2.6",
+    "@vue/compiler-sfc": "^3.2.21",
     "marked": "^3.0.7",
+    "postcss": "^8.3.11",
     "rollup-plugin-esbuild": "^4.6.0",
+    "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-vue": "^6.0.0",
@@ -41,6 +44,7 @@
     "vite-plugin-components": "^0.13.3",
     "vite-plugin-md": "^0.11.2",
     "vue": "^3.2.20",
+    "vue-loader": "^16.8.2",
     "vue-tsc": "^0.2.2",
     "vue-types": "^4.1.1"
   },
