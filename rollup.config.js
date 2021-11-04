@@ -7,12 +7,13 @@
 import esbuild from 'rollup-plugin-esbuild'
 import vue from 'rollup-plugin-vue'
 import scss from 'rollup-plugin-scss'
-import sass from 'sass'
+import dartSass from 'sass'
 import {terser} from 'rollup-plugin-terser'
 import alias from '@rollup/plugin-alias'
 
 export default {
   input: 'src/lib/index.ts',
+  external: ['vue'],
   output: {
     globals: {
       vue: 'vue'
@@ -29,7 +30,7 @@ export default {
         {find: '@', replacement: './src'}
       ]
     }),
-    scss({include: /\.scss$/, runtime: require("sass")}),
+    scss({include: /\.scss$/, sass: dartSass}),
     esbuild({
       include: /\.[jt]s$/,
       minify: process.env.NODE_ENV === 'production',
