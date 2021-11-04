@@ -30,6 +30,9 @@ export default {
   },
   external: [Object.keys(pkg.dependencies)],
   plugins: [
+    alias({
+      '@': pathResolve('src')
+    }),
     // .vue -> .js
     vuePlugin({
       include: /\.vue$/,
@@ -50,9 +53,6 @@ export default {
     }),
     // .scss -> css
     scssPlugin({include: /\.scss$/, sass: dartSass}),
-    alias({
-      '@': pathResolve('src')
-    }),
     bundleSize(),
   ]
 }

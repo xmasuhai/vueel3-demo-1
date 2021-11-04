@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '@/lib/Button.vue';
+import Button from 'Button.vue';
 import {computed, toRefs} from 'vue';
 
 // 注册外部带默认值的数据

@@ -1,4 +1,4 @@
-import Dialog from '@/lib/Dialog.vue';
+import Dialog from '../Dialog.vue';
 import {createApp, h} from 'vue';
 
 export interface dialogOptions {
