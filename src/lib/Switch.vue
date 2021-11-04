@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {toRefs} from 'vue';
+import {computed, toRefs} from 'vue';
 
 interface Props {
   toggleValue?: boolean;
@@ -19,6 +19,17 @@ const {toggleValue, disabled, activeText, inactiveText} = toRefs(props) || {};
 
 const emit = defineEmits(['update:toggleValue']);
 
+const openClose = computed(() => {
+  return {
+    open: toggleValue.value,
+    close: !toggleValue.value,
+  };
+});
+
+const showText = computed(() => {
+  return toggleValue.value ? activeText.value : inactiveText.value;
+});
+
 const toggle = () => {
   if (!disabled.value) {
     emit('update:toggleValue', !toggleValue.value);
@@ -36,15 +47,12 @@ const toggle = () => {
             @click="toggle">
       <span class="vue-switch-toggle">
         <span v-show="!toggleValue"
-              class="close-line"></span>
-        <template v-if="activeText">
-          <div class="vue-switch-label open" v-show="toggleValue">
-            {{ activeText }}
-          </div>
-          <div class="vue-switch-label close" v-show="!toggleValue">
-            {{ inactiveText }}
-          </div>
-        </template>
+              class="close-line">
+        </span>
+        <span class="vue-switch-label"
+              :class="openClose">
+          {{ showText }}
+        </span>
       </span>
     </button>
   </div>
@@ -60,7 +68,36 @@ export default {
 @use "sass:math";
 @import 'styles/var';
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+  }
+  100% {
+    transform: translateX(-26px);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+  }
+  100% {
+    transform: translateX(26px);
+  }
+}
+
 .vue-switch-button-wrapper {
+  &:focus {
+    outline: none;
+  }
+
   .vue-switch {
     height: $height;
     width: $height * 2;
@@ -81,15 +118,25 @@ export default {
       transition: all .25s;
 
       .vue-switch-label {
+        display: block;
         color: #fff;
         font-size: 18px;
+        position: relative;
 
         &.open {
-          transform: translateX(-26px);
+          animation: fade .25s forwards .05s;
+          animation-name: slideLeft;
+          animation-direction: normal;
+          animation-duration: .25s;
+          animation-fill-mode: forwards;
         }
 
         &.close {
-          transform: translateX(26px);
+          animation: fade .25s forwards .05s;
+          animation-name: slideRight;
+          animation-direction: normal;
+          animation-duration: .25s;
+          animation-fill-mode: forwards;
         }
       }
 
@@ -133,6 +180,7 @@ export default {
     }
 
   }
+
 }
 
 </style>
