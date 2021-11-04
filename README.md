@@ -1,14 +1,18 @@
 ## Vueel3
 
-> Vueel 3 UI 是一个基于Vue 3.2 和 TypeScript 的 UI 组件库
+> Vueel 3 UI 是一个基于`Vue 3.2` 和 `TypeScript` 的 UI 组件库
 > 
 <img src="https://img.shields.io/npm/v/vueel3-demo-1/ui?style=flat-square" alt="version">
 <img src="https://img.shields.io/github/license/xmasuhai/vueel3-demo-1" alt="license">
 <img src="https://img.shields.io/badge/vue-v3.2.0%2B-%23407fbc" alt="vue">
 
 - 这是我在学习 Vue.js 过程中做的一个 UI 框架
-- 使用了 Composition API
-- 使用了 script setup 的语法糖
+  - 使用 `Composition API`
+  - 使用 `script setup` 的语法糖
+  - 使用 简洁的 `SCSS` 样式语法
+  - 使用 严谨的 `TypeScript` 类型检查，并在开发时获得类型提示
+- 使用 `Vite` 进行项目的构建
+- 使用 `Rollup` 进行项目的打包，并发布到 npm
 
 作者：徐某人
 
@@ -18,6 +22,7 @@
 - `TypeScript`
 - `SCSS`
 - `Vite`
+- `Rollup`
 
 ## UI参考
 
