@@ -122,6 +122,7 @@ export default {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
+
     @media screen and(max-width: 768px) {
       padding-left: 0;
     }
