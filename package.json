@@ -24,8 +24,10 @@
     "vue-router": "4.0.11"
   },
   "devDependencies": {
+    "@pathscale/rollup-plugin-vue3": "^0.0.3",
     "@rollup/plugin-alias": "^3.1.8",
     "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-replace": "^3.0.0",
     "@types/marked": "^3.0.2",
     "@types/node": "^16.9.1",
     "@types/prismjs": "^1.16.6",
