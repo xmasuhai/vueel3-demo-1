@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect, Ref} from 'vue';
 import TabItem from './TabItem.vue';
 import {useGetSlots} from './hooks/useGetSlots';
 import {useCheckSlots} from './hooks/useCheckSlots';
+import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect, Ref} from 'vue';
 
 // 获取slotsDefaults
 const {defaults} = useGetSlots();

@@ -91,27 +91,33 @@ const cancelFn = () => {
   </template>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'Dialog'
+};
+</script>
+
 <style lang="scss" scoped>
 @import 'styles/var.scss';
 
 .vue-dialog {
   background: white;
   border-radius: $radius;
-  box-shadow: 0 0 3px fade_out(black, 0.5);
+  box-shadow: 0 0 3px fade_out(black, .5);
   min-width: 15em;
   max-width: 90%;
 
-  // 邻层的遮罩层 z-index: $dialog-z-index;
+  // overlay z-index: $dialog-z-index;
   &-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: fade_out(black, 0.8);
+    background: fade_out(black, .8);
   }
 
-  // 对话框样式 z-index: $dialog-z-index + 1;
+  // dialog z-index: $dialog-z-index + 1;
   &-wrapper {
     position: fixed;
     left: 50%;
@@ -121,12 +127,12 @@ const cancelFn = () => {
 
   $dialog-z-index: 10, 100, 1000;
   @each $zIndex in $dialog-z-index {
-    // 邻层的遮罩层 z-index: $zIndex;
+    // overlay z-index: $zIndex;
     &-overlay-#{$zIndex} {
       z-index: $zIndex;
     }
 
-    // 对话框样式 z-index: $zIndex + 1;
+    // dialog z-index: $zIndex + 1;
     &-wrapper-#{$zIndex} {
       z-index: $zIndex + 1;
     }
@@ -151,7 +157,7 @@ const cancelFn = () => {
     text-align: right;
   }
 
-  // 关闭的叉字
+  // close cross
   &-close {
     position: relative;
     display: inline-block;

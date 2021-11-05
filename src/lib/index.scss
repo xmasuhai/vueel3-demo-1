@@ -1,6 +1,7 @@
 @charset "UTF-8";
-@import 'styles/mixins.scss';
-@import 'styles/vue-reset.scss';
-@import 'styles/var.scss';
-@import 'styles/theme-var.scss';
-@import 'styles/animate.scss';
+@use 'sass:math';
+@import './styles/mixins.scss';
+@import './styles/vue-reset.scss';
+@import './styles/var.scss';
+@import './styles/theme-var.scss';
+@import './styles/animate.scss';

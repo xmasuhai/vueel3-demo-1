@@ -1,25 +1,6 @@
 <script setup lang="ts">
 import './svg/svg.js';
 import {computed, toRefs} from 'vue';
-/*
-interface Props {
-  name?: string;
-  scale?: number | string;
-  flip?: '' | 'horizontal' | 'vertical';
-  spin?: boolean;
-  pulse?: boolean;
-  customClass?: string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  name: '',
-  scale: 1,
-  flip: '',
-  spin: false,
-  pulse: false,
-  customClass: ''
-});
-*/
 
 const props = defineProps({
   iconName: {
