@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import 'svg/svg.js';
+import './svg/svg.js';
 import {computed, toRefs} from 'vue';
 /*
 interface Props {
