@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TopNav from '@/components/TopNav.vue';
-import Waves from '@/components/waves.vue';
+import Waves from '@/components/Waves.vue';
 import VueButton from '@/lib/Button.vue';
 import VueIcon from '@/lib/Icon.vue';
 </script>
