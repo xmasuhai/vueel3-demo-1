@@ -16,8 +16,10 @@
   },
   "scripts": {
     "dev": "vite",
-    "vite-bd": "vite build",
-    "build": "vue-tsc --noEmit && vite build"
+    "vite-bd": "vite build --config vite-app.config.js "/* "vite build" */,
+    "build": "vue-tsc --noEmit && vite build",
+    "build:app": "vite build --config vite-app.config.js",
+    "build:lib": "vite build --config vite-lib.config.js"
   },
   "resolutions": {
     "node-sass": "npm:sass@^1.39.2"

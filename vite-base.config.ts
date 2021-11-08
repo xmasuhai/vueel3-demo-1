@@ -1,24 +1,25 @@
+/*
 import vue from '@vitejs/plugin-vue';
-import {defineConfig/*, PluginOption, UserConfig*/} from 'vite'; // const { defineConfig } = require('vite')
+import {defineConfig/!*, PluginOption, UserConfig*!/} from 'vite'; // const { defineConfig } = require('vite')
 import Markdown from 'vite-plugin-md';
-import ViteComponents/*, {Options}*/ from 'vite-plugin-components';
+import ViteComponents/!*, {Options}*!/ from 'vite-plugin-components';
 // vueCustomBlockTransforms
 import {vueCompAddSourceCodeTitleFromCustomBlock} from './plugins/vueCompAddSourceCodeTitleFromCustomBlock';
-import {terser} from 'rollup-plugin-terser' // 压缩 js 代码，包括 ES6 代码压缩
+import {terser} from 'rollup-plugin-terser'; // 压缩 js 代码，包括 ES6 代码压缩
 import esbuildPlugin from 'rollup-plugin-esbuild';
 import bundleSize from 'rollup-plugin-filesize';
 
-/*// ES6
+/!*!// ES6
 import path from 'path';
 import fs from 'fs';
-import marked from 'marked';*/
+import marked from 'marked';*!/
 // const path = require('path'); path.resolve(...)
 // https://vitejs.dev/config/
 const {resolve} = require('path');
 
 export default defineConfig({
   base: './',
-  css: { preprocessorOptions: { scss: { charset: false } } },
+  css: {preprocessorOptions: {scss: {charset: false}}},
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
@@ -43,7 +44,6 @@ export default defineConfig({
       {find: /^~@/, replacement: resolve(__dirname, 'src')},
     ]
   },
-  /*
   build: {
     outDir: 'dist/lib',
     lib: {
@@ -54,10 +54,10 @@ export default defineConfig({
     },
     minify: 'terser', // 'terser' 相对较慢，但大多数情况下构建后的文件体积更小。// minify: 'esbuild','esbuild' 最小化混淆更快但构建后的文件相对更大。
     terserOptions: {
-        compress: {
-            drop_console: true, // 生产环境去除console
-            drop_debugger: true // 生产环境去除debugger
-        }
+      compress: {
+        drop_console: true, // 生产环境去除console
+        drop_debugger: true // 生产环境去除debugger
+      }
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
@@ -92,5 +92,5 @@ export default defineConfig({
 
     }
   }
-  */
 });
+*/
