@@ -18,6 +18,7 @@ const {resolve} = require('path');
 
 export default defineConfig({
   base: './',
+  css: { preprocessorOptions: { scss: { charset: false } } },
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
@@ -51,7 +52,13 @@ export default defineConfig({
       formats: [/!*'es', *!/'umd'],
       fileName: (/!*format*!/) => `vueel3-ui.js`  // `vueel3-ui.${format}.js`
     },
-    minify: 'esbuild',
+    minify: 'terser', // 'terser' 相对较慢，但大多数情况下构建后的文件体积更小。// minify: 'esbuild','esbuild' 最小化混淆更快但构建后的文件相对更大。
+    terserOptions: {
+        compress: {
+            drop_console: true, // 生产环境去除console
+            drop_debugger: true // 生产环境去除debugger
+        }
+    },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
       external: ['vue'],
