@@ -11,7 +11,7 @@ const libConfig = Object.assign(basicConfig, {
       entry: resolve(__dirname, 'src/lib/index.ts'),
       name: 'vueel3-ui',
       formats: [/*'es', */'umd'],
-      // fileName: (/*format*/) => `vueel3-ui.js`  // `vueel3-ui.${format}.js`
+      fileName: (/*format*/) => `vueel3-ui.js`  // `vueel3-ui.${format}.js`
     },
     minify: 'terser', // 'terser' 相对较慢，但大多数情况下构建后的文件体积更小。// minify: 'esbuild','esbuild' 最小化混淆更快但构建后的文件相对更大。
     terserOptions: {
