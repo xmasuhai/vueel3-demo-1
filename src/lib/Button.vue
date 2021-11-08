@@ -37,7 +37,8 @@ const classes = computed(() => {
 <template>
   <button class="vue-button"
           :class="classes"
-          :disabled="disabled">
+          :disabled="disabled"
+          type="button">
     <span class="vue-loadingIndicator"
           v-if="isLoading">
     </span>
