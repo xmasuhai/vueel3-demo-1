@@ -5,12 +5,13 @@ Vueel3 UI 是一款基于 **`Vue 3`** 和 **`TypeScript`** 的 UI 组件库。
 这款组件库其实是我为了总结自己学习最新 Vue 3 的技术经验而写，全程亲手编写，包括现在看到的这个官网也都是我自己写的。
 
 - Vueel3 UI 的技术栈
- - 使用 `Composition API`
- - 使用 `script setup` 的语法糖
- - 使用 简洁的 `SCSS` 样式语法
- - 使用 严谨的 `TypeScript` 类型检查，并在开发时获得类型提示
-- 使用 `Vite` 进行项目的构建
-- 使用 `Rollup` 进行项目的打包，并发布到 npm
+- 使用 `Composition API`
+- 使用 `script setup` 的语法糖
+- 使用 简洁的 `SCSS` 样式语法
+- 使用 严谨的 `TypeScript` 类型检查，并在开发时获得类型提示
+- 使用 `Vite2.0`
+  - 进行项目展示文档的构建
+  - 进行组件库的打包，并发布到 [npm/vue3-demo-ui-1](https://www.npmjs.com/package/vue3-demo-ui-1)
 
 强烈不建议将此 UI 库用于生产环境。
 
