@@ -18,7 +18,6 @@ import VueIcon from '@/lib/Icon.vue';
             <VueIcon iconName="github"></VueIcon>
             <a href="https://github.com/xmasuhai/vueel3-demo-1">GitHub</a>
           </vue-button>
-          |
           <vue-button class="actions get-started"
                       shape="capsule">
             <router-link to="/docs">开始</router-link>
@@ -57,7 +56,7 @@ import VueIcon from '@/lib/Icon.vue';
         </li>
       </ul>
     </div>
-    <Waves></Waves>
+    <Waves class="waves"></Waves>
   </div>
 </template>
 
@@ -109,7 +108,10 @@ export default {
       }
 
       .skip {
-        margin-top: 18px;
+        transform: translateY(18px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .actions {
           padding: 8px 0;
@@ -222,26 +224,11 @@ export default {
     }
   }
 
-  .custom-shape-divider-bottom {
-    position: absolute;
-    bottom: 0;
+  .waves {
+    position: fixed;
+    bottom: -20px;
     left: 0;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-
-    svg {
-      position: relative;
-      display: block;
-      width: calc(100% + 1.3px);
-      height: 96px;
-    }
-
-    .shape-fill {
-      fill: rgba(183, 233, 230, 50);
-    }
-
   }
 }
 </style>
