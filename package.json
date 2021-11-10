@@ -1,17 +1,17 @@
 {
   "name": "vue3-demo-ui-1",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "author": "Xu Shuai",
   "license": "MIT",
   "files": [
     "dist/lib/*"
   ],
-  "main": "./dist/lib/vueel3.js",
-  "module": "./dist/lib/vueel3.js",
+  "main": "dist/lib/vueel3.js",
+  "module": "dist/lib/vueel3.js",
   "exports": {
     ".": {
-      "import": "./dist/vueel3.js",
-      "require": "./dist/vueel3.js"
+      "import": "dist/vueel3.js",
+      "require": "dist/vueel3.js"
     }
   },
   "scripts": {
