@@ -7,7 +7,7 @@
     "dist/lib/*"
   ],
   "main": "./dist/lib/vueel3.js",
-  "module": "./dist/vueel3.js",
+  "module": "./dist/lib/vueel3.js",
   "exports": {
     ".": {
       "import": "./dist/vueel3.js",
