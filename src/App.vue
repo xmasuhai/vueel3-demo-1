@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// @ts-ignore
+import {Button as Vbn} from '../dist/lib/vueel3-ui.js'
+console.log(Vbn);
 import mitt from 'mitt';
 import {provide, reactive, ref} from 'vue';
 import {router} from '@/router';

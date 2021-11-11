@@ -1,17 +1,18 @@
 {
   "name": "vue3-demo-ui-1",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Xu Shuai",
   "license": "MIT",
   "files": [
     "dist/lib/*"
   ],
   "main": "dist/lib/vueel3.js",
+  "browser": "dist/lib/vueel3.js",
   "module": "dist/lib/vueel3.js",
   "exports": {
     ".": {
-      "import": "dist/vueel3.js",
-      "require": "dist/vueel3.js"
+      "import": "dist/lib/vueel3.js",
+      "require": "dist/lib/vueel3.js"
     }
   },
   "scripts": {
@@ -28,10 +29,11 @@
     "github-markdown-css": "^5.0.0",
     "mitt": "^3.0.0",
     "prismjs": "^1.25.0",
-    "vue-router": "4.0.11",
-    "vite": "^2.5.7"
+    "vite": "^2.5.7",
+    "vue-router": "4.0.11"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-umd": "^7.16.0",
     "@rollup/plugin-alias": "^3.1.8",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-replace": "^3.0.0",
