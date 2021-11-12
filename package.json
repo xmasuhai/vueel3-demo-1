@@ -6,13 +6,13 @@
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/vueel3.js",
-  "browser": "dist/lib/vueel3.js",
-  "module": "dist/lib/vueel3.js",
+  "main": "dist/lib/vueel3-ui.js",
+  "browser": "dist/lib/vueel3-ui.js",
+  "module": "dist/lib/vueel3-ui.js",
   "exports": {
     ".": {
-      "import": "dist/lib/vueel3.js",
-      "require": "dist/lib/vueel3.js"
+      "import": "dist/lib/vueel3-ui.js",
+      "require": "dist/lib/vueel3-ui.js"
     }
   },
   "scripts": {
