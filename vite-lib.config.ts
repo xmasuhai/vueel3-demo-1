@@ -1,4 +1,4 @@
-// import {terser} from 'rollup-plugin-terser'; // 压缩 js 代码，包括 ES6 代码压缩
+import {terser} from 'rollup-plugin-terser'; // 压缩 js 代码，包括 ES6 代码压缩
 import esbuildPlugin from 'rollup-plugin-esbuild';
 import bundleSize from 'rollup-plugin-filesize';
 import {basicConfig} from './vite-base.config';
@@ -13,6 +13,7 @@ const libConfig = Object.assign(basicConfig, {
       formats: ['es'/*, 'umd'*/], // 和build.rollupOptions.output.format: 'umd',冲突
       fileName: (/*format*/) => `vueel3-ui.js`  // `vueel3-ui.${format}.js`
     },
+    /*
     minify: 'terser', // 'terser' 相对较慢，但大多数情况下构建后的文件体积更小。// minify: 'esbuild','esbuild' 最小化混淆更快但构建后的文件相对更大。
     terserOptions: {
       compress: {
@@ -20,20 +21,21 @@ const libConfig = Object.assign(basicConfig, {
         drop_debugger: true // 生产环境去除debugger
       }
     },
+    */
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
       external: ['vue', 'vue-router', 'mitt', 'vite'],
       output:
         {
-          entryFileNames: 'vueel3-ui.js',
+          // entryFileNames: 'vueel3-ui.js',
           // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
           globals: {
             vue: 'Vue'
           },
-          name: 'vueel3',
+          // name: 'vueel3',
           // file: 'dist/lib/vueel3.js',
           // format: 'umd',
-          // plugins: [terser()],
+          plugins: [terser()],
         },
       plugins: [
         /*
