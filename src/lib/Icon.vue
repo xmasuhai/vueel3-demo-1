@@ -8,6 +8,7 @@ const props = defineProps({
     require: true,
     validator(val: string) {
       const iconsNames = [
+        'github',
         'search',
         'delete',
         'edit',

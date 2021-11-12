@@ -1,10 +1,11 @@
 <script setup lang="ts">
-// @ts-ignore
-import {Button as Vbn} from '../dist/lib/vueel3-ui.js'
-console.log(Vbn);
 import mitt from 'mitt';
 import {provide, reactive, ref} from 'vue';
 import {router} from '@/router';
+
+// @ts-ignore
+import  {Button} from './dist/lib/vueel3-ui.js'
+console.log(Button);
 
 const width = document.documentElement.clientWidth;
 const asideVisible = ref(width > 500);
