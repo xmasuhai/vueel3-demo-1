@@ -5,7 +5,8 @@
 然后在你的代码中写入下面的代码：
 
 ```
-import {Button, Tabs, Switch, Dialog} from "vueel3-ui"
+import * as vueel3 from 'vue3-demo-ui-1'
+const {Button, Tabs, Switch, Dialog, useDialog} = vueel3
 ```
 
 就可以使用我提供的组件了。
@@ -20,10 +21,13 @@ import {Button, Tabs, Switch, Dialog} from "vueel3-ui"
     <Button>按钮</Button>
   </div>
 </template>
+
 <script>
-import {Button, Tabs, Switch, Dialog} from "vueel3-ui"
+import * as vueel3 from 'vue3-demo-ui-1'
+const {Button, Tabs, Switch, Dialog, useDialog} = vueel3
+
 export default {
-  components: {Button}
+  components: {Button, Tabs, Switch, Dialog, useDialog}
 }
 </script>
 ```
