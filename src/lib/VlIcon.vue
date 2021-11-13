@@ -61,7 +61,7 @@ const props = defineProps({
 });
 
 // 解构的对象不能为undefined、null 否则会报错，要给被解构的对象一个默认值
-const {iconName, scale, flip, spin, inverse, pulse, customClass} = toRefs(props) || {};
+const {scale, flip, spin, inverse, pulse} = toRefs(props) || {};
 
 const iconClass = computed(() => {
   return {
@@ -73,6 +73,7 @@ const iconClass = computed(() => {
     'vue-icon-pulse': pulse
   };
 });
+
 const iconScale = computed(() => {
   return {
     [`vue-icon-${scale.value}x`]: true
@@ -83,7 +84,11 @@ const iconScale = computed(() => {
 <template>
   <span class="vue-icon-wrapper">
     <svg class="vue-icon-svg"
-         :class="{iconClass: true}, iconScale"
+         :class="{
+                iconClass: true,
+                customClass: true
+                },
+                iconScale"
          aria-hidden="true">
       <use :xlink:href="`#icon-${iconName}`">
       </use>

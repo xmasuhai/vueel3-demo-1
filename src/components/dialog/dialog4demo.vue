@@ -10,8 +10,8 @@ export default {
 
 <template>
   <div>
-    <VueButton @click="toggle1">toggle z-index 1</VueButton>
-    <VueDialog v-model:visible="visible1" :zIndexLevel="1">
+    <VlButton @click="toggle1">toggle z-index 1</VlButton>
+    <VlDialog v-model:visible="visible1" :zIndexLevel="1">
       <template v-slot:title>
         <strong>使用Teleport</strong>
       </template>
@@ -19,11 +19,11 @@ export default {
         <div>原外层 div 的z-index 为 1</div>
         <div>Teleport 将 Dialog 放到 body 关闭标签 之前</div>
       </template>
-    </VueDialog>
+    </VlDialog>
     <br/>
     <br/>
-    <VueButton @click="toggle10">toggle z-index 10</VueButton>
-    <VueDialog v-model:visible="visible10" :zIndexLevel="10">
+    <VlButton @click="toggle10">toggle z-index 10</VlButton>
+    <VlDialog v-model:visible="visible10" :zIndexLevel="10">
       <template v-slot:title>
         <strong>使用Teleport</strong>
       </template>
@@ -31,11 +31,11 @@ export default {
         <div>原外层 div 的z-index 为 10</div>
         <div>Teleport 将 Dialog 放到 body 关闭标签 之前</div>
       </template>
-    </VueDialog>
+    </VlDialog>
     <br/>
     <br/>
-    <VueButton @click="toggle100">toggle z-index 100</VueButton>
-    <VueDialog v-model:visible="visible100" :zIndexLevel="100">
+    <VlButton @click="toggle100">toggle z-index 100</VlButton>
+    <VlDialog v-model:visible="visible100" :zIndexLevel="100">
       <template v-slot:title>
         <strong>使用Teleport</strong>
       </template>
@@ -43,7 +43,7 @@ export default {
         <div>原外层 div 的z-index 为 100</div>
         <div>Teleport 将 Dialog 放到 body 关闭标签 之前</div>
       </template>
-    </VueDialog>
+    </VlDialog>
     <br/>
     <br/>
   </div>
@@ -75,8 +75,8 @@ export default {
 </template>
 
 <script setup lang="ts">
-import VueButton from '@/lib/Button.vue';
-import VueDialog from '@/lib/Dialog.vue';
+import VlButton from '@/lib/VlButton.vue';
+import VlDialog from '@/lib/VlDialog.vue';
 import {ref} from 'vue';
 
 const visible1 = ref(false);

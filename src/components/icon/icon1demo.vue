@@ -10,31 +10,31 @@ export default {
 
 <template>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="search" :scale="3"></VueIcon>
+    <VlIcon iconName="search" :scale="3"></VlIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="vue" :scale="3"></VueIcon>
+    <VlIcon iconName="vue" :scale="3"></VlIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="vite" :scale="3"></VueIcon>
+    <VlIcon iconName="vite" :scale="3"></VlIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="ts" :scale="3"></VueIcon>
+    <VlIcon iconName="ts" :scale="3"></VlIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="github" :scale="3"></VueIcon>
+    <VlIcon iconName="github" :scale="3"></VlIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="design-rule-1" :scale="3"></VueIcon>
+    <VlIcon iconName="design-rule-1" :scale="3"></VlIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="design-rule-2" :scale="3"></VueIcon>
+    <VlIcon iconName="design-rule-2" :scale="3"></VlIcon>
   </div>
   <div style="display: inline-flex;margin: 20px;">
-    <VueIcon iconName="ui" :scale="3"></VueIcon>
+    <VlIcon iconName="ui" :scale="3"></VlIcon>
   </div>
 </template>
 
 <script setup lang="ts">
-import VueIcon from '@/lib/Icon.vue';
+import VlIcon from '@/lib/VlIcon.vue';
 </script>

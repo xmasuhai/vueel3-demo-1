@@ -6,7 +6,8 @@
 
 ```
 import * as vueel3 from 'vue3-demo-ui-1'
-const {Button, Tabs, Switch, Dialog, useDialog} = vueel3
+import 'vue3-demo-ui-1/dist/lib/style.css'
+const {VlButton, VlTabs, VlSwitch, VlDialog, useDialog} = vueel3
 ```
 
 就可以使用我提供的组件了。
@@ -18,16 +19,17 @@ const {Button, Tabs, Switch, Dialog, useDialog} = vueel3
 ```
 <template>
   <div>
-    <Button>按钮</Button>
+    <VlButton>按钮</VlButton>
   </div>
 </template>
 
 <script>
 import * as vueel3 from 'vue3-demo-ui-1'
-const {Button, Tabs, Switch, Dialog, useDialog} = vueel3
+import 'vue3-demo-ui-1/dist/lib/style.css'
+const {VlButton, VlTabs, VlSwitch, VlDialog, useDialog} = vueel3
 
 export default {
-  components: {Button, Tabs, Switch, Dialog, useDialog}
+  components: {VlButton, VlTabs, VlSwitch, VlDialog, useDialog}
 }
 </script>
 ```

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icon from './Icon.vue';
+import Icon from './VlIcon.vue';
 import {computed, toRefs} from 'vue';
 
 interface Props {

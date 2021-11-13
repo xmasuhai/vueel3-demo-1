@@ -8,19 +8,19 @@ export default {
 </script>
 
 <script setup lang="ts">
-import VueSwitch from '@/lib/Switch.vue';
+import VlSwitch from '@/lib/VlSwitch.vue';
 import {ref} from 'vue';
 
 const bool = ref(false);
 </script>
 
 <template>
-  <VueSwitch v-model:toggleValue="bool"
-             activeText="on"
-             inactiveText="off">
-  </VueSwitch>
-  <VueSwitch v-model:toggleValue="bool"
-             activeText="开"
-             inactiveText="关">
-  </VueSwitch>
+  <VlSwitch v-model:toggleValue="bool"
+            activeText="on"
+            inactiveText="off">
+  </VlSwitch>
+  <VlSwitch v-model:toggleValue="bool"
+            activeText="开"
+            inactiveText="关">
+  </VlSwitch>
 </template>

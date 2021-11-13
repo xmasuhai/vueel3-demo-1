@@ -9,11 +9,11 @@ export default {
 </script>
 
 <template>
-  <VueButton @click="dialogHook">toggle</VueButton>
+  <VlButton @click="dialogHook">toggle</VlButton>
 </template>
 
 <script setup lang="ts">
-import VueButton from '@/lib/Button.vue'
+import VlButton from '@/lib/VlButton.vue'
 import {useDialog} from '@/lib/hooks/useDialog';
 
 const dialogHook = () => {

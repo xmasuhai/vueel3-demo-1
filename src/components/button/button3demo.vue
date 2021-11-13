@@ -19,6 +19,6 @@ export default {
 </template>
 
 <script setup lang="ts">
-import VueButton from '@/lib/Button.vue';
-import VueIcon from '@/lib/Icon.vue';
+import VueButton from '@/lib/VlButton.vue';
+import VueIcon from '@/lib/VlIcon.vue';
 </script>

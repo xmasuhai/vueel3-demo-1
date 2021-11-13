@@ -1,4 +1,4 @@
-import Dialog from '../Dialog.vue';
+import VlDialog from '../VlDialog.vue';
 import {createApp, h} from 'vue';
 
 export interface dialogOptions {
@@ -20,7 +20,7 @@ export const useDialog = (dialogOptions: dialogOptions) => {
 
   const app = createApp({
     render() {
-      return h(Dialog, {
+      return h(VlDialog, {
         visible: true,
         'onUpdate:visible': (newVisible: boolean) => {
           if (!newVisible) {close();}

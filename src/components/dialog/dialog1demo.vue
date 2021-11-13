@@ -16,8 +16,8 @@ export default {
 </template>
 
 <script setup lang="ts">
-import VueButton from '@/lib/Button.vue';
-import VueDialog from '@/lib/Dialog.vue';
+import VueButton from '@/lib/VlButton.vue';
+import VueDialog from '@/lib/VlDialog.vue';
 import {ref} from 'vue';
 
 const visible = ref(false);

@@ -3,7 +3,7 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js';
-import VueButton from '@/lib/Button.vue';
+import VlButton from '@/lib/VlButton.vue';
 import {computed, ref} from 'vue';
 
 const codeVisible = ref(false);
@@ -28,7 +28,7 @@ const html = computed(() => {
       </keep-alive>
     </div>
     <div class="vue-demo-actions">
-      <VueButton @click="toggle">{{ codeVisible ? '隐藏代码' : '查看代码' }}</VueButton>
+      <VlButton @click="toggle">{{ codeVisible ? '隐藏代码' : '查看代码' }}</VlButton>
     </div>
     <div class="vue-demo-code" v-show="codeVisible">
       <pre class="language-html">

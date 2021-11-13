@@ -23,8 +23,8 @@ export default {
 </template>
 
 <script setup lang="ts">
-import VueButton from '@/lib/Button.vue';
-import VueDialog from '@/lib/Dialog.vue';
+import VueButton from '@/lib/VlButton.vue';
+import VueDialog from '@/lib/VlDialog.vue';
 import {ref} from 'vue';
 
 const visible = ref(false);
@@ -33,10 +33,13 @@ const toggle = () => {
 };
 
 // 指定ok cancel的回调
-const fn1 = () => {
-  return false;
+const fn1 = (result = true) => {
+  alert('ok');
+  return result;
 };
-const fn2 = () => {
+const fn2 = (result = true) => {
+  alert('cancel');
+  return result;
 };
 
 </script>

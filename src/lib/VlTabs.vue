@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TabItem from './TabItem.vue';
+import VlTabItem from './VlTabItem.vue';
 import {useGetSlots} from './hooks/useGetSlots';
 import {useCheckSlots} from './hooks/useCheckSlots';
 import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect, Ref} from 'vue';
@@ -17,7 +17,7 @@ const checkTabItem = () => {
   });
 };
 */
-const checkTabItem = useCheckSlots.bind(null, defaults, TabItem);
+const checkTabItem = useCheckSlots.bind(null, defaults, VlTabItem);
 
 // 获取子组件VNode中对应title属性组成的数组 titles: string[]
 const titles = defaults?.map((tag: VNode) => {
@@ -75,6 +75,7 @@ onMounted(() => {
   checkTabItem();
 });
 
+// Tab指示下划线跟踪TabItem位置
 const indicatorTraceTab = () => {
   const {width, left} = selectedItem.value!.getBoundingClientRect();
   const {left: containerLeft} = container.value!.getBoundingClientRect();
