@@ -8,6 +8,14 @@ export default {
 
 </script>
 
+<script setup lang="ts">
+import VlTabs from '@/lib/VlTabs.vue';
+import VlTabItem from '@/lib/VlTabItem.vue';
+import {ref} from 'vue';
+
+const defaultTab = ref('导航22');
+</script>
+
 <template>
   <VlTabs v-model:selected="defaultTab">
     <VlTabItem title="导航1">内容1</VlTabItem>
@@ -15,11 +23,3 @@ export default {
     <VlTabItem title="导航333">内容333</VlTabItem>
   </VlTabs>
 </template>
-
-<script setup lang="ts">
-import VlTabs from '@/lib/VlTabs.vue';
-import VlTabItem from '@/lib/VlTabItem.vue';
-import {ref} from 'vue';
-
-const defaultTab = ref('导航1');
-</script>
