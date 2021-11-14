@@ -8,19 +8,10 @@ import {onBeforeUpdate, computed, onMounted, ref, VNode, watchEffect, Ref} from 
 const {defaults} = useGetSlots();
 
 // 检查子标签名方法hooks: useCheckSlots
-/*
-const checkTabItem = () => {
-  defaults.forEach((tag: VNode) => {
-    if (tag.type !== TabItem) {
-      console.error(new Error('Tabs 子标签必须是 TabItem'));
-    }
-  });
-};
-*/
 const checkTabItem = useCheckSlots.bind(null, defaults, VlTabItem);
 
 // 获取子组件VNode中对应title属性组成的数组 titles: string[]
-const titles = defaults?.map((tag: VNode) => {
+const titleListOfDefaultSlots = defaults?.map((tag: VNode) => {
   return tag?.props?.title;
 });
 
@@ -29,22 +20,16 @@ const props = defineProps({
   selected: String
 });
 
-// 对比所有项目的title和当前选中项的title 获取当前选中项currentTab
-// filter 性能不如 find，改用find
-/*
-const getCurrentTab = computed(() => {
-  return defaults?.filter((tag: VNode) => {
-    return tag?.props?.title === props.selected;
-  })[0];
-});
-*/
+// 获取当前选中项currentTab
+// 通过遍历对比所有项目的title和当前选中项的title得到
 const getCurrentTab = computed(() => {
   return defaults.find((tag: VNode) => {
     return tag?.props?.title === props.selected;
   });
 });
 
-const getCurrentTitle = computed(() => {
+// 获取当前选中项的标题
+const getCurrentTabTitle = computed(() => {
   return defaults.find((tag: VNode) => {
     return tag?.props?.title === props.selected;
   })!.props!.title;
@@ -94,7 +79,7 @@ watchEffect(() => {
 <template>
   <div class="vue-tabs">
     <nav class="vue-tabs-nav" ref="container">
-      <div v-for="(title, index) in titles"
+      <div v-for="(title, index) in titleListOfDefaultSlots"
            :key="index"
            :ref="(el) => { if (el && (title === selected)) selectedItem = el }"
            :class="{selected: title === selected}"
@@ -109,7 +94,7 @@ watchEffect(() => {
     <div class="vue-tabs-content">
       <keep-alive>
         <component :is="getCurrentTab"
-                   :key="getCurrentTitle"
+                   :key="getCurrentTabTitle"
                    class="vue-tabs-content-item">
         </component>
       </keep-alive>
