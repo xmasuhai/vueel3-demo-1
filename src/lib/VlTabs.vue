@@ -72,7 +72,7 @@ const indicatorTraceTab = () => {
 // 追踪 变更，执行回调
 watchEffect(() => {
   indicatorTraceTab();
-});
+}, {flush: 'pre'});
 
 </script>
 
