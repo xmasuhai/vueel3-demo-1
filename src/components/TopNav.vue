@@ -152,7 +152,7 @@ export default {
   @media screen and(max-width: 768px) {
     > .logo {
       margin: 0 auto;
-      transform: translateX(50%);
+      transform: translateX(75%);
     }
 
     > .menu {

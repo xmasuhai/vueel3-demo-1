@@ -1,11 +1,11 @@
-## TabItem.vue Attributes
+## VlTabItem.vue Attributes
 
 参数   |   说明   |   类型	   |   可选值   |   默认值
 ---- |:----:|:---- |:---- |:----:|
 title   |  当前导航栏的名称，唯一且必填   |   String   |   —   |   —   
 
 
-## Tabs.vue Attributes
+## VlTabs.vue Attributes
 
 参数   |   说明   |   类型	   |   可选值   |   默认值
 ---- |:----:|:---- |:---- |:----:|
