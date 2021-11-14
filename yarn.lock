@@ -3061,7 +3061,7 @@ vue-types@^4.1.1:
   dependencies:
     is-plain-object "5.0.0"
 
-vue@^3.2.20:
+vue@^3.2.21:
   version "3.2.21"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.21.tgz#55f5665172d95cf97e806b9aad0a375180be23a1"
   integrity sha512-jpy7ckXdyclfRzqLjL4mtq81AkzQleE54KjZsJg/9OorNVurAxdlU5XpD49GpjKdnftuffKUvx2C5jDOrgc/zg==

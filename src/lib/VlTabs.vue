@@ -58,6 +58,7 @@ onBeforeUpdate(() => {
 
 onMounted(() => {
   checkTabItem();
+  indicatorTraceTab();
 });
 
 // Tab指示下划线跟踪TabItem位置
