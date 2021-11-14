@@ -51,12 +51,13 @@ const onClickOverlay = () => {
 };
 
 // OK Cancel按钮关闭逻辑
-const okFn = () => {
+const onClickOk = () => {
   if (props.ok?.() !== false) {
     close();
   }
 };
-const cancelFn = () => {
+
+const onClickCancel = () => {
   if (props.cancel?.() !== false) {
     close();
   }
@@ -82,8 +83,8 @@ const cancelFn = () => {
             <slot name="content">内容</slot>
           </main>
           <footer>
-            <Button level="primary" @click="okFn">OK</Button>
-            <Button @click="cancelFn">Cancel</Button>
+            <Button level="primary" @click="onClickOk">OK</Button>
+            <Button @click="onClickCancel">Cancel</Button>
           </footer>
         </div>
       </div>

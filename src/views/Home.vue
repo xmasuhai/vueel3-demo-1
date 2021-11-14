@@ -3,6 +3,13 @@ import TopNav from '@/components/TopNav.vue';
 import Waves from '@/components/Waves.vue';
 import VueButton from '@/lib/VlButton.vue';
 import VueIcon from '@/lib/VlIcon.vue';
+import {ref} from 'vue';
+
+const ua = navigator.userAgent.toLowerCase();
+const showWaves = ref(true);
+if (/qq/.test(ua)) {
+  showWaves.value = false;
+}
 </script>
 
 <template>
@@ -56,7 +63,7 @@ import VueIcon from '@/lib/VlIcon.vue';
         </li>
       </ul>
     </div>
-    <Waves class="waves"></Waves>
+    <Waves class="waves" v-if="showWaves"></Waves>
   </div>
 </template>
 
