@@ -5,7 +5,7 @@ import fs from 'fs';
 // 可以告诉 vite 在遇到 vue 文件的时候如何处理自定义块 <example>
 // 获取组件源码 Component.__sourceCode
 // 获取组件标题 Component.__sourceCodeTitle 等价于 code
-export function vueCompAddSourceCodeTitleFromCustomBlock(customBlockName: string) {
+export function addSrcFromCustomBlock(customBlockName: string) {
   const regexp = new RegExp(`vue&type=${customBlockName}`);
   return {
     name: 'vueCustomBlockTransforms',

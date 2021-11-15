@@ -3,7 +3,7 @@ import {defineConfig/*, PluginOption, UserConfig*/} from 'vite'; // const { defi
 import Markdown from 'vite-plugin-md';
 import ViteComponents/*, {Options}*/ from 'vite-plugin-components';
 // vueCustomBlockTransforms
-import {vueCompAddSourceCodeTitleFromCustomBlock} from './plugins/vueCompAddSourceCodeTitleFromCustomBlock';
+import {addSrcFromCustomBlock} from './plugins/addSrcFromCustomBlock';
 
 const {resolve} = require('path');
 
@@ -23,7 +23,7 @@ export const basicConfig = defineConfig({
       // allow auto import and register components used in markdown
       customLoaderMatcher: (path: string) => path.endsWith('.md'),
     }),
-    vueCompAddSourceCodeTitleFromCustomBlock('demo')
+    addSrcFromCustomBlock('demo')
   ],
   resolve: {
     alias: [
