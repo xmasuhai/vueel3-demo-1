@@ -17,8 +17,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "vite-bd": "vite build --config vite-app.config.ts ",
-    "build": "vue-tsc --noEmit && vite build",
+    "ts-bd": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "build:app": "vite build --config vite-app.config.ts",
     "build:lib": "vite build --config vite-lib.config.ts"
   },
