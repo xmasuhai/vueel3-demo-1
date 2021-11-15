@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const {toggleValue, disabled, activeText, inactiveText} = toRefs(props) || {};
 
-const emit = defineEmits(['update:toggleValue']);
+const emits = defineEmits(['update:toggleValue']);
 
 const openClose = computed(() => {
   return {
@@ -32,7 +32,7 @@ const showText = computed(() => {
 
 const toggle = () => {
   if (!disabled.value) {
-    emit('update:toggleValue', !toggleValue.value);
+    emits('update:toggleValue', !toggleValue.value);
   }
 };
 </script>

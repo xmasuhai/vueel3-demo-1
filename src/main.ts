@@ -7,8 +7,9 @@ import {router} from '@/router';
 import {createApp} from 'vue';
 import mitt from 'mitt';
 
+const emitter = mitt();
 const app = createApp(App);
 app.use(router);
-app.config.globalProperties.$evbus = mitt;
+app.config.globalProperties.emitter = emitter;
 
 app.mount('#app');

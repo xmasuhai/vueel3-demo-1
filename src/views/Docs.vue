@@ -6,7 +6,7 @@ let asideVisible = inject<Ref<boolean>>('asideVisible');
 const emmiter = inject<any>('evBus');
 
 const closeAside = () => {
-  emmiter.on('evBus', () => {
+  emmiter.on('update:asideVisible', () => {
     asideVisible!.value = false;
   });
 };
@@ -25,6 +25,7 @@ const routerInfo = [
     textInfo: '开始使用'
   }
 ];
+
 const compInfo = [
   {
     toPath: 'switch',
@@ -45,8 +46,13 @@ const compInfo = [
   {
     toPath: 'icons',
     textInfo: 'Icons 组件'
-  }
+  },
+  {
+    toPath: 'collapse',
+    textInfo: 'Collapse 组件'
+  },
 ];
+
 </script>
 
 <template>

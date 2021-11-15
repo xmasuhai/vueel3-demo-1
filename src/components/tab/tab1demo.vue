@@ -5,7 +5,6 @@ export default {
   __sourceCode: '',
   __sourceCodeTitle: ''
 };
-
 </script>
 
 <script setup lang="ts">

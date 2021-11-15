@@ -1,9 +1,10 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
+import IconsDemo from '@/components/IconsDemos.vue';
 import ButtonDemo from '@/components/ButtonDemos.vue';
-import DialogDemo from '@/components/DialogDemos.vue';
 import SwitchDemo from '@/components/SwitchDemos.vue';
 import TabsDemo from '@/components/TabsDemos.vue';
-import IconsDemo from '@/components/IconsDemos.vue';
+import DialogDemo from '@/components/DialogDemos.vue';
+import CollapseDemos from '@/components/CollapseDemos.vue';
 import Docs from '@/views/Docs.vue';
 import Home from '@/views/Home.vue';
 // use 'vite-plugin-md' import markdown
@@ -25,11 +26,12 @@ export const router = createRouter({
         {path: 'intro', component: Intro},
         {path: 'get-started', component: GetStarted},
         {path: 'install', component: Install},
+        {path: 'icons', component: IconsDemo},
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},
         {path: 'switch', component: SwitchDemo},
         {path: 'tabs', component: TabsDemo},
-        {path: 'icons', component: IconsDemo},
+        {path: 'collapse', component: CollapseDemos},
       ]
     },
   ]
