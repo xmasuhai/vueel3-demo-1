@@ -11,50 +11,53 @@
   - 使用 `script setup` 的语法糖
   - 使用 简洁的 `SCSS` 样式语法
   - 使用 严谨的 `TypeScript` 类型检查，并在开发时获得类型提示
-- 使用 `Vite` 进行项目的构建
-- 使用 `Rollup` 进行项目的打包，并发布到 npm
+- 使用 `Vite 2` 进行项目官网的构建
+- 使用 `Vite 2` 进行组件库的打包，并发布到 npm
 
 作者：徐某人
 
 ## 技术栈
 
-- `Vue.js 3.x`全家桶
+- `Vue.js 3.x`
+  - `vue-router`
 - `TypeScript`
 - `SCSS`
-- `Vite`
-- `Rollup`
+- `Vite 2`
 
 ## UI参考
 
-- Eleme UI
-- Ant Design Vue
-- Vant UI
-- iView UI
-- Bulma UI
+- [Element UI]()
+- [Ant Design Vue]()
+- [Vant UI]()
+- [iView UI]()
+- [Bulma UI]()
+- [Nut UI]()
 - 饥人谷的 [Gulu UI](https://github.com/FrankFang/frank-test-1)
-- [轱辘 UI源码](https://github.com/FrankFang/gulu)
-- [Gulu UI for Vue 3](https://github.com/FrankFang/gulu-for-vue3)
+  - [轱辘 UI源码](https://github.com/FrankFang/gulu)
+  - [Gulu UI for Vue 3](https://github.com/FrankFang/gulu-for-vue3)
 
 --
 
 ## 运行步骤
 
-1. 运行 yarn
-2. 运行 yarn dev
+1. 运行 `yarn install` 安装依赖
+2. 运行 `yarn dev` 启动服务
 3. 打开 [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
-## 官网打包步骤
+## 官网构建步骤
 
-1. 运行 yarn
-2. 运行 yarn build
-3. 得到的 dist 目录就是官网源代码
-4. 编辑并运行 sh deploy.sh 就可以手动上传到 Github 或码云等支持 Pages 功能的平台
-5. 推送时自动上传到 Github
+1. 运行 `yarn install` 安装依赖
+2. 运行 `yarn build`
+3. 得到的 `dist` 目录就是官网源代码
+4. 编辑并运行 `sh deploy.sh` 就可以手动上传到 `GitHub` 或码云等支持 `Pages` 功能的平台
+5. 使用`GitHub Actions`推送时自动更新官网
+6. 使用`GitHub Actions`推送时自动发布组件库到`npm`
 
-## 库文件打包步骤
+## 组件库文件打包步骤
 
-1. 运行 yarn build:lib
-2. 得到的 dist/lib 目录就是编译后的库文件所在目录
+1. 运行 `yarn install` 安装依赖
+2. 运行 `yarn build:lib`
+3. 得到的 `dist/lib` 目录就是编译后的库文件所在目录
 
 ## 变更记录
 
@@ -74,4 +77,5 @@
 - `xmasuhai@163.com`
 
 ---
+
 ---
