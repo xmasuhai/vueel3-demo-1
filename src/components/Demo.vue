@@ -7,12 +7,15 @@ import VlButton from '@/lib/VlButton.vue';
 import {computed, ref} from 'vue';
 
 const codeVisible = ref(false);
+
 const props = defineProps({
   component: Object
 });
+
 const toggle = () => {
   codeVisible.value = !codeVisible.value;
 };
+
 const html = computed(() => {
   return Prism.highlight(props.component?.__sourceCode, Prism.languages.html, 'html');
 });

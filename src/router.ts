@@ -13,9 +13,10 @@ import Install from '@/markdown/install.md';
 import Intro from '@/markdown/intro.md';
 import Readme from '../README.md';
 
-const history = createWebHashHistory();
+// const history = createWebHashHistory();
+
 export const router = createRouter({
-  history,
+  history: createWebHashHistory(),
   routes: [
     {path: '/', component: Home},
     {
