@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import useEmitter from '@/hooks/useEmitter';
+import mitt from 'mitt';
 import {provide, onMounted, toRefs} from 'vue';
 import VlCollapseItem from './VlCollapseItem.vue';
 
@@ -11,12 +11,12 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   itemsData: () => ([]),
-  selectedArray: () => (['']),
+  selectedArray: () => ([]),
   onlyShowSingle: false
 });
 const {itemsData, selectedArray, onlyShowSingle} = toRefs(props);
 
-const collapseEmitter = useEmitter();
+const collapseEmitter = mitt();
 provide('collapseEmitter', collapseEmitter);
 const emits = defineEmits(['update:selectedArray']);
 
@@ -34,18 +34,19 @@ const updateSelectedArrayToAll = (selectedArray: Array<string>) => {
 const monitorSelectedArray = () => {
   let selectedArrayCopy = JSON.parse(JSON.stringify(selectedArray.value));
 
-  collapseEmitter.on('add:selected', (title: string) => {
+  collapseEmitter.on('add:selected', (title) => {
     onlyShowSingle.value
       ? selectedArrayCopy = [title]
       : selectedArrayCopy.push(title);
+    updateSelectedArrayToAll(selectedArrayCopy);
   });
 
-  collapseEmitter.on('remove:selected', (title: string) => {
+  collapseEmitter.on('remove:selected', (title) => {
     const index = selectedArrayCopy.indexOf(title);
     selectedArrayCopy.splice(index, 1);
+    updateSelectedArrayToAll(selectedArrayCopy);
   });
 
-  updateSelectedArrayToAll(selectedArrayCopy);
 };
 
 onMounted(() => {

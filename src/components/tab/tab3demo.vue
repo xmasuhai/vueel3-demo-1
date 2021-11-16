@@ -5,7 +5,6 @@ export default {
   __sourceCode: '',
   __sourceCodeTitle: ''
 };
-
 </script>
 
 <template>
@@ -21,6 +20,5 @@ import VlTabs from '@/lib/VlTabs.vue';
 import VlTabItem from '@/lib/VlTabItem.vue';
 import {ref} from 'vue';
 
-const defaultTab = ref('导航1');
-
+const defaultTab = ref('导航333');
 </script>

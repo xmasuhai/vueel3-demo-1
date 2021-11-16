@@ -28,12 +28,16 @@ const routerInfo = [
 
 const compInfo = [
   {
-    toPath: 'switch',
-    textInfo: 'Switch 组件'
+    toPath: 'icons',
+    textInfo: 'Icons 组件'
   },
   {
     toPath: 'button',
     textInfo: 'Button 组件'
+  },
+  {
+    toPath: 'switch',
+    textInfo: 'Switch 组件'
   },
   {
     toPath: 'dialog',
@@ -42,10 +46,6 @@ const compInfo = [
   {
     toPath: 'tabs',
     textInfo: 'Tabs 组件'
-  },
-  {
-    toPath: 'icons',
-    textInfo: 'Icons 组件'
   },
   {
     toPath: 'collapse',

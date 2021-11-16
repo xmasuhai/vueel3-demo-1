@@ -3,16 +3,16 @@ import {computed, toRefs} from 'vue';
 
 interface Props {
   toggleValue?: boolean;
+  disabled?: boolean;
   activeText?: string;
   inactiveText?: string;
-  disabled?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   toggleValue: false,
+  disabled: false,
   activeText: '',
-  inactiveText: '',
-  disabled: false
+  inactiveText: ''
 });
 
 const {toggleValue, disabled, activeText, inactiveText} = toRefs(props) || {};

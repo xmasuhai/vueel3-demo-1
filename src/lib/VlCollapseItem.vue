@@ -17,13 +17,18 @@ const {title, isDisabled} = toRefs(props);
 const collapseEmitter = inject<any>('collapseEmitter');
 
 const toggle = () => {
-  isOpen.value = !isOpen.value;
+  // isOpen.value = !isOpen.value; // no need change isOpen.value itself
+  // send title.value to parent node by different emitter event
+  // eventbus update a copy of selectedArray in parent node
+  // & let eventbus update:selected selectedArray
   isOpen.value
     ? collapseEmitter.emit('remove:selected', title.value)
     : collapseEmitter.emit('add:selected', title.value);
 };
 
-// listen to parent
+// listen to eventbus
+// parent node update:selectedArray
+// child node watch selectedArray.includes(title.value)
 const addListener = () => {
   collapseEmitter.on('update:selected', (titleList: Array<string>) => {
     isOpen.value = titleList.includes(title.value);
@@ -51,9 +56,7 @@ onMounted(() => {
     <article class="vue-content"
              :class="{ 'content-show': isOpen && !isDisabled}"
              v-show="isOpen && !isDisabled">
-      <slot>
-        VueCollapseItem
-      </slot>
+      <slot></slot>
     </article>
   </div>
 </template>

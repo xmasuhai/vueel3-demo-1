@@ -1,7 +1,7 @@
-<demo>常规用法</demo>
+<demo>禁用项</demo>
 <script lang="ts">
 export default {
-  name: 'Collapse1Demo',
+  name: 'Collapse3Demo',
   __sourceCode: '',
   __sourceCodeTitle: ''
 };
@@ -9,9 +9,9 @@ export default {
 
 <template>
   <VlCollapse>
-    <VlCollapseItem title="标题1">内容1</VlCollapseItem>
+    <VlCollapseItem title="标题1" isDisabled>内容1</VlCollapseItem>
     <VlCollapseItem title="标题2">内容2</VlCollapseItem>
-    <VlCollapseItem title="标题3">内容3</VlCollapseItem>
+    <VlCollapseItem title="标题3" isDisabled>内容3</VlCollapseItem>
   </VlCollapse>
 </template>
 
