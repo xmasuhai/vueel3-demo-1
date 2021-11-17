@@ -2,7 +2,7 @@
 import {ref} from 'vue';
 import {onBeforeRouteUpdate} from 'vue-router';
 import TopNav from '@/components/TopNav.vue';
-import AsideMenu from '@/components/AsideMenu.vue';
+import AsideMenu from '@/components/aside/AsideMenu.vue';
 
 // ref模板引用 https://v3.cn.vuejs.org/guide/composition-api-template-refs.html
 const mainDoc = ref(null);
