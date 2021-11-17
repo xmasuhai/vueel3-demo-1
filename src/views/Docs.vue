@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import {inject, ref, Ref} from 'vue';
+import {onBeforeRouteUpdate} from 'vue-router';
 import TopNav from '@/components/TopNav.vue';
-import {inject, Ref} from 'vue';
 
 let asideVisible = inject<Ref<boolean>>('asideVisible');
 const emmiter = inject<any>('evBus');
@@ -53,6 +54,18 @@ const compInfo = [
   },
 ];
 
+// ref模板引用 https://v3.cn.vuejs.org/guide/composition-api-template-refs.html
+const mainDoc = ref(null);
+
+const mainDocBackTop = () => {
+  // mainDoc get value after onMounted
+  (mainDoc.value as unknown as HTMLElement).scrollTop = 0;
+};
+
+onBeforeRouteUpdate((/*to, from*/) => {
+  mainDocBackTop();
+});
+
 </script>
 
 <template>
@@ -95,7 +108,7 @@ const compInfo = [
           </ol>
         </aside>
       </transition>
-      <main>
+      <main ref="mainDoc">
         <router-view></router-view>
       </main>
     </div>
