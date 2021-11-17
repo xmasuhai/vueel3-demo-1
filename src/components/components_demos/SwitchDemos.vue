@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Demo from '@/components/ComponentsDemos/Demo.vue';
-import Switch1demo from '@/components/ComponentsDemos/switch/switch1demo.vue';
-import Switch2demo from '@/components/ComponentsDemos/switch/switch2demo.vue';
-import Switch3demo from '@/components/ComponentsDemos/switch/switch3demo.vue';
+import Demo from '@/components/components_demos/Demo.vue';
+import Switch1demo from '@/components/components_demos/switch/switch1demo.vue';
+import Switch2demo from '@/components/components_demos/switch/switch2demo.vue';
+import Switch3demo from '@/components/components_demos/switch/switch3demo.vue';
 import SwitchDoc from '@/markdown/components/switch.md';
 </script>
 

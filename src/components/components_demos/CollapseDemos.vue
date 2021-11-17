@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Demo from '@/components/ComponentsDemos/Demo.vue';
-import collapse1demo from '@/components/ComponentsDemos/collapse/collapse1demo.vue';
-import collapse2demo from '@/components/ComponentsDemos/collapse/collapse2demo.vue';
-import collapse3demo from '@/components/ComponentsDemos/collapse/collapse3demo.vue';
-import collapse4demo from '@/components/ComponentsDemos/collapse/collapse4demo.vue';
+import Demo from '@/components/components_demos/Demo.vue';
+import collapse1demo from '@/components/components_demos/collapse/collapse1demo.vue';
+import collapse2demo from '@/components/components_demos/collapse/collapse2demo.vue';
+import collapse3demo from '@/components/components_demos/collapse/collapse3demo.vue';
+import collapse4demo from '@/components/components_demos/collapse/collapse4demo.vue';
 import CollapseDoc from '@/markdown/components/collapse.md';
 </script>
 
