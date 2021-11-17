@@ -10,7 +10,7 @@ zIndexLevel | z-index等级 |   Number   |   10 / 100 / 1000   |   10
 
 方法   |   说明   |   类型	   |   参数类型   |   默认值
 ---- |:----:|:---- |:---- |:----:|
-useDialog | 编编程式创建Dialog的内容 | Function |   dialogOptions   |   —
+useDialog | 编程式创建Dialog的内容 | Function |   dialogOptions   |   —
 
 ## Events
 
