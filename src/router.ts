@@ -1,10 +1,10 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
-import IconsDemo from '@/components/IconsDemos.vue';
-import ButtonDemo from '@/components/ButtonDemos.vue';
-import SwitchDemo from '@/components/SwitchDemos.vue';
-import TabsDemo from '@/components/TabsDemos.vue';
-import DialogDemo from '@/components/DialogDemos.vue';
-import CollapseDemos from '@/components/CollapseDemos.vue';
+import IconsDemo from '@/components/ComponentsDemos/IconsDemos.vue';
+import ButtonDemo from '@/components/ComponentsDemos/ButtonDemos.vue';
+import SwitchDemo from '@/components/ComponentsDemos/SwitchDemos.vue';
+import TabsDemo from '@/components/ComponentsDemos/TabsDemos.vue';
+import DialogDemo from '@/components/ComponentsDemos/DialogDemos.vue';
+import CollapseDemos from '@/components/ComponentsDemos/CollapseDemos.vue';
 import Docs from '@/views/Docs.vue';
 import Home from '@/views/Home.vue';
 // use 'vite-plugin-md' import markdown

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Demo from '@/components/Demo.vue';
-import Tab1demo from '@/components/tab/tab1demo.vue';
-import Tab2demo from '@/components/tab/tab2demo.vue';
-import Tab3demo from '@/components/tab/tab3demo.vue';
+import Demo from '@/components/ComponentsDemos/Demo.vue';
+import Tab1demo from '@/components/ComponentsDemos/tab/tab1demo.vue';
+import Tab2demo from '@/components/ComponentsDemos/tab/tab2demo.vue';
+import Tab3demo from '@/components/ComponentsDemos/tab/tab3demo.vue';
 import TabsDoc from '@/markdown/components/tabs.md'
 </script>
 

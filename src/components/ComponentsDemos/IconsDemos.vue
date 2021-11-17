@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Demo from '@/components/Demo.vue';
-import Icon1demo from '@/components/icon/icon1demo.vue';
+import Demo from '@/components/ComponentsDemos/Demo.vue';
+import Icon1demo from '@/components/ComponentsDemos/icon/icon1demo.vue';
 import IconDoc from '@/markdown/components/icon.md';
 </script>
 
