@@ -24,12 +24,15 @@ const props = defineProps({
         'gear-blue'
       ];
 
+      /*
+      // 使用message/toast组件代替
       (!val)
         ? console.warn(`Invalid prop: prop "name" is required.`)
         : (!iconsNames.includes(val))
           ? console.log(`Invalid prop: prop "name" is referring to an unregistered icon "${val}".
                          Please make sure you have imported this icon before using it.`)
           : null;
+      */
       return iconsNames.includes(val);
     }
   },

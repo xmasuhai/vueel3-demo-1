@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import VlIcon from './VlIcon.vue';
 import {inject, onMounted, ref, toRefs} from 'vue';
 
 const isOpen = ref(false);
@@ -52,12 +53,20 @@ onMounted(() => {
             }"
             @click="toggle">
       {{ title }}
+      <VlIcon iconName="right"
+              :class="{'down-icon': isOpen && !isDisabled}">
+      </VlIcon>
     </header>
-    <article class="vue-content"
-             :class="{ 'content-show': isOpen && !isDisabled}"
-             v-show="isOpen && !isDisabled">
-      <slot></slot>
-    </article>
+    <transition name="push-pull">
+      <article class="vue-content"
+               :class="{
+                        'content-show': isOpen && !isDisabled
+                        }"
+               v-show="isOpen && !isDisabled">
+        <slot></slot>
+      </article>
+    </transition>
+
   </div>
 </template>
 
@@ -75,21 +84,61 @@ export default {
   border-bottom-right-radius: $radius;
 }
 
+@keyframes slide-open {
+  0% {
+    height: 0;
+    padding: 0;
+  }
+
+  100% {
+    height: auto;
+    padding: 16px;
+  }
+
+}
+
+@keyframes slide-close {
+  0% {
+    height: auto;
+    padding: 16px;
+  }
+
+  100% {
+    height: 0;
+    padding: 0;
+  }
+
+}
+
+.push-pull-enter-active {
+  animation: slide-open .3s ease-in-out;
+}
+
+.push-pull-leave-active {
+  animation: slide-close .3s ease-in-out;
+}
+
 .vue-collapse-item {
   align-items: center;
   background-color: lighten($collapse-grey, 30%);
   border-bottom: 1px solid $collapse-grey;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
   width: 100%;
 
   > .vue-title {
     align-items: center;
     border-radius: $border-radius - 1;
     display: flex;
+    justify-content: space-between;
     min-height: 32px;
     padding: 0 8px;
     width: 100%;
+
+    > .down-icon {
+      transform: rotate(90deg);
+    }
 
     &.disabled {
       background-color: lighten($collapse-grey, 50%);
