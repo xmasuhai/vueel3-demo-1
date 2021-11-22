@@ -9,33 +9,40 @@ const props = defineProps({
     validator(val: string) {
       const iconsNames = [
         'vite',
-        'arrow',
+        'arrow-down',
         'download',
         'settings',
-        'thumbs',
+        'thumbs-up',
         'left',
         'right',
         'loading',
-        'arrow',
-        'info',
-        'error',
+        'arrow-up',
+        'info-solid',
+        'info-empty',
+        'error-solid',
+        'error-empty',
         'warning',
-        'info',
         'meowney',
         'delete',
+        'deleteTag',
+        'deleteIcon',
         'clear',
         'hook',
+        'hook-yes',
         'ok',
-        'empty',
+        'ok-circle',
+        'empty-record',
         'kalendar',
-        'economic',
-        'rili',
-        'blank',
-        'delete',
+        'economicCalendar',
+        'rili1',
+        'blank-calendar',
         'edit',
-        'income',
-        'design',
-        'gear',
+        'edit1',
+        'incomeOutcome',
+        'design-rule-1',
+        'design-rule-2',
+        'gear-blue',
+        'gear-green',
         'vue',
         'ui',
         'ts',
@@ -46,7 +53,7 @@ const props = defineProps({
         'link',
         'helm',
         'rudder',
-        'puzzle'
+        'puzzle1'
       ];
 
       /*
@@ -134,6 +141,7 @@ export default {
 @import 'styles/animate';
 
 .vue-icon-wrapper {
+  vertical-align: sub;
   line-height: 1em;
   width: 1em;
   height: 1em;

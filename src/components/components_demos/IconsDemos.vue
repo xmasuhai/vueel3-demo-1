@@ -12,6 +12,6 @@ import IconDoc from '@/markdown/components/icon.md';
 
 <script lang="ts">
 export default {
-  name: 'IconsDemo'
+  name: 'IconsDemos'
 };
 </script>
