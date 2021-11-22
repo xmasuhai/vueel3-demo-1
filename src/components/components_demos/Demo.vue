@@ -30,6 +30,9 @@ const html = computed(() => {
         <component :is="component"></component>
       </keep-alive>
     </div>
+    <div class="vue-demo-addition">
+      <slot></slot>
+    </div>
     <div class="vue-demo-actions">
       <VlButton @click="toggle">{{ codeVisible ? '隐藏代码' : '查看代码' }}</VlButton>
     </div>
@@ -90,5 +93,10 @@ $border-color: #d9d9d9;
       }
     }
   }
+
+  &-addition {
+    padding: 12px 16px;
+  }
+
 }
 </style>

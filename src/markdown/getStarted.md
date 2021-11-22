@@ -2,15 +2,42 @@
 
 请先[安装](#/docs/install)本组件库。
 
-然后在你的代码中写入下面的代码：
+引入必要资源，在代码中写入下面的代码：
 
 ```
 import * as vueel3 from 'vue3-demo-ui-1'
 import 'vue3-demo-ui-1/dist/lib/style.css'
-const {VlButton, VlTabs, VlSwitch, VlDialog, useDialog} = vueel3
+const {VlButton, } = vueel3
 ```
 
-就可以使用我提供的组件了。
+注册组件
+
+```
+export default {
+  name: "ComponentName",
+  components: {
+    VlButton,
+  },
+}
+```
+
+使用
+
+```
+<template>
+  <div>
+    <VlButton>默认按钮</VlButton>
+  </div>
+</template>
+```
+
+效果
+
+<script setup lang="ts">
+import VueButton from '@/lib/VlButton.vue';
+</script>
+
+<VueButton>默认按钮</VueButton>
 
 ## Vue 单文件组件 使用时不必使用 ts 语法
 
@@ -26,10 +53,10 @@ const {VlButton, VlTabs, VlSwitch, VlDialog, useDialog} = vueel3
 <script>
 import * as vueel3 from 'vue3-demo-ui-1'
 import 'vue3-demo-ui-1/dist/lib/style.css'
-const {VlButton, VlTabs, VlSwitch, VlDialog, useDialog} = vueel3
+const {VlButton, VlTabs, VlSwitch, VlDialog, useDialog, VlCollapse, VlCollapseItem} = vueel3
 
 export default {
-  components: {VlButton, VlTabs, VlSwitch, VlDialog, useDialog}
+  components: {VlButton, VlTabs, VlSwitch, VlDialog, useDialog, VlCollapse, VlCollapseItem}
 }
 </script>
 ```
