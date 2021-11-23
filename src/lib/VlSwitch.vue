@@ -44,7 +44,8 @@ const toggle = () => {
                     [`vue-switch-checked`]: toggleValue,
                     [`vue-switch-disabled`]: disabled
                     }"
-            @click="toggle">
+            @click="toggle"
+            type="button">
       <span class="vue-switch-toggle">
         <span v-show="!toggleValue"
               class="close-line">
