@@ -68,6 +68,7 @@ const props = defineProps({
       return iconsNames.includes(val);
     }
   },
+  fill: String,
   scale: {
     type: Number,
     default: 1,
@@ -124,6 +125,7 @@ const iconScale = computed(() => {
                 customClass: true
                 },
                 iconScale"
+         :fill="fill"
          aria-hidden="true">
       <use :xlink:href="`#icon-${iconName}`">
       </use>
