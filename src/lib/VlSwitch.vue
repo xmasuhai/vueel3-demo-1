@@ -48,8 +48,7 @@ const toggle = () => {
             type="button">
       <span class="vue-switch-toggle">
         <span v-show="!toggleValue"
-              class="close-line">
-        </span>
+              class="close-line"></span>
         <span class="vue-switch-label"
               :class="openClose">
           {{ showText }}
