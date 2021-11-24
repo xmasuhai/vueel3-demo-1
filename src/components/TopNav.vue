@@ -56,7 +56,7 @@ export default {
 
 .top-nav {
   background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 50) 100%);
+      rgba(183, 233, 230, 50) 100%);
   color: $ugly-cyan;
   position: fixed;
   top: 0;

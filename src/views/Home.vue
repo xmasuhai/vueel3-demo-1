@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FeatureItem from '@/components/FeatureItem.vue';
 import TopNav from '@/components/TopNav.vue';
 import Waves from '@/components/Waves.vue';
 import VueButton from '@/lib/VlButton.vue';
@@ -34,11 +35,8 @@ if (/qq/.test(ua)) {
     </div>
     <div class="features">
       <ul>
-        <li>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-vue"></use>
-          </svg>
-          <h3>基于Vue 3.2</h3>
+        <FeatureItem iconName="vue"
+                     title="基于Vue 3.2">
           <p>
             使用 <strong>Composition API</strong> 和
             <br/>
@@ -46,21 +44,17 @@ if (/qq/.test(ua)) {
             <br/>
             <span>每个组件代码简洁、易读、严谨</span>
           </p>
-        </li>
-        <li>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-ts"></use>
-          </svg>
-          <h3>基于 TypeScript</h3>
+        </FeatureItem>
+        <FeatureItem iconName="ts"
+                     title="基于 TypeScript">
+
           <p>源代码采用TypeScript</p>
-        </li>
-        <li>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-vite"></use>
-          </svg>
-          <h3>使用Vite 开发、构建</h3>
+        </FeatureItem>
+        <FeatureItem iconName="vite"
+                     title="使用Vite 2 开发、构建">
+
           <p>秒级运行、快速开发</p>
-        </li>
+        </FeatureItem>
       </ul>
     </div>
     <Waves class="waves" v-if="showWaves"></Waves>
@@ -83,7 +77,7 @@ export default {
 
   .topNavAndBanner {
     background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%,
-      rgba(183, 233, 230, 50) 100%);
+        rgba(183, 233, 230, 50) 100%);
     display: flex;
     flex-direction: column;
     clip-path: ellipse(80% 60% at 50% 40%);
@@ -154,6 +148,7 @@ export default {
         }
 
       }
+
     }
   }
 
@@ -165,23 +160,8 @@ export default {
       display: flex;
       flex-wrap: wrap;
 
-      > li {
-        margin: 16px 16px;
-        display: grid;
-        justify-content: start;
-        align-content: space-between;
-        grid-template-areas:
-          "icon title"
-          "icon text";
-        grid-template-columns: 80px auto;
-        grid-template-rows: 1fr auto;
-
-        > svg {
-          grid-area: icon;
-          width: 64px;
-          height: 64px;
-        }
-
+      &:deep(.feature-item) {
+        // inside slot
         strong {
           color: rgb(255, 140, 0);
           font-weight: bold;
@@ -197,6 +177,7 @@ export default {
 
         }
       }
+
     }
   }
 
@@ -237,5 +218,6 @@ export default {
     left: 0;
     width: 100%;
   }
+
 }
 </style>
