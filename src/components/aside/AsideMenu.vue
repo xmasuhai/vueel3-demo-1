@@ -84,9 +84,9 @@ export default {
   top: 0;
   left: 0;
   background: linear-gradient(
-      145deg,
-      rgba(183, 233, 230, 50) 100%,
-      rgba(227, 255, 253, 1) 0%);
+          145deg,
+          rgba(183, 233, 230, 50) 100%,
+          rgba(227, 255, 253, 1) 0%);
   width: 150px;
   padding: 60px 0 16px;
   height: 100vh;

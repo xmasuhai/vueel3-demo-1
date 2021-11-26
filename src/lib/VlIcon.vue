@@ -101,25 +101,25 @@ const {scale, flip, spin, inverse, pulse} = toRefs(props) || {};
 
 const iconClass = computed(() => {
   return {
-    'vue-icon': true,
-    'vue-icon-spin': spin,
-    'vue-icon-flip-horizontal': flip.value === 'horizontal',
-    'vue-icon-flip-vertical': flip.value === 'vertical',
-    'vue-icon-inverse': inverse,
-    'vue-icon-pulse': pulse
+    'vl-icon': true,
+    'vl-icon-spin': spin,
+    'vl-icon-flip-horizontal': flip.value === 'horizontal',
+    'vl-icon-flip-vertical': flip.value === 'vertical',
+    'vl-icon-inverse': inverse,
+    'vl-icon-pulse': pulse
   };
 });
 
 const iconScale = computed(() => {
   return {
-    [`vue-icon-${scale.value}x`]: true
+    [`vl-icon-${scale.value}x`]: true
   };
 });
 </script>
 
 <template>
-  <span class="vue-icon-wrapper">
-    <svg class="vue-icon-svg"
+  <span class="vl-icon-wrapper">
+    <svg class="vl-icon-svg"
          :class="{
                 iconClass: true,
                 customClass: true
@@ -130,25 +130,28 @@ const iconScale = computed(() => {
       <use :xlink:href="`#icon-${iconName}`">
       </use>
     </svg>
+      <slot></slot>
   </span>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'Icon'
+  name: 'VlIcon'
 };
 </script>
 
 <style lang="scss">
 @import 'styles/animate';
 
-.vue-icon-wrapper {
-  vertical-align: sub;
-  line-height: 1em;
-  width: 1em;
-  height: 1em;
+.vl-icon {
+  &-wrapper {
+    vertical-align: sub;
+    line-height: 1em;
+    width: 1em;
+    height: 1em;
+  }
 
-  .vue-icon-svg {
+  &-svg {
     vertical-align: top;
     width: 1em;
     height: 1em;
@@ -157,7 +160,7 @@ export default {
 }
 
 @for $i from 2 through 10 {
-  .vue-icon-#{$i}x {
+  .vl-icon-#{$i}x {
     transform: scale($i);
   }
 }

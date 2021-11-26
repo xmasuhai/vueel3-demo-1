@@ -25,13 +25,13 @@ const {visible, closeOnClickOverlay, zIndexLevel} = toRefs(props) || {};
 
 const zIndexLevelOverlayClass = computed(() => {
   return {
-    [`vue-dialog-overlay-${zIndexLevel.value}`]: true
+    [`vl-dialog-overlay-${zIndexLevel.value}`]: true
   };
 });
 
 const zIndexLevelWrapperClass = computed(() => {
   return {
-    [`vue-dialog-wrapper-${zIndexLevel.value}`]: true
+    [`vl-dialog-wrapper-${zIndexLevel.value}`]: true
   };
 });
 
@@ -67,22 +67,22 @@ const onClickCancel = () => {
 <template>
   <template v-if="visible">
     <teleport to="body">
-      <div class="vue-dialog-overlay"
+      <div class="vl-dialog-overlay"
            :class="zIndexLevelOverlayClass"
            @click="onClickOverlay">
       </div>
-      <div class="vue-dialog-wrapper"
+      <div class="vl-dialog-wrapper"
            :class="zIndexLevelWrapperClass">
-        <div class="vue-dialog">
-          <header>
+        <div class="vl-dialog">
+          <header class="vl-dialog-header">
             <slot name="title">标题</slot>
-            <span class="vue-dialog-close"
+            <span class="vl-dialog-close"
                   @click="close"></span>
           </header>
-          <main>
+          <main class="vl-dialog-main">
             <slot name="content">内容</slot>
           </main>
-          <footer>
+          <footer class="vl-dialog-footer">
             <Button level="primary" @click="onClickOk">OK</Button>
             <Button @click="onClickCancel">Cancel</Button>
           </footer>
@@ -94,14 +94,14 @@ const onClickCancel = () => {
 
 <script lang="ts">
 export default {
-  name: 'Dialog'
+  name: 'VlDialog'
 };
 </script>
 
 <style lang="scss" scoped>
 @import 'styles/var.scss';
 
-.vue-dialog {
+.vl-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, .5);
@@ -139,7 +139,7 @@ export default {
     }
   }
 
-  > header {
+  > &-header {
     padding: 12px 16px;
     border-bottom: 1px solid $border-color;
     display: flex;
@@ -148,11 +148,11 @@ export default {
     font-size: 20px;
   }
 
-  > main {
+  > &-main {
     padding: 12px 16px;
   }
 
-  > footer {
+  > &-footer {
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;
@@ -185,5 +185,7 @@ export default {
       transform: translate(-50%, -50%) rotate(45deg);
     }
   }
+
 }
+
 </style>

@@ -2,7 +2,7 @@
 @import './var.scss';
 @import './theme-var.scss';
 
-$namespace: 'vue';
+$namespace: 'vl';
 
 /* -----------BEM--------------- */
 @mixin bem($block) {
@@ -16,13 +16,13 @@ $namespace: 'vue';
 
 /* -----------shape--------------- */
 @mixin shape($text-width: $--size-medium) {
-  &.vue-button-shape-rect {
+  &.vl-button-shape-rect {
     border-radius: $radius;
   }
-  &.vue-button-shape-capsule {
+  &.vl-button-shape-capsule {
     border-radius: math.div($text-width, 2);
   }
-  &.vue-button-shape-circle {
+  &.vl-button-shape-circle {
     min-width: $text-width;
     border-radius: 50%;
   }

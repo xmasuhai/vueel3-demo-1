@@ -2,8 +2,8 @@
 import FeatureItem from '@/components/FeatureItem.vue';
 import TopNav from '@/components/TopNav.vue';
 import Waves from '@/components/Waves.vue';
-import VueButton from '@/lib/VlButton.vue';
-import VueIcon from '@/lib/VlIcon.vue';
+import VlButton from '@/lib/VlButton.vue';
+import VlIcon from '@/lib/VlIcon.vue';
 import {ref} from 'vue';
 
 const ua = navigator.userAgent.toLowerCase();
@@ -21,15 +21,18 @@ if (/qq/.test(ua)) {
         <h1>Vueel 3 UI</h1>
         <h2>一个基于 Vue 3 的UI组件库</h2>
         <div class="skip">
-          <vue-button class="actions"
-                      shape="capsule">
-            <VueIcon iconName="github"></VueIcon>
-            <a href="https://github.com/xmasuhai/vueel3-demo-1">GitHub</a>
-          </vue-button>
-          <vue-button class="actions get-started"
-                      shape="capsule">
+          <VlButton class="actions"
+                    shape="capsule">
+            <VlIcon iconName="github"></VlIcon>
+            <a href="https://github.com/xmasuhai/vueel3-demo-1"
+               target="_blank">
+              GitHub
+            </a>
+          </VlButton>
+          <VlButton class="actions get-started"
+                    shape="capsule">
             <router-link to="/docs">开始</router-link>
-          </vue-button>
+          </VlButton>
         </div>
       </div>
     </div>
@@ -115,24 +118,29 @@ export default {
         align-items: center;
 
         .actions {
-          padding: 8px 0;
+          position: relative;
           background: #f6f6f6;
 
-          a {
-            line-height: 24px;
-            margin: 0 8px;
-            color: #4f5959;
-            display: inline-block;
-            border-radius: 24px;
-            padding: 8px 24px;
-          }
-
-          &:deep(.vue-icon-wrapper) {
-            padding-left: 1em;
+          &:deep(.vl-icon-wrapper) {
+            position: absolute;
+            left: 6px;
+            pointer-events: none;
 
             > svg {
               fill: #7f8c8d;
             }
+          }
+
+          &:first-child {
+            padding-left: 24px;
+          }
+
+          a {
+            user-select: none;
+            padding: 8px 0;
+            color: #4f5959;
+            display: inline-block;
+            border-radius: 24px;
           }
 
         }
@@ -220,4 +228,5 @@ export default {
   }
 
 }
+
 </style>

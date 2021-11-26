@@ -38,18 +38,18 @@ const toggle = () => {
 </script>
 
 <template>
-  <div class="vue-switch-button-wrapper">
-    <button class="vue-switch"
+  <div class="vl-switch-button-wrapper">
+    <button class="vl-switch"
             :class="{
-                    [`vue-switch-checked`]: toggleValue,
-                    [`vue-switch-disabled`]: disabled
+                    [`vl-switch-checked`]: toggleValue,
+                    [`vl-switch-disabled`]: disabled
                     }"
             @click="toggle"
             type="button">
-      <span class="vue-switch-toggle">
+      <span class="vl-switch-toggle">
         <span v-show="!toggleValue"
               class="close-line"></span>
-        <span class="vue-switch-label"
+        <span class="vl-switch-label"
               :class="openClose">
           {{ showText }}
         </span>
@@ -60,7 +60,7 @@ const toggle = () => {
 
 <script lang="ts">
 export default {
-  name: 'Switch',
+  name: 'VlSwitch',
 };
 </script>
 
@@ -93,12 +93,12 @@ export default {
   }
 }
 
-.vue-switch-button-wrapper {
+.vl-switch-button-wrapper {
   &:focus {
     outline: none;
   }
 
-  .vue-switch {
+  .vl-switch {
     height: $height;
     width: $height * 2;
     border: none;
@@ -106,7 +106,7 @@ export default {
     border-radius: math.div($height, 2);
     position: relative;
 
-    .vue-switch-toggle {
+    .vl-switch-toggle {
       line-height: $toggle-ball-height;
       position: absolute;
       top: 2px;
@@ -117,7 +117,7 @@ export default {
       border-radius: math.div($toggle-ball-height, 2);
       transition: all .25s;
 
-      .vue-switch-label {
+      .vl-switch-label {
         display: block;
         color: #fff;
         font-size: 18px;

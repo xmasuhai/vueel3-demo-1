@@ -23,20 +23,20 @@ const html = computed(() => {
 </script>
 
 <template>
-  <div class="vue-demo">
+  <div class="vl-demo">
     <h2>{{ component.__sourceCodeTitle }}</h2>
-    <div class="vue-demo-component">
+    <div class="vl-demo-component">
       <keep-alive>
         <component :is="component"></component>
       </keep-alive>
     </div>
-    <div class="vue-demo-addition">
+    <div class="vl-demo-addition">
       <slot></slot>
     </div>
-    <div class="vue-demo-actions">
+    <div class="vl-demo-actions">
       <VlButton @click="toggle">{{ codeVisible ? '隐藏代码' : '查看代码' }}</VlButton>
     </div>
-    <div class="vue-demo-code" v-show="codeVisible">
+    <div class="vl-demo-code" v-show="codeVisible">
       <pre class="language-html">
         <code class="language-html" v-html="html"></code>
       </pre>
@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
 
-.vue-demo {
+.vl-demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;
 

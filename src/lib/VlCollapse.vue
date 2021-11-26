@@ -36,8 +36,8 @@ const monitorSelectedArray = () => {
 
   collapseEmitter.on('add:selected', (title) => {
     onlyShowSingle.value
-      ? selectedArrayCopy = [title]
-      : selectedArrayCopy.push(title);
+        ? selectedArrayCopy = [title]
+        : selectedArrayCopy.push(title);
     updateSelectedArrayToAll(selectedArrayCopy);
   });
 
@@ -57,7 +57,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="vue-collapse">
+  <div class="vl-collapse">
     <slot>
       <VlCollapseItem v-for="(item, index) in itemsData"
                       :title="item.title"
@@ -78,7 +78,7 @@ export default {
 <style lang="scss">
 @import './styles/var.scss';
 
-.vue-collapse {
+.vl-collapse {
   align-items: center;
   border: 1px solid $collapse-grey;
   border-radius: $border-radius;

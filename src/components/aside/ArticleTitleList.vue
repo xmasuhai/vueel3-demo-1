@@ -13,11 +13,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 const {articleTitle, routerInfo, toDir} = toRefs(props) || {};
 
-const emmiter = inject<any>('evBus');
+const emitter = inject<any>('evBus');
+
 const asideVisible = inject<Ref<boolean>>('asideVisible');
 
 const closeAside = () => {
-  emmiter.on('update:asideVisible', () => {
+  emitter.on('update:asideVisible', () => {
     asideVisible!.value = false;
   });
 };

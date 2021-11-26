@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-:deep(.vue-button) {
+:deep(.vl-button) {
   margin: 5px;
 }
 </style>

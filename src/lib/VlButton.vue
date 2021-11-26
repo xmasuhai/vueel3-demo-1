@@ -26,20 +26,20 @@ const {theme, size, level, disabled, isLoading, shape} = toRefs(props) || {};
 // 计算classes
 const classes = computed(() => {
   return {
-    [`vue-button-theme-${theme.value}`]: theme.value,
-    [`vue-button-size-${size.value}`]: size.value,
-    [`vue-button-level-${level.value}`]: level.value,
-    [`vue-button-shape-${shape.value}`]: shape.value,
+    [`vl-button-theme-${theme.value}`]: theme.value,
+    [`vl-button-size-${size.value}`]: size.value,
+    [`vl-button-level-${level.value}`]: level.value,
+    [`vl-button-shape-${shape.value}`]: shape.value,
   };
 });
 </script>
 
 <template>
-  <button class="vue-button"
+  <button class="vl-button"
           :class="classes"
           :disabled="disabled"
           type="button">
-    <span class="vue-loadingIndicator"
+    <span class="vl-loadingIndicator"
           v-if="isLoading">
     </span>
     <slot>
@@ -50,7 +50,7 @@ const classes = computed(() => {
 
 <script lang="ts">
 export default {
-  name: 'Button'
+  name: 'VlButton'
 };
 </script>
 
@@ -61,7 +61,8 @@ export default {
 @import 'styles/mixins.scss';
 @import 'styles/animate.scss';
 
-// .vue-button
+// namespace: 'vl'
+// .vl-button
 @include bem(button) {
   // layout position
   height: $--size-medium;
@@ -141,7 +142,7 @@ export default {
 
   //theme
   // .vue-theme-link | vue-theme-text
-  &.vue-button-theme-link {
+  &.vl-button-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $light-font-color;
@@ -152,7 +153,7 @@ export default {
     }
   }
 
-  &.vue-button-theme-text {
+  &.vl-button-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -165,13 +166,13 @@ export default {
 
   // level
   //  .vue-button-theme-button | vue-theme-primary | vue-theme-danger
-  &.vue-button-theme-button {
+  &.vl-button-theme-button {
     &:hover,
     &:focus {
     }
 
     // primary
-    &.vue-button-level-primary {
+    &.vl-button-level-primary {
       background: $light-font-color;
       color: white;
       border-color: $light-font-color;
@@ -184,7 +185,7 @@ export default {
     }
 
     // danger
-    &.vue-button-level-danger {
+    &.vl-button-level-danger {
       background: $danger;
       border-color: $danger;
       color: white;
@@ -198,9 +199,9 @@ export default {
 
   }
 
-  &.vue-button-theme-link {
+  &.vl-button-theme-link {
     // danger
-    &.vue-button-level-danger {
+    &.vl-button-level-danger {
       color: $danger;
 
       &:hover,
@@ -210,7 +211,7 @@ export default {
     }
   }
 
-  &.vue-button-theme-text {
+  &.vl-button-theme-text {
     // primary
     &.vue-button-level-primary {
       color: $light-font-color;
@@ -222,7 +223,7 @@ export default {
     }
 
     // danger
-    &.vue-button-level-danger {
+    &.vl-button-level-danger {
       color: $danger;
 
       &:hover,
@@ -233,16 +234,16 @@ export default {
   }
 
   // disabled
-  &.vue-button-theme-button {
+  &.vl-button-theme-button {
     &[disabled]:hover {
       border-color: $grey;
     }
   }
 
   // theme disabled
-  &.vue-button-theme-button,
-  &.vue-button-theme-link,
-  &.vue-button-theme-text {
+  &.vl-button-theme-button,
+  &.vl-button-theme-link,
+  &.vl-button-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -251,7 +252,7 @@ export default {
 
   // size
   // big normal small
-  &.vue-button-size-big {
+  &.vl-button-size-big {
     font-size: $--font-size-big;
     line-height: $--font-size-big;
     height: $--size-big;
@@ -259,7 +260,7 @@ export default {
     @include shape($--size-big);
   }
 
-  &.vue-button-size-medium {
+  &.vl-button-size-medium {
     font-size: $--font-size-medium;
     line-height: $--font-size-medium;
     height: $--size-medium;
@@ -267,7 +268,7 @@ export default {
     @include shape();
   }
 
-  &.vue-button-size-small {
+  &.vl-button-size-small {
     font-size: $--font-size-small;
     line-height: $--font-size-small;
     height: $--size-small;
@@ -276,7 +277,7 @@ export default {
   }
 
   // loading
-  > .vue-loadingIndicator {
+  > .vl-loadingIndicator {
     pointer-events: none;
     width: $loading-indicator-size;
     height: $loading-indicator-size;

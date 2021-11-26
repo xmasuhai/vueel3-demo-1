@@ -23,8 +23,8 @@ const toggle = () => {
   // eventbus update a copy of selectedArray in parent node
   // & let eventbus update:selected selectedArray
   isOpen.value
-    ? collapseEmitter.emit('remove:selected', title.value)
-    : collapseEmitter.emit('add:selected', title.value);
+      ? collapseEmitter.emit('remove:selected', title.value)
+      : collapseEmitter.emit('add:selected', title.value);
 };
 
 // listen to eventbus
@@ -45,8 +45,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="vue-collapse-item">
-    <header class="vue-title"
+  <div class="vl-collapse-item">
+    <header class="vl-title"
             :class="{
               'title-show': isOpen && !isDisabled,
               'disabled': isDisabled
@@ -58,7 +58,7 @@ onMounted(() => {
       </VlIcon>
     </header>
     <transition name="push-pull">
-      <article class="vue-content"
+      <article class="vl-content"
                :class="{
                         'content-show': isOpen && !isDisabled
                         }"
@@ -118,7 +118,7 @@ export default {
   animation: slide-close .3s ease-in-out;
 }
 
-.vue-collapse-item {
+.vl-collapse-item {
   align-items: center;
   background-color: lighten($collapse-grey, 30%);
   border-bottom: 1px solid $collapse-grey;
@@ -127,7 +127,7 @@ export default {
   overflow: hidden;
   width: 100%;
 
-  > .vue-title {
+  > .vl-title {
     align-items: center;
     border-radius: $border-radius - 1;
     display: flex;
@@ -148,7 +148,7 @@ export default {
     }
   }
 
-  > .vue-content {
+  > .vl-content {
     background-color: $basic-bg-lt;
     padding: 18px;
     width: 100%;
@@ -165,7 +165,7 @@ export default {
     outline: 1px solid $collapse-grey;
 
     // v-show = true
-    > .vue-title.title-show {
+    > .vl-title.title-show {
       border-top: 0;
     }
   }
@@ -178,11 +178,11 @@ export default {
     outline: 1px solid $collapse-grey;
 
     // v-show = true
-    > .vue-title.title-show {
+    > .vl-title.title-show {
       @include border-bottom-radius;
     }
 
-    > .vue-content {
+    > .vl-content {
       @include border-bottom-radius($border-radius);
     }
   }

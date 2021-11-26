@@ -78,25 +78,25 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="vue-tabs">
-    <nav class="vue-tabs-nav" ref="container">
+  <div class="vl-tabs">
+    <nav class="vl-tabs-nav" ref="container">
       <div v-for="(title, index) in titleListOfDefaultSlots"
            :key="index"
            :ref="(el) => { if (el && (title === selected)) selectedItem = el }"
            :class="{selected: title === selected}"
-           class="vue-tabs-nav-item"
+           class="vl-tabs-nav-item"
            @click="select(title)">
         {{ title }}
       </div>
-      <div class="vue-tabs-nav-indicator"
+      <div class="vl-tabs-nav-indicator"
            ref="indicator">
       </div>
     </nav>
-    <div class="vue-tabs-content">
+    <div class="vl-tabs-content">
       <keep-alive>
         <component :is="getCurrentTab"
                    :key="getCurrentTabTitle"
-                   class="vue-tabs-content-item">
+                   class="vl-tabs-content-item">
         </component>
       </keep-alive>
     </div>
@@ -105,14 +105,14 @@ watchEffect(() => {
 
 <script lang="ts">
 export default {
-  name: 'Tabs'
+  name: 'VlTabs'
 };
 </script>
 
 <style lang="scss">
 @import 'styles/var';
 
-.vue-tabs {
+.vl-tabs {
   &-nav {
     display: flex;
     color: $tab-color;
