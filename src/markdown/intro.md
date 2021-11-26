@@ -1,14 +1,16 @@
 # 介绍
 
-Vueel3 UI 是一款基于 **`Vue 3`** 和 **`TypeScript`** 的 UI 组件库。
+> Vueel3 UI 是一款基于 **`Vue 3`** 和 **`TypeScript`** 的 UI 组件库。
 
-- 这款组件库是为了总结自己学习最新 Vue 3 的技术经验而写，全程亲手编写，包括现在看到的这个官网也都是我自己写的
-- Vueel3 UI涵盖了Icon、Button、Switch、Dialog等常见组件
-- 在制作组件的过程中，使我了解了`setup`、`ref`、`watchEffect`等Composition API的用法
-- 模块化的源代码简洁明了，易于阅读
+- 这款组件库是为了总结自己学习最新 Vue 3.2 的技术经验
+- 包括现在看到的这个展示组件的官网，也都是全程手写
+- 涵盖了Icon、Button、Switch、Dialog等常见组件
+- 在制作组件的过程中，使我了解了`setup`、`ref`、`watchEffect`等`Composition API`的用法
+- 模块化、组件化的源代码简洁明了，易于阅读
 - 官方文档展示了组件的用法，可在线查看示例代码，并支持PC和手机浏览
+- 官方展示使用了 `github` 的 `gh-pages` 功能，并实现了自动化部署脚本。
 
-> Vueel3 UI 的技术栈
+## Vueel3 UI 的技术栈
 
 - 使用 `Composition API`
 - 使用 `script setup` 的语法糖
@@ -26,7 +28,7 @@ Vueel3 UI 是一款基于 **`Vue 3`** 和 **`TypeScript`** 的 UI 组件库。
 
 历史提交信息非常规范，可以按提交的顺序逐个查看；也可以直接查看每个组件的源代码和示例，运行方法见 [README.md](#/docs/readme)。
 
-> 展示网站时使用的第三方库：
+## 展示网站时使用的第三方库：
 
 - 事件总线`mitt`
 - 代码美化`prismjs`
