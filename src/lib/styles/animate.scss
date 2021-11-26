@@ -16,3 +16,29 @@
     transform: rotate(360deg);
   }
 }
+
+// switch
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+  }
+  100% {
+    transform: translateX(-26px);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+  }
+  100% {
+    transform: translateX(26px);
+  }
+}

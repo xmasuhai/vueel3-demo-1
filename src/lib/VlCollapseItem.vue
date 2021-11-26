@@ -13,6 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
   title: '',
   isDisabled: false
 });
+
 const {title, isDisabled} = toRefs(props);
 
 const collapseEmitter = inject<any>('collapseEmitter');
@@ -78,6 +79,7 @@ export default {
 
 <style lang="scss">
 @import '../lib/styles/var';
+@import 'styles/mixins.scss';
 
 @mixin border-bottom-radius($radius: 0) {
   border-bottom-left-radius: $radius;
@@ -118,7 +120,9 @@ export default {
   animation: slide-close .3s ease-in-out;
 }
 
-.vl-collapse-item {
+// namespace: 'vl'
+// .vl-collapse-item
+@include bem(collapse-item) {
   align-items: center;
   background-color: lighten($collapse-grey, 30%);
   border-bottom: 1px solid $collapse-grey;

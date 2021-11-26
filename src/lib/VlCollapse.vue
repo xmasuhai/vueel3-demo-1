@@ -77,8 +77,11 @@ export default {
 
 <style lang="scss">
 @import './styles/var.scss';
+@import 'styles/mixins.scss';
 
-.vl-collapse {
+// namespace: 'vl'
+// .vl-collapse
+@include bem(collapse) {
   align-items: center;
   border: 1px solid $collapse-grey;
   border-radius: $border-radius;

@@ -130,7 +130,7 @@ const iconScale = computed(() => {
       <use :xlink:href="`#icon-${iconName}`">
       </use>
     </svg>
-      <slot></slot>
+    <slot></slot>
   </span>
 </template>
 
@@ -142,8 +142,11 @@ export default {
 
 <style lang="scss">
 @import 'styles/animate';
+@import 'styles/mixins.scss';
 
-.vl-icon {
+// namespace: 'vl'
+// .vl-icon
+@include bem(icon) {
   &-wrapper {
     vertical-align: sub;
     line-height: 1em;

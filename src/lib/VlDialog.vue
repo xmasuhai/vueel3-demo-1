@@ -100,8 +100,11 @@ export default {
 
 <style lang="scss" scoped>
 @import 'styles/var.scss';
+@import 'styles/mixins.scss';
 
-.vl-dialog {
+// namespace: 'vl'
+// .vl-dialog
+@include bem(dialog) {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, .5);
@@ -139,7 +142,7 @@ export default {
     }
   }
 
-  > &-header {
+  &-header {
     padding: 12px 16px;
     border-bottom: 1px solid $border-color;
     display: flex;
@@ -148,11 +151,11 @@ export default {
     font-size: 20px;
   }
 
-  > &-main {
+  &-main {
     padding: 12px 16px;
   }
 
-  > &-footer {
+  &-footer {
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;

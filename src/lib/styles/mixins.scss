@@ -9,7 +9,7 @@ $namespace: 'vl';
   $Comp: $namespace + '-' + $block !global;
 
   .#{$Comp} {
-    // @content;类似插槽 使用时可自定义内容替换
+    // @content; // 类似插槽 使用时可自定义内容替换
     @content;
   }
 }

@@ -111,8 +111,11 @@ export default {
 
 <style lang="scss">
 @import 'styles/var';
+@import 'styles/mixins.scss';
 
-.vl-tabs {
+// namespace: 'vl'
+// .vl-tab
+@include bem(tabs) {
   &-nav {
     display: flex;
     color: $tab-color;
