@@ -4,7 +4,7 @@ import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js';
 import VlButton from '@/lib/VlButton.vue';
-import {computed, ref} from 'vue';
+import {computed,/* nextTick, onMounted,*/ ref} from 'vue';
 
 const codeVisible = ref(false);
 
@@ -19,6 +19,18 @@ const toggle = () => {
 const html = computed(() => {
   return Prism.highlight(props.component?.__sourceCode, Prism.languages.html, 'html');
 });
+
+/*
+const html = ref('');
+const showCode = async () => {
+  await nextTick(() => {
+    html.value = Prism.highlight(props.component?.__sourceCode, Prism.languages.html, 'html');
+  });
+};
+onMounted(() => {
+  showCode();
+});
+*/
 
 </script>
 

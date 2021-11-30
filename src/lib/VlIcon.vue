@@ -29,6 +29,7 @@ const props = defineProps({
         'clear',
         'hook',
         'hook-yes',
+        'hook_ok',
         'ok',
         'ok-circle',
         'empty-record',

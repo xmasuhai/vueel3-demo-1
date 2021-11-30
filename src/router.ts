@@ -1,4 +1,5 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
+// import components
 import IconsDemo from '@/components/components_demos/IconsDemos.vue';
 import ButtonDemo from '@/components/components_demos/ButtonDemos.vue';
 import SwitchDemo from '@/components/components_demos/SwitchDemos.vue';

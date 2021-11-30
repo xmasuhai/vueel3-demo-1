@@ -4,8 +4,8 @@ import {createApp, h} from 'vue';
 export interface dialogOptions {
   title?: string;
   content?: string;
-  ok?: Function;
-  cancel?: Function;
+  ok?: () => void;
+  cancel?: () => void;
 }
 
 export const useDialog = (dialogOptions: dialogOptions) => {

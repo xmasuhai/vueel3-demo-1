@@ -12,6 +12,7 @@ const mainDocBackTop = () => {
   (mainDoc.value as unknown as HTMLElement).scrollTop = 0;
 };
 
+// 每次路由跳转前，都滚动到顶部
 onBeforeRouteUpdate((/*to, from*/) => {
   mainDocBackTop();
 });
