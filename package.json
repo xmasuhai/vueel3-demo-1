@@ -42,7 +42,7 @@
     "@types/prismjs": "^1.16.6",
     "@vitejs/plugin-vue": "^1.6.1",
     "@vue/compiler-sfc": "^3.2.22",
-    "marked": "^3.0.7",
+    "marked": "^4.0.10",
     "rollup-plugin-esbuild": "^4.6.0",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-scss": "^3.0.0",
